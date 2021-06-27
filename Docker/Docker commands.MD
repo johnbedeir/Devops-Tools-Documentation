@@ -17,10 +17,10 @@ docker image
 ```sh
 docker run --name <container_Name> <image_name>:<image_version/tag>
 
-d - run your container in back ground (detached)
-```sh 
+docker - run your container in back ground (detached)
+ 
 docker run -d --name <container_Name> <image_name>:<image_version/tag>
-
+```
 5. Expose your application to host server
 ```sh
 docker run -d --name <container_Name> -p <host_port>:<container_port> <image_name>:<Image_version/tag>
