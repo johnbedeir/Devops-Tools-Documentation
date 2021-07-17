@@ -8,11 +8,13 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
+
 class Product(Resource):
     def get(self):
         return {
-            'products': ['Ice cream', 'Chocolate', 'Fruit', 'Eggs', 'new']
+            'products': ['Product 1', 'Product 2', 'Product 3', 'Product 4', 'Product 5', 'Product 6', 'New Product']
         }
+
 
 # Create routes
 api.add_resource(Product, '/')
