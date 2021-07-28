@@ -51,10 +51,10 @@
   <summary>:zap: Devops Tools Documentation</summary>
   
 <!--START_SECTION:activity-->
-1. [#Git Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Git/Git_Commands.md)
-2. [#Docker Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Docker/Docker%20commands.MD)
-3. [#Docker Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Docker/Docker%20commands.MD)
-4. [#Ansible Playbook Template](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Ansible/ansible-playbook%20(example).yml)
+1. [Git Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Git/Git_Commands.md)
+2. [Docker Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Docker/Docker%20commands.MD)
+3. [Docker Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Docker/Docker%20commands.MD)
+4. [Ansible Playbook Template](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Ansible/ansible-playbook%20(example).yml)
 <!--END_SECTION:activity-->
 
 </details>
