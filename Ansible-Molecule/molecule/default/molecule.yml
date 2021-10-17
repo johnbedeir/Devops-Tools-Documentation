@@ -1,0 +1,32 @@
+---
+driver:
+  name: docker
+platforms:
+  - name: ubuntu-18.04
+    image: ubuntu:bionic-20210930
+    networks:
+      - name: molecule-poc-patch-management
+    groups:
+      - nodes # so we use groups in Ansible
+
+  - name: ubuntu-20.04
+    image: ubuntu:focal-20211006
+    networks:
+      - name: molecule-poc-patch-management
+    groups:
+      - nodes # so we use groups in Ansible
+
+scenario:
+  name: default
+  test_sequence:
+    - dependency # install any dependency if there is a requirements.txt file
+    - lint # make sure syntax all correct
+    - destroy # destroy any leftover instences from the previous run to make sure we start from blank state
+    - syntax # run syntax check on the playbook file to make sure ansible can execute it
+    - create # depends on driver going to build docker or vagrant
+    - prepare # run prepare playbook if exists
+    - converge # run converge playbook and install on all the instences that was created
+    - idempotence # make sure if we run this playbook again nothing will be change
+    - side_effect # run side_effect playbook
+    - verify # run verify on all the instences
+    - destroy # remove any of the instences
