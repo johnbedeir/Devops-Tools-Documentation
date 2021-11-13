@@ -43,7 +43,7 @@ Check the SSH config file
 $ sudo vim /etc/ssh/ssh_config
 ```
 
-Make sure to have the following lines uncommented:
+Make sure to have the following lines uncommented in /etc/ssh/ssh_config.d file:
 ```sh
 PasswordAuthentication yes 
 
