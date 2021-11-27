@@ -1,0 +1,112 @@
+/******************************************************************************
+  Structure
+*******************************************************************************/
+.main {
+  height: 100%;
+  overflow: hidden;
+  padding-top: $header-height;
+  padding-bottom: $footer-height;
+  width: 100%;
+  @media (max-width: $media-sm) {
+    padding-top: $header-height - 20;
+    padding-bottom: $footer-height - 8;
+  }
+  @media (max-width: $media-xs) {
+    height: auto;
+    min-height: calc(100% - #{$header-height + 4} - #{$footer-height - 43});
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  .section {
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    table-layout: fixed;
+    visibility: hidden;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    @media (max-width: $media-xs) {
+      display: block;
+      position: relative;
+    }
+    
+    &.active {
+      height: 100%;
+      height: calc(100% - #{$header-height} - #{$footer-height});
+      visibility: visible;
+      @media (max-width: $media-sm) {
+        height: calc(100% - #{$header-height - 20} - #{$footer-height - 8});
+      }
+      @media (max-width: $media-xs) {
+        height: auto;
+      }
+    }
+    .section-wrap {
+      display: table;
+      height: 100%;
+      overflow-y: auto;
+      table-layout: fixed;
+      width: 100%;
+      
+      .section-content {
+        display: table-cell;
+        height: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        vertical-align: middle;
+        width: 100%;
+        @media (max-width: $media-xs) {
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+.intro-page,
+.no-footer {
+  .main {
+    padding-bottom: 30px;
+    @media (max-width: $media-xs) {
+      padding-bottom: 0;
+    }
+    
+    @media (max-width: $media-xs) {
+      height: auto;
+      min-height: calc(100% - #{$header-height + 4} - 30px);
+    }
+    
+    .section {
+      height: calc(100% - #{$header-height} - 30px);
+      @media (max-width: $media-xs) {
+        height: auto;
+      }
+    }
+  }
+}
+.section .mCustomScrollBox {
+  height: auto;
+}
+.mCSB_inside > .mCSB_container {
+  margin-right: 0;
+}
+
+.section .section-content > .mCustomScrollBox,
+.section .section-content > .mCustomScrollBox > .mCSB_container {
+  overflow: visible;
+}
+.section.scroll-content .section-wrap,
+.section.scroll-content .section-wrap .section-content {
+  display: block;
+  height: 100%;
+  
+  > .mCustomScrollBox {
+    height: 100%;
+    overflow: hidden;
+    
+    > .mCSB_container {
+      overflow: hidden;
+    }
+  }
+}

@@ -1,0 +1,164 @@
+/******************************************************************************
+  Background
+*******************************************************************************/
+@keyframes moveclouds {
+  0% {margin-left: 100%;}
+  100% {margin-left: -100%;}
+}
+@-webkit-keyframes moveclouds {
+  0% {margin-left: 100%;}
+  100% {margin-left: -100%;}
+}
+@keyframes moveclouds2 {
+  0% {margin-left: 100%;}
+  50% {margin-left: 100%;}
+  100% {margin-left: -100%;}
+}
+@-webkit-keyframes moveclouds2 {
+  0% {margin-left: 100%;}
+  50% {margin-left: 100%;}
+  100% {margin-left: -100%;}
+}
+.background {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  
+  .layer {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  .clouds {
+    overflow: hidden;
+    
+    .cloud {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      -webkit-transform:translate3d(0,0,0);
+  	  transform:translate3d(0,0,0);
+      width: 100%;
+      will-change: transform;
+    }
+    .cloud-1 {
+      -webkit-animation: moveclouds 25s linear infinite;
+      animation: moveclouds 25s linear infinite;
+    }
+    .cloud-2 {
+      -webkit-animation: moveclouds 50s linear infinite;
+      animation: moveclouds 50s linear infinite;
+    }
+    .cloud-3 {
+      -webkit-animation: moveclouds2 35s linear infinite;
+      animation: moveclouds2 35s linear infinite;
+    }
+  }
+  
+  .background-image {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    
+    &.page-bg-1 {
+      background-image: url(../content/img/page-bg-1.jpg);
+      + .layer {
+          background-color: rgba(255, 255, 255, .4);
+      }
+    }
+    &.page-bg-2 {
+      background-image: url(../content/img/page-bg-2.jpg);
+    }
+    &.page-bg-3 {
+      background-image: url(../content/img/page-bg-3.jpg);
+    }
+    &.page-bg-4 {
+      background-image: url(../content/img/page-bg-4.jpg);
+    }
+    &.page-bg-5 {
+      background-image: url(../content/img/page-bg-5.jpg);
+    }
+    &.intro-bg {
+      background-image: url(../content/img/intro-bg.jpg);
+    }
+    &.underconstruction {
+      background-image: url(../content/img/under-bg.jpg);
+    }
+  }
+	
+	.background-slider {
+		z-index: inherit !important;
+		.owl-stage-outer {
+			height: 100%;
+			
+			.owl-stage {
+				height: 100%;
+				
+				.owl-item {
+					height: 100%;
+					
+					.item {
+						-webkit-background-size: cover;
+						background-size: cover;
+						background-position: 50% 50%;
+						background-repeat: no-repeat;
+						height: 100%;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+  
+  .background-overlay {
+    &.page-overlay-2 {
+      background-color: rgba(#000,.9);
+    }
+    &.page-overlay-3 {
+      background-color: rgba(#fff,.8);
+    }
+    &.page-overlay-4 {
+      background-color: rgba(#caddfe,.9);
+    }
+    &.page-overlay-5 {
+      background-color: rgba(#ceeff8,.9);
+    }
+    &.page-overlay-6 {
+      background-color: rgba(#fedfdf,.9);
+    }
+    &.intro-overlay {
+      background-color: rgba(#070707,.8);
+    }
+  }
+
+  .background-video {
+    video {
+      max-width: inherit;
+      min-height: 100%;
+      min-width: 100%;
+      width: 100%;
+      
+      .loaded & {
+        width: auto;
+      }
+    }
+		iframe {
+			max-width: inherit;
+		}
+    .tubular-container {
+      height: 100%;
+      width: 100%;
+      
+      .tubular-player {
+        position: absolute;
+      }
+    }
+  }
+}

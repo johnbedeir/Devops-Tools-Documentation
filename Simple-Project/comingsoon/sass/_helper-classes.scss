@@ -1,0 +1,28 @@
+/******************************************************************************
+  Helper Classes
+*******************************************************************************/
+@media (max-width: $media-xs) {
+  .xs-text-center {
+    text-align: center;
+  }
+  .xs-text-left {
+    text-align: left;
+  }
+  .xs-text-right {
+    text-align: right;
+  }
+}
+@media (max-width: $media-sm) {
+  .sm-text-center {
+    text-align: center;
+  }
+  .sm-text-left {
+    text-align: left;
+  }
+  .sm-text-right {
+    text-align: right;
+  }
+}
+.relative {
+  position: relative;
+}
