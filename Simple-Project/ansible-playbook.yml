@@ -1,6 +1,6 @@
 ---
 - name: "Build a container with ansible"
-  hosts: localhost
+  hosts: all
   connection: local
   become: yes
   tasks:
