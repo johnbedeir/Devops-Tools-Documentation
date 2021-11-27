@@ -19,10 +19,5 @@
       command: docker build -t comingsoon-image .
 
     - name: create tag to image
-      command: docker tag comingsoon-image triple3a/comingsoon-image
+      command: docker run -d --name web-container -p 5000:80 comingsoon-image
 
-    - name: push image to dockerhub
-      command: docker push triple3a/comingsoon-image
-
-    - name: remove docker created images
-      command: docker rmi comingsoon-image triple3a/comingsoon-image
