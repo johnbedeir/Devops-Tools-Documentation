@@ -2,6 +2,7 @@
 - name: "Build a container with ansible"
   hosts: localhost
   connection: local
+  become: yes
   tasks:
     - name: stop current running container
       command: docker stop comingsoon-container
