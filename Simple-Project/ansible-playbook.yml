@@ -1,6 +1,7 @@
 ---
 - name: "Build a container with ansible"
-  hosts: all
+  hosts: local
+  connection: local
   become: yes
   tasks:
     - name: stop current running container
