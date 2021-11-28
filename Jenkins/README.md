@@ -70,7 +70,7 @@ Step 6:
 
 Access Jenkins through browser:
 ```sh
-  1. PUBLIC_IPv4_DNS_NAME:8000
+  1. PUBLIC_IPv4_ADDRESS:8080
 
   2. sudo cat <jenkins_default_password_path>
 
@@ -137,7 +137,7 @@ Install Ansible:
 ```sh
 sudo apt update
 
-sudo apt install ansible
+sudo apt install ansible -y
 ```
 
 Step 11: 
@@ -153,5 +153,5 @@ Step 12:
 
 Once the job run successfully:
 ```sh
-Go to your browser: PUBLIC_IPv4_DNS_NAME:5000
+Go to your browser: PUBLIC_IPv4_ADDRESS:5000
 ```
