@@ -13,7 +13,12 @@ docker image pull <image_name>:<image_version/tag>
 docker image
 ```
 
-4. Create a docker container from image
+4. Build docker image from Dockerfile
+```sh
+docker build -t <image_name> . #the dot in the end specify the current directory where the Dockerfile is located 
+```
+
+5. Create a docker container from image
 ```sh
 docker run --name <container_Name> <image_name>:<image_version/tag>
 
@@ -21,46 +26,47 @@ docker - run your container in back ground (detached)
  
 docker run -d --name <container_Name> <image_name>:<image_version/tag>
 ```
-5. Expose your application to host server
+
+6. Expose your application to host server
 ```sh
 docker run -d --name <container_Name> -p <host_port>:<container_port> <image_name>:<Image_version/tag>
 
 docker run -d --name httpd_container -p 8080:80 httpd:latest
 ```
 
-6. Show all running containers
+7. Show all running containers
 ```sh
 docker ps
 ```
 
-7. Show all docker container (running, stpooed, terminated, etc...)
+8. Show all docker container (running, stpooed, terminated, etc...)
 ```sh
 docker ps -a
 ```
 
-8. Get inside a container
+9. Get inside a container
 
 ```sh
 docker exec -it <container_Name> bash
 ```
 
-9. Stop a container 
+10. Stop a container 
 ```sh
 docker stop <container_id>
 ```
 
-10. Start a container which is stopped 
+11. Start a container which is stopped 
 
 ```sh
 docker start <container_id>
 ```
-11. Remove a container
+12. Remove a container
 
 ```sh
 docker rm <container_id>
 ```
 
-12. Remove docker image
+13. Remove docker image
 ```sh
 docker rmi <image_id>
 ```
