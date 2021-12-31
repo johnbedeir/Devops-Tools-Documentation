@@ -1,0 +1,21 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: comingsoon-web-img
+spec:
+  selector:
+    matchLabels:
+      app: comingsoon-web-img
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: comingsoon-web-img
+    spec:
+      containers:
+      - name: comingsoon-web-img
+        image: triple3a/k8s
+        ports:
+        - containerPort: 80
+
+# nodeGroup:

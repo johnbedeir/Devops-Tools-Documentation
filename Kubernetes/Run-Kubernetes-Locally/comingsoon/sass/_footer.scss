@@ -1,0 +1,64 @@
+/******************************************************************************
+  Footer
+*******************************************************************************/
+.site-footer {
+  bottom: 0;
+  color: #666;
+  @include rem(font-size, 12px);
+  height: $footer-height;
+  left: 0;
+  line-height: 1.2;
+  padding: 10px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  @media (max-width: $media-sm) {
+    height: $footer-height - 8;
+  }
+  @media (max-width: $media-xs) {
+    height: $footer-height - 43;
+    position: relative;
+  }
+  
+  .dark & {
+    color: #999;
+  }
+  .copyright {
+    margin-bottom: 10px;
+  }
+  .social {
+    a {
+      border: 2px solid transparent;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      color: #666;
+      display: inline-block;
+      font-size: 15px;
+      height: 34px;
+      line-height: 32px;
+      margin: 0;
+      -webkit-transition:
+        color 0.2s ease-in-out,
+        border 0.2s ease-in-out;
+      transition:
+        color 0.2s ease-in-out,
+        border 0.2s ease-in-out;
+      vertical-align: top;
+      width: 34px;
+      
+      &:hover {
+        border-color: #464646;
+        color: #333;
+      }
+      .dark & {
+        color: #999;
+        
+        &:hover {
+          border-color: rgba(#ccc,.5);
+          color: #ccc;
+        }
+      }
+    }
+  }
+}
