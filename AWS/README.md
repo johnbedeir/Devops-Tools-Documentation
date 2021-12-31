@@ -98,7 +98,7 @@ Step 11:
 Download the .zip file using the S3 bucket URL:
 
 ```sh
-$ wget <S3 bucket URL>
+$ wget <S3 bucket URL> # Make sure the S3 bucket is set to public to be able to download it on the EC2
 ```
 
 Step 12:
@@ -111,7 +111,7 @@ $ unzip <file.zip>
 
 Step 13:
 
-Unzip the file:
+Move files of the project into the current directory:
 
 ```sh
 $ mv directory/* .
