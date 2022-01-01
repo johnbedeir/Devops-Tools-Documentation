@@ -50,14 +50,3 @@ $ kubectl apply -f service.yml
 # access your website locally in your browser
 localhost:8080
 ```
-# How to create kubernetes cluster on AWS:
-
-## 1. Intsall [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-
-## 2. Intsall [eksctl](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-eksctl.html)
-
-## 3. Create Cluster on AWS:
-``` bash
-# access your website locally in your browser
-eksctl create cluster --name comingsoon --nodes-min=2
-```
