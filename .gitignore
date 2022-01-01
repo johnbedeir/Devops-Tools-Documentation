@@ -2,4 +2,4 @@ deployment.yaml
 ingress.yaml
 services.yaml
 
-DevOps Tasks/*
+DevOps Tasks\ README.MD
