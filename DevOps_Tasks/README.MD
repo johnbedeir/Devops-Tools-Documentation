@@ -48,3 +48,4 @@
 6. Run the ansible-playbook command into jenkins 
 7. Configure jenkins to run this task every 1 min so it can trigger any changes in the github repository and publish it 
 8. Access your webpage from AWS public DNS and the port specified
+
