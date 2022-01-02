@@ -15,7 +15,7 @@ $ sudo usermod -aG docker [user]
 # To activate changes to the group
 $ newgrp docker
 ```
-## 4. Build and test application:
+## 4. Build, test and push application to dockerhub:
 
 ```bash
 # (required) build the docker image from the Dockerfile
