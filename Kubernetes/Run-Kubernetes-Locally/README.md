@@ -4,7 +4,18 @@
 
 ## 2. Intsall [MiniKube](https://minikube.sigs.k8s.io/docs/start/)
 
-## 3. Build and test application:
+## 3. Add Docker to Sudo group:
+```bash
+# (required) to be able to start minikube
+$ sudo groupadd docker
+
+# Add your user to the docker group, replace [user] with your username
+$ sudo usermod -aG docker [user] 
+
+# To activate changes to the group
+$ newgrp docker
+```
+## 4. Build and test application:
 
 ```bash
 # (required) build the docker image from the Dockerfile
@@ -33,7 +44,7 @@ $ docker tag comingsoon-img dockerhub.user/comingsoon-img
 # (required) push image to dockerhub
 $ docker push dockerhub.user/comingsoon-img
 ```
-## 4. Start MiniKube and run deployment:
+## 5. Start MiniKube and run deployment:
 
 ```bash
 # start minikube 
@@ -46,7 +57,18 @@ minikube dashboard
 $ kubectl apply -f deployment.yml 
 $ kubectl apply -f service.yml 
 ```
+## 6. Install K9s
+
+### a) Click on the following link: [Download K9s](https://github.com/derailed/k9s/releases)
+
+### b) Unzip the downloaded tar.gz file
 ``` bash
-# access your website locally in your browser
-localhost:8080
+# Download K9s 
+$ sudo tar -xvzf file.tar.gz
+```
+
+### c) Install 
+``` bash
+# Make sure you are into the directory and see the k9s file 
+$ sudo install -m 755 k9s
 ```
