@@ -44,20 +44,26 @@ $ docker tag comingsoon-img dockerhub.user/comingsoon-img
 # (required) push image to dockerhub
 $ docker push dockerhub.user/comingsoon-img
 ```
-## 5. Start MiniKube and run deployment:
-
+## 5. Add Docker to Sudo Group
 ```bash
-# start minikube 
-minikube start 
-minikube dashboard
+# Create the docker group if not exist
+$ sudo groupadd docker
+
+# Add user to the docker group
+$ sudo usermod -aG docker [user]
+
+# To activate changes to the group
+$ newgrp docker
+
 ```
 
-``` bash
-# run deployment.yml & service.yml 
-$ kubectl apply -f deployment.yml 
-$ kubectl apply -f service.yml 
+## 6. Start MiniKube:
+
+```bash 
+minikube start 
 ```
-## 6. Install K9s
+
+## 7. Install K9s
 
 ### a) Click on the following link: [Download K9s](https://github.com/derailed/k9s/releases)
 
@@ -71,4 +77,17 @@ $ sudo tar -xvzf file.tar.gz
 ``` bash
 # Make sure you are into the directory and see the k9s file 
 $ sudo install -m 755 k9s
+```
+
+## 8. Deploy the application:
+
+``` bash
+# run deployment.yml & service.yml 
+$ kubectl apply -f deployment.yml 
+$ kubectl apply -f service.yml 
+```
+
+## 9. Get App URL
+```bash
+minikube service -n <namespace> <service-name> --url
 ```
