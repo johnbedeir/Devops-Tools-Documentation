@@ -83,11 +83,12 @@ $ sudo install -m 755 k9s
 
 ``` bash
 # run deployment.yml & service.yml 
-$ kubectl apply -f deployment.yml 
-$ kubectl apply -f service.yml 
+$ kubectl create namespace <namespace-name>
+$ kubectl -n <namespace-name> apply -f deployment.yml 
+$ kubectl -n <namespace-name> apply -f service.yml 
 ```
 
 ## 9. Get App URL
 ```bash
-minikube service -n <namespace> <service-name> --url
+minikube service -n <namespace-name> <service-name> --url
 ```
