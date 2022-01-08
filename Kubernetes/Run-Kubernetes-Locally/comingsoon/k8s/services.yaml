@@ -2,12 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: comingsoon-page
-  namespace: comingsoon
+  namespace: kube-system
 spec:
   selector:
     app: comingsoon-page
-  type: NodePort
+# ClusterIP (default), LoadBalancer (works on cloud), NodePort (most used)
+  type: LoadBalancer
   ports:
   - protocol: TCP
-    port: 80 # listen to port 80  
-    targetPort: 80 # send to which container port
+    port: 80 
+    targetPort: 80 
