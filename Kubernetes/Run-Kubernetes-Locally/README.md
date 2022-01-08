@@ -95,30 +95,41 @@ minikube service -n <namespace-name> <service-name> --url
 
 # How to create and deploy your application on cluster (EKS)
 
-## 1. Intsall [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+## 1. Connect to your AWS User Account
+``` bash
+# Get your access key from (your AWS account > IAM service > the user you will use > security credintials > create access key)
+aws configure
+```
 
-## 2. Intsall [eksctl](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-eksctl.html)
+## 2. Intsall [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
-## 3. Create Cluster on AWS:
+## 3. Intsall [eksctl](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/setting-up-eksctl.html)
+
+## 4. Create Cluster on AWS:
 ``` bash
 # access your website locally in your browser
 eksctl create cluster --name <cluster-name> --nodes-min=2
 ```
 
-## 4. Make sure you have the same namespace in your manifest files
+## 5. Make sure you have the same namespace in your manifest files
 
-## 5. In the services.yaml change the type from NodePort to LoadBalanced 
+## 6. In the services.yaml change the type from NodePort to LoadBalanced 
 ``` bash
 # Since we will be working on the cloud we will need to change the service type to get an external IP for our application
 ```
-## 6. Deploy your application:
+## 7. Deploy your application:
 ``` bash
 kubectl -n <namespace-name> apply -f deployment.yml 
 kubectl -n <namespace-name> apply -f service.yml 
 ```
 
-## 6. Access your application:
+## 8. Access your application:
 ``` bash
 # 1. Run K9s and go to services
 # 2. Copy the external IP to your browser
+```
+
+## 8. Delete your cluster
+``` bash
+eksctl delete cluster <cluster-name>
 ```
