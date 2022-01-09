@@ -39,7 +39,7 @@ terraform plan
 terraform apply # It will first show your the plan then you have to type yes to build
 ```
 
-## 8. Connect to the created EC2 instence 
+## 8. Connect to the created EC2 instence
 ```bash
 # Make sure you are in the directory where the keypair was downloaded   
 ssh -i "keypair.pem" <user@ec2...>
