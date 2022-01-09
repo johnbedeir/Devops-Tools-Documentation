@@ -1,3 +1,4 @@
 # deployment.yaml
 # ingress.yaml
 # services.yaml
+variables.tf
