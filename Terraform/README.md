@@ -22,6 +22,9 @@ terraform init
 ## 5. Create variables.tf file
 ```bash
 # That containes all the variables with the data that you should not expose to public
+
+# Make sure you generate SSH key if you don't have one and added into the variables.tf file
+ssh-keygen
 ```
 
 ## 6. Check what will be created if you apply 
@@ -34,4 +37,10 @@ terraform plan
 ```bash
 # This command is start building the infrastructure on the cloud  
 terraform apply # It will first show your the plan then you have to type yes to build
+```
+
+## 8. Connect to the created EC2 instence 
+```bash
+# Make sure you are in the directory where the keypair was downloaded   
+ssh -i "keypair.pem" <user@ec2...>
 ```
