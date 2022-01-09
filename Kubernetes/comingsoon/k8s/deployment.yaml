@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: comingsoon-page-img-deployment 
-  namespace: kube-system
+  namespace: comingsoon
 spec:
   selector:
     matchLabels:
