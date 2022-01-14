@@ -76,7 +76,7 @@ $ sudo tar -xvzf file.tar.gz
 ### c) Install 
 ``` bash
 # Make sure you are into the directory and see the k9s file 
-$ sudo install -m 755 k9s
+$ sudo install -m 755 k9s /usr/local/bin
 ```
 
 ## 8. Deploy the application:
