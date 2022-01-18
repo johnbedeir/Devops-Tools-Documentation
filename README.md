@@ -5,16 +5,16 @@
 - 🔭 I launched Devops courses on my Youtube Channel: [Become A Devops Engineer!][course]!
 - 🌱 I’m currently learning everything 🤣
 - 👯 I’m looking to collaborate with other content creators
-- 🥅 2021 Goals: Contribute more to Open Source projects
+- 🥅 2022 Goals: Jump to the next level and integrate Network and Security with DevOps >> DevSecOps 
 <!-- - ⚡ Fun fact: I love to draw and play guitar / drums -->
 
 
 ### Connect with me:
 
-[<img align="left" alt="johnydev.com" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
-[<img align="left" alt="youtube | YouTube" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg" />][youtube]
-[<img align="left" alt="linkedin | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
-[<img align="left" alt="instagram | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
+[<img alt="johnydev.com" src="https://img.icons8.com/dusk/64/000000/domain.png"/>][website]
+[<img alt="https://www.youtube.com/channel/UCxvd-DdyFsE_07lCa4kRINA" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-youtube-social-media-justicon-lineal-color-justicon.png"/>][youtube]
+[<img alt="https://www.linkedin.com/in/johnbedeir/" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-linkedin-social-media-justicon-lineal-color-justicon.png"/>][linkedin]
+[<img alt="https://www.instagram.com/johnbedeir/" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-instagram-social-media-justicon-lineal-color-justicon.png"/>][instagram]
 
 <br />
 
@@ -26,12 +26,12 @@
 <img align="left" alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
 <img align="left" alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
 <img align="left" alt="Git" width="26px" src="https://iconape.com/wp-content/png_logo_vector/git-icon.png" />
-<img align="left" alt="GitHub" width="26px" src="https://raw.githubusercontent.com/github/explore/78df643247d429f6cc873026c0622819ad797942/topics/github/github.png" />
+<img align="left" alt="GitHub" width="26px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
 <img align="left" alt="GitLab" width="26px" src="https://brandslogos.com/wp-content/uploads/thumbs/gitlab-logo-vector.svg" />
 <img align="left" alt="BitBucket" width="26px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bitbucket-blue-logomark-only.svg/1200px-Bitbucket-blue-logomark-only.svg.png" />
-<img align="left" alt="BitBucket" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1280px-Docker_%28container_engine%29_logo.svg.png" />
-<img align="left" alt="BitBucket" width="100px" src="https://cdn.freelogovectors.net/wp-content/uploads/2018/11/kubernetes-logo.png" />
-<img align="left" alt="BitBucket" width="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" />
+<img align="left" alt="Docker" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1280px-Docker_%28container_engine%29_logo.svg.png" />
+<img align="left" alt="Kubernetes" width="30px" src="https://img.icons8.com/color/48/000000/kubernetes.png"/>
+<img align="left" alt="AWS" width="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" />
 
 
 <br />
@@ -42,6 +42,13 @@
 ### 📺 Latest YouTube Videos
 
 <!-- YOUTUBE:START -->
+- [Kubernetes | EKS | Cluster (Part 3)](https://www.youtube.com/watch?v=4Tkxe0VjrYw)
+- [Kubernetes | MiniKube| Elasticity |Fault Tolerance | High Availability (Part 2)](https://www.youtube.com/watch?v=kV4jINv3s-k)
+- [Kubernetes | Scalability | Monolithic vs Microservices (Part 1)](https://www.youtube.com/watch?v=YfJZBngbhM8&t=537s)
+- [Jenkins | Docker | Ansible | EC2 AWS](https://www.youtube.com/watch?v=awqwdGM_Trw&t=1379s)
+- [Deploy website on AWS](https://www.youtube.com/watch?v=NeGdfKEXA-E)
+- [Finding Job Tips](https://www.youtube.com/watch?v=PAMMBb1fHOM)
+- [Ansible Moleule](https://www.youtube.com/watch?v=no8ZM1F7rhA&t=1714s)
 - [Git - Github - Gitlab - Bitbucket](https://www.youtube.com/watch?v=MC5ZAyGl2bw&t=1347s)
 - [Docker Compose](https://www.youtube.com/watch?v=mZdU7r8Rf5c&t=4s)
 - [Ansible Playbook](https://www.youtube.com/watch?v=-86oMSw6pSc)
@@ -57,10 +64,14 @@
   <summary>:zap: Devops Tools Documentation</summary>
   
 <!--START_SECTION:activity-->
-1. [Git Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Git/Git_Commands.md)
-2. [Docker Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Docker/Docker%20commands.MD)
-3. [Docker Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Docker/Docker%20commands.MD)
-4. [Ansible Playbook Template](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Ansible/ansible-playbook%20(example).yml)
+1. [Git Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/tree/main/Git)
+2. [Docker Commands](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Docker/Docker_commands.MD)  
+3. [Docker-Compose](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Docker-Compose/docker-compose.yml)  
+4. [Ansible Playbook Template](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Ansible-Playbook/ansible-playbook%20(example).yml)
+5. [Ansible Molecule](https://github.com/johnbedeir/Devops-Tools-Documentation/tree/main/Ansible-Molecule)
+6. [AWS](https://github.com/johnbedeir/Devops-Tools-Documentation/tree/main/AWS)
+7. [Jenkins](https://github.com/johnbedeir/Devops-Tools-Documentation/tree/main/Jenkins)
+8. [Kubernetes](https://github.com/johnbedeir/Devops-Tools-Documentation/tree/main/Kubernetes)
 <!--END_SECTION:activity-->
 
 </details>
