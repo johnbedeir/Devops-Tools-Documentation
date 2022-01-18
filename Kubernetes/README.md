@@ -1,9 +1,9 @@
 # How to install and run kubernetes locally (Ubuntu)
-[Watch Kubernetes_Part1 step by step on YouTube](https://youtu.be/YfJZBngbhM8)
+[Watch Kubernetes_Part1 شرح step by step on YouTube](https://youtu.be/YfJZBngbhM8)
 
-[Watch Kubernetes_Part2, Run Kubernetes locally step by step on YouTube](https://youtu.be/kV4jINv3s-k)
+[Watch Kubernetes_Part2, شرح Run Kubernetes locally step by step on YouTube](https://youtu.be/kV4jINv3s-k)
 
-[Watch Kubernetes_Part1 Create a Cluster on Cloud step by step on YouTube](https://youtu.be/4Tkxe0VjrYw)
+[Watch Kubernetes_Part1 شرح Create a Cluster on Cloud step by step on YouTube](https://youtu.be/4Tkxe0VjrYw)
 
 ## 1. Intsall [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 
