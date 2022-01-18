@@ -1,4 +1,6 @@
 # Git Basics
+[Watch Git, Github, GitLab, Bitbucket شرح step by step on YouTube](https://youtu.be/MC5ZAyGl2bw)
+
 Create empty Git repo in specified directory. Run with no
 arguments to initialize the current directory as a git repository.
 
