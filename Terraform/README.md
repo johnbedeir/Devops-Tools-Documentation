@@ -1,4 +1,6 @@
 # Create AWS EC2 using Terraform
+[Watch Terraform_Part1 شرح on YouTube](https://youtu.be/zF_N4flz8lw)
+
 
 ## 1. Intsall [Terraform CLI](https://www.terraform.io/downloads)
 
