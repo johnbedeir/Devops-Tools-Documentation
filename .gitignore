@@ -1,9 +1,5 @@
 # deployment.yaml
 # ingress.yaml
 # services.yaml
-variables.tf
 
-.terraform.lock.hcl
-.terraform/
-terraform.tfstate
-terraform.tfstate.backup
+*.tfstate
