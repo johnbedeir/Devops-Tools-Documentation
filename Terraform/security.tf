@@ -2,8 +2,8 @@ resource "aws_security_group" "UbuntuSG" {
     description = "Allow inbound and outbound traffic"
 
     ingress {
-        from_port         = var.ingressfrom
-        to_port           = var.ingressto
+        from_port         = 22
+        to_port           = 22
         protocol          = "tcp"
         cidr_blocks       = ["0.0.0.0/0"]
         }
