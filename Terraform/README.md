@@ -27,6 +27,8 @@ terraform init
 
 # Make sure you generate SSH key if you don't have one and added into the variables.tf file
 ssh-keygen
+
+export TF_VAR_key_pair=$(cat ~/.ssh/id_rsa.pub)
 ```
 
 ## 6. Check what will be created if you apply 
