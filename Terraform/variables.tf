@@ -1,6 +1,6 @@
 variable "region" {
   type    = string
-  default = "us-east-2"
+  default = "eu-central-1"
 }
 
 variable "ami_id" {
