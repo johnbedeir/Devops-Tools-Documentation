@@ -1,6 +1,8 @@
 # Create AWS EC2 using Terraform
 [Watch Terraform_Part1 شرح on YouTube](https://youtu.be/zF_N4flz8lw)
 
+[Watch Terraform_Part2 شرح on YouTube](https://youtu.be/V6CPs_C9v8A)
+
 
 ## 1. Intsall [Terraform CLI](https://www.terraform.io/downloads)
 
@@ -51,7 +53,7 @@ terraform plan
 # This command is start building the infrastructure on the cloud  
 terraform apply # It will first show your the plan then you have to type yes to build
 # OR 
-terraform apply --auto-approve # To plan and apply changes without confirming
+terraform apply -auto-approve # To plan and apply changes without confirming
 ```
 
 ## 9. Connect to the created EC2 instence
@@ -65,5 +67,5 @@ ssh -i "file.pem" <user@ec2...>
 # This command will show you first what it will destroy then ask you to type yes to confirm
 terraform destroy
 # OR
-terraform destroy --auto-approve # To immediately destroy all the created resources without confirming 
+terraform destroy -auto-approve # To immediately destroy all the created resources without confirming 
 ```
