@@ -1,13 +1,13 @@
 variable "region" {
-  type    = string
-  default = "eu-central-1"
+  type    = string 
+  default = ""
 }
 
-variable "ami_id" {
-  type    = string
-  default = "ami-0d527b8c289b4af7f"
+variable "ami" {
+  type    = string 
+  default = "a"
 }
 
-variable "ssh_publickey_path" {
-  type = string
+variable "public_key" {
+  description = "ssh public key"
 }
