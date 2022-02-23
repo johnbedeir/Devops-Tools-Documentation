@@ -1,44 +1,57 @@
 ---
-- name: Converge
+- name: Converge 
   hosts: all
   vars:
-    x: "/root/"
+    root: "root/"
+    repo: "https://github.com/AB-Sterling-b2bi/multi-tenancy-gitops.git" #add your desired repo
   tasks:
     - name: install updates
-      command: apt update -y
+      command: apt update -y #cmd for updates on ubuntu
 
-    - name: install git
+    - name: install git # installing git on both containers
       apt:
         name: git
         state: present
         update_cache: yes
+    
+    - name: install tree #installing tree
+      command: sudo apt-get install tree
 
-    - name: clone repo
-      ansible.builtin.git:
-        repo: https://github.com/johnbedeir/laravel-app.git
-        dest: "{{ x }}laravel-app"
-
-    - name: add text to .bashrc file
+    # - name: clone repo # cloning a repo
+    #   ansible.builtin.git:
+    #     repo: {{repo}}
+    #     dest: /root/gitops/multi-tenancy
+    #
+    - name: add text to README.md file
       blockinfile:
-        path: "{{ x }}.bashrc"
+        path: "{{root}}gitops/multi-tenancy/README.md"
         block: |
-          export PYENV_ROOT="/root/.pyenv" 
-          export PATH="$PYENV_ROOT/bin:$PATH"
-          eval "$(pyenv init --path)"
-          eval "$(pyenv init -)"
-
+          # I AM HERE
+    
     - name: create sh script
       file:
-        path: "{{ x }}script.sh"
-        state: touch
-
+        path: "{{root}}script.sh"
+        state: touch #to create the file 
+        #-rw-r--r-- 1 root "THERE IS NO Executable permision"
+    
     - name: insert text into script
       lineinfile:
-        path: "{{ x }}script.sh"
-        line: "pip install --upgrade pip"
+        path: "{{root}}script.sh"
+        line: "echo WELCOME-MOLECULE"
 
+    # - name: insert text into script
+    #   lineinfile:
+    #     path: "{{root}}vagrant.sh"
+    #     line: "sudo apt install virtualbox"
+
+    # giving the script permission to Execute " adding the mode"
     - name: set executable permission for script.sh
       ansible.builtin.file:
-        path: "{{ x }}script.sh"
+        path: "root/script.sh"
         state: touch
-        mode: u=rwx,g=rwx,o=rwx
+        mode: u=rwx,g=rwx,o=rwx 
+        #user: read write exec
+        #group: read write exec
+        #other: read write exec
+
+#multi-tenancy-gitops/blob/master/0-bootstrap/single-cluster/1-infra/kustomization.yaml
