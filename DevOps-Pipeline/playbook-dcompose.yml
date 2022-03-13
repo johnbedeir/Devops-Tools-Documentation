@@ -1,0 +1,31 @@
+---
+- name: "Run Docker-Compose using ansible playbook"
+  hosts: localhost
+  tasks:
+  - name: stop running containers
+    command: docker-compose down
+    ignore_errors: yes
+  
+  - name: remove image built with dockercompose
+    command: docker rmi triple3a/laravel-app
+    ignore_errors: yes
+
+  - name: remove php-apache image
+    command: docker rmi php:7.4.1-apache
+    ignore_errors: yes
+
+  - name: remove mysql image
+    command: docker rmi mysql:5.7
+    ignore_errors: yes
+
+  - name: remove phpmyadmin image
+    command: docker rmi phpmyadmin/phpmyadmin
+    ignore_errors: yes
+
+  - name: build docker-compose
+    command: docker-compose up -d 
+
+
+
+
+    
