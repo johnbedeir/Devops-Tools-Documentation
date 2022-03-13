@@ -68,6 +68,16 @@ aws --version
 ansible-playbook playbook-dcompose.yml
 ```
 ### Step 7: Access your application
+---
+
+``You will need to update the composer inside the running php-apache container first, get the container name by using ($ docker ps) and make sure you are in /var/www/html/`` 
+
+---
+```
+docker exec -it <PHP_APACHE_CONTAINER_NAME> 
+composer update 
+```
+### Step 8: Access your application
 ```
 <ec2-Public IPv4 DNS>:5000
 <ec2-Public IPv4 DNS>:4000
@@ -77,7 +87,7 @@ ansible-playbook playbook-dcompose.yml
 ``Already added the steps needed to solve this task, proceed with the next steps``
 
 ---
-### Step 8: Create Kubernetes files
+### Step 9: Create Kubernetes files
 ---
 
 ``Make sure you are in the root directory of the application on your machine, this will be done locally then commit the edits to github``
@@ -88,7 +98,7 @@ ansible-playbook playbook-dcompose.yml
 ```
 kompose convert
 ```
-### Step 9: Create 2nd Jekins job 
+### Step 10: Create 2nd Jekins job 
 ---
 
 ``This job is to add AWS credentials, create cluster and create namespace`` 
@@ -101,7 +111,7 @@ eksctl create cluster --region=<REGION> --name=<CLUSTER_NAME> --nodes-min=2
 
 kubectl create namespace <NAMESPACE>
 ```
-### Step 10: Create 3rd Jenkins job  
+### Step 11: Create 3rd Jenkins job  
 ---
 
 ``This job is to automate the deployment that will run the k8s deployment and services yml files``
@@ -116,7 +126,7 @@ kubectl -n laravel-app apply -f k8s/db-phpmyadmin-deployment.yaml
 kubectl -n laravel-app apply -f k8s/db-phpmyadmin-service.yaml
 kubectl -n laravel-app apply -f k8s/php-apache-environment-claim0-persistentvolumeclaim.yaml
 ```
-### Step 11: Create 4th Jenkins job 
+### Step 12: Create 4th Jenkins job 
 ---
 
 ``This job is to delete the cluster``
@@ -125,7 +135,7 @@ kubectl -n laravel-app apply -f k8s/php-apache-environment-claim0-persistentvolu
 ```
 eksctl delete <CLUSTER_NAME>
 ```
-### Step 12: Access the application
+### Step 13: Access the application
 ```
 <node-Public IPv4 address>:5000
 <node-Public IPv4 address>:4000
