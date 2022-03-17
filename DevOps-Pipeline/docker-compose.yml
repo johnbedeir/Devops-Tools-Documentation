@@ -34,6 +34,3 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD:
       MYSQL_ROOT_PASSWORD:
-    depends_on:
-      - db
-      - php-apache-environment
