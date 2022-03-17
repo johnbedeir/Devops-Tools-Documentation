@@ -2,7 +2,7 @@
 - name: "Run Docker-Compose using ansible playbook"
   hosts: localhost
   tasks:
-  - name: stop running containers
+  - name: stop and remove containers
     command: docker-compose down
     ignore_errors: yes
   
