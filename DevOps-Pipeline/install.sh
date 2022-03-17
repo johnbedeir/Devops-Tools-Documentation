@@ -61,6 +61,10 @@ echo "--------------------Installing AWS-CLI--------------------"
 sudo apt-get install zip -y
 sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip
 sudo ./aws/install
+# Install Kompose
+echo "--------------------Installing Kompose--------------------"
+wget https://github.com/kubernetes/kompose/releases/download/v1.26.1/kompose_1.26.1_amd64.deb # Replace 1.26.1 with latest tag
+sudo apt install ./kompose_1.26.1_amd64.deb
 #Add docker to sudo group
 echo "--------------------Add Docker to Sudo group--------------------"
 sudo groupadd docker && sudo usermod -aG docker $USER && newgrp docker && sudo chmod 777 /var/run/docker.sock
