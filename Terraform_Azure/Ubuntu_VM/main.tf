@@ -40,6 +40,7 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     storage_account_type = "Premium_LRS"
   }
 
+# Ubuntu VM
   source_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
@@ -47,14 +48,15 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     version   = "latest"
   }
 
+# VM and User details
   computer_name                   = "myvm"
   admin_username                  = "azureuser"
   disable_password_authentication = true
 
+# SSH Connect
   admin_ssh_key {
     username   = "azureuser"
     public_key = var.public_key
-
   }
 
   boot_diagnostics {
