@@ -45,7 +45,7 @@
 <img align="left" alt="Jenkins" width="35px" src="https://img.icons8.com/color/48/000000/jenkins.png"/>
 <img align="left" alt="DevOps" width="35px" src="https://img.icons8.com/color/48/000000/infinity-large.png"/>
 <img align="left" alt="Rasp" width="35px" src="https://img.icons8.com/color/48/000000/raspberry-pi.png"/>
-
+<br />
 <br />
 <br />
 <br />
