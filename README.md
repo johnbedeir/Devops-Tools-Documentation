@@ -5,7 +5,7 @@
 - 🔭 I launched Devops courses on my Youtube Channel: [Become A Devops Engineer!][course]!
 - 🌱 I’m currently learning everything 🤣
 - 👯 I’m looking to collaborate with other content creators
-- 🥅 2022 Goals: Jump to the next level and integrate Network and Security with DevOps >> DevSecOps 
+- 🥅 2022 Goals: Jump to the next level DevSecOps & SRE
 <!-- - ⚡ Fun fact: I love to draw and play guitar / drums -->
 
 
@@ -21,19 +21,33 @@
 ### Languages and Tools:
 
 <img align="left" alt="Terminal" width="26px" src="https://www.kindpng.com/picc/m/153-1538018_terminal-icon-hd-png-download.png" />
+<img align="left" alt="ubuntu" width="30px" src="https://img.icons8.com/color/48/000000/ubuntu--v1.png"/>
+<img align="left" alt="redhat" width="35px" src="https://img.icons8.com/color/48/000000/red-hat.png"/>
+<img align="left" alt="debian" width="35px" src="https://img.icons8.com/color/48/000000/debian.png"/>
+<img align="left" alt="centos" width="30px" src="https://img.icons8.com/color/48/000000/centos.png"/>
 <img align="left" alt="Visual Studio Code" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" />
 <img align="left" alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
 <img align="left" alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
-<img align="left" alt="JavaScript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
+<img align="left" alt="JavaScript" width="25px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
+<img align="left" alt="nginx" width="30px" src="https://img.icons8.com/color/48/000000/nginx.png"/>
 <img align="left" alt="Git" width="26px" src="https://iconape.com/wp-content/png_logo_vector/git-icon.png" />
-<img align="left" alt="GitHub" width="26px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
-<img align="left" alt="GitLab" width="26px" src="https://brandslogos.com/wp-content/uploads/thumbs/gitlab-logo-vector.svg" />
-<img align="left" alt="BitBucket" width="26px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bitbucket-blue-logomark-only.svg/1200px-Bitbucket-blue-logomark-only.svg.png" />
-<img align="left" alt="Docker" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1280px-Docker_%28container_engine%29_logo.svg.png" />
+<img align="left" alt="GitHub" width="26
+px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
+<img align="left" alt="GitLab" width="24px" src="https://brandslogos.com/wp-content/uploads/thumbs/gitlab-logo-vector.svg" />
+<img align="left" alt="BitBucket" width="24px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bitbucket-blue-logomark-only.svg/1200px-Bitbucket-blue-logomark-only.svg.png" />
+<img align="left" alt="Vagrant" width="25px" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/000000/external-vagrant-an-open-source-software-product-for-building-and-maintaining-portable-virtual-software-logo-shadow-tal-revivo.png"/>
+<img align="left" alt="Docker" width="30px" src="https://img.icons8.com/fluency/48/000000/docker.png"/>
+<img align="left" alt="Ansible" width="30px" src="https://img.icons8.com/color/48/000000/ansible.png"/>
 <img align="left" alt="Kubernetes" width="30px" src="https://img.icons8.com/color/48/000000/kubernetes.png"/>
-<img align="left" alt="AWS" width="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" />
+<img align="left" alt="AWS" width="35px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" />
+<img align="left" alt="Azure" width="30px" src="https://img.icons8.com/fluency/48/000000/azure-1.png"/>
+<img align="left" alt="DO" width="25px" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-digital-ocean-a-cloud-infrastructure-with-data-centers-worldwide-logo-color-tal-revivo.png"/>
+<img align="left" alt="Terraform" width="30px" src="https://img.icons8.com/color/48/000000/terraform.png"/>
+<img align="left" alt="Jenkins" width="35px" src="https://img.icons8.com/color/48/000000/jenkins.png"/>
+<img align="left" alt="DevOps" width="35px" src="https://img.icons8.com/color/48/000000/infinity-large.png"/>
+<img align="left" alt="Rasp" width="35px" src="https://img.icons8.com/color/48/000000/raspberry-pi.png"/>
 
-
+<br />
 <br />
 <br />
 
