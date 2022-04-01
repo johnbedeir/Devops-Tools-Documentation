@@ -35,7 +35,8 @@
 <img align="left" alt="Azure" width="30px" align="left" alt="Azure" width="35px" src="https://img.icons8.com/fluency/48/000000/azure-1.png"/>
 <img align="left" alt="DO" width="25px" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-digital-ocean-a-cloud-infrastructure-with-data-centers-worldwide-logo-color-tal-revivo.png"/>
 <img align="left" alt="Terraform" width="30px" src="https://img.icons8.com/color/48/000000/terraform.png"/>
-<img align="left" alt="Terraform" width="35px" src="https://img.icons8.com/color/48/000000/jenkins.png"/>
+<img align="left" alt="Jenkins" width="35px" src="https://img.icons8.com/color/48/000000/jenkins.png"/>
+<img align="left" alt="DevOps" width="35px"src="https://img.icons8.com/color/48/000000/infinity-large.png"/>
 
 
 <br />
