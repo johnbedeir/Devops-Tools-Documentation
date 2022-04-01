@@ -37,7 +37,7 @@
 <img align="left" alt="Docker" width="26px" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/000000/external-vagrant-an-open-source-software-product-for-building-and-maintaining-portable-virtual-software-logo-shadow-tal-revivo.png"/>
 <img align="left" alt="Docker" width="35px" src="https://img.icons8.com/fluency/48/000000/docker.png"/>
 <img align="left" alt="Ansible" width="30px" src="https://img.icons8.com/color/48/000000/ansible.png"/>
-<br />
+<n />
 <img align="left" alt="Kubernetes" width="30px" src="https://img.icons8.com/color/48/000000/kubernetes.png"/>
 <img align="left" alt="AWS" width="35px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" />
 <img align="left" alt="Azure" width="30px" align="left" alt="Azure" width="35px" src="https://img.icons8.com/fluency/48/000000/azure-1.png"/>
