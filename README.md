@@ -31,13 +31,13 @@
 <img align="left" alt="JavaScript" width="25px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
 <img align="left" alt="nginx" width="30px" src="https://img.icons8.com/color/48/000000/nginx.png"/>
 <img align="left" alt="Git" width="26px" src="https://iconape.com/wp-content/png_logo_vector/git-icon.png" />
-<img align="left" alt="GitHub" width="28px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
-<img align="left" alt="GitLab" width="25px" src="https://brandslogos.com/wp-content/uploads/thumbs/gitlab-logo-vector.svg" />
-<img align="left" alt="BitBucket" width="25px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bitbucket-blue-logomark-only.svg/1200px-Bitbucket-blue-logomark-only.svg.png" />
-<img align="left" alt="Docker" width="26px" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/000000/external-vagrant-an-open-source-software-product-for-building-and-maintaining-portable-virtual-software-logo-shadow-tal-revivo.png"/>
-<img align="left" alt="Docker" width="35px" src="https://img.icons8.com/fluency/48/000000/docker.png"/>
+<img align="left" alt="GitHub" width="26
+px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
+<img align="left" alt="GitLab" width="24px" src="https://brandslogos.com/wp-content/uploads/thumbs/gitlab-logo-vector.svg" />
+<img align="left" alt="BitBucket" width="24px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bitbucket-blue-logomark-only.svg/1200px-Bitbucket-blue-logomark-only.svg.png" />
+<img align="left" alt="Vagrant" width="25px" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/000000/external-vagrant-an-open-source-software-product-for-building-and-maintaining-portable-virtual-software-logo-shadow-tal-revivo.png"/>
+<img align="left" alt="Docker" width="30px" src="https://img.icons8.com/fluency/48/000000/docker.png"/>
 <img align="left" alt="Ansible" width="30px" src="https://img.icons8.com/color/48/000000/ansible.png"/>
-<n />
 <img align="left" alt="Kubernetes" width="30px" src="https://img.icons8.com/color/48/000000/kubernetes.png"/>
 <img align="left" alt="AWS" width="35px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" />
 <img align="left" alt="Azure" width="30px" align="left" alt="Azure" width="35px" src="https://img.icons8.com/fluency/48/000000/azure-1.png"/>
