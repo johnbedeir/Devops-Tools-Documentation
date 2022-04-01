@@ -29,14 +29,16 @@
 <img align="left" alt="GitHub" width="26px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
 <img align="left" alt="GitLab" width="26px" src="https://brandslogos.com/wp-content/uploads/thumbs/gitlab-logo-vector.svg" />
 <img align="left" alt="BitBucket" width="26px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bitbucket-blue-logomark-only.svg/1200px-Bitbucket-blue-logomark-only.svg.png" />
-<img align="left" alt="Docker" width="100px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Docker_%28container_engine%29_logo.svg/1280px-Docker_%28container_engine%29_logo.svg.png" />
+<img align="left" alt="Docker" width="35px" src="https://img.icons8.com/fluency/48/000000/docker.png"/>
+<img align="left" alt="Ansible" width="30px" src="https://img.icons8.com/color/48/000000/ansible.png"/>
 <img align="left" alt="Kubernetes" width="30px" src="https://img.icons8.com/color/48/000000/kubernetes.png"/>
 <img align="left" alt="AWS" width="35px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" />
 <img align="left" alt="Azure" width="30px" align="left" alt="Azure" width="35px" src="https://img.icons8.com/fluency/48/000000/azure-1.png"/>
 <img align="left" alt="DO" width="25px" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-digital-ocean-a-cloud-infrastructure-with-data-centers-worldwide-logo-color-tal-revivo.png"/>
 <img align="left" alt="Terraform" width="30px" src="https://img.icons8.com/color/48/000000/terraform.png"/>
 <img align="left" alt="Jenkins" width="35px" src="https://img.icons8.com/color/48/000000/jenkins.png"/>
-<img align="left" alt="DevOps" width="35px"src="https://img.icons8.com/color/48/000000/infinity-large.png"/>
+<img align="left" alt="DevOps" width="35px" src="https://img.icons8.com/color/48/000000/infinity-large.png"/>
+<img align="left" alt="Rasp" width="35px" src="https://img.icons8.com/color/48/000000/raspberry-pi.png"/>
 
 
 <br />
