@@ -1,5 +1,4 @@
 #
-# ComingSoon...
 # DevOps Interview Questions
 ## Question 1:
 ### Docker vs Vagrant vs Virtual Machine 
