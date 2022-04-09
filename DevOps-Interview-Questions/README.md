@@ -24,9 +24,11 @@ VPC is Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resou
 ```
 ## Question 4:
 ### What is IAC?
+[Watch explaination here](https://www.youtube.com/watch?v=zF_N4flz8lw)
 ```
 IAC is Infrastructure as Code which is managing and provisioning of infrastructure through code instead of through manual processes.
 ```
+
 ## Question 5:
 ### Cloud Regions vs Availability Zones?
 ```
@@ -35,6 +37,7 @@ The Availability Zones are multiple, isolated locations within each Region.
 ```
 ## Question 6:
 ### What is EKS?
+[Watch explaination here](https://www.youtube.com/watch?v=4Tkxe0VjrYw)
 ```
 EKS is Amazon Elastic Kubernetes Service whcih is a managed Kubernetes service that makes it easy for you to run Kubernetes on AWS.
 ```
@@ -46,7 +49,7 @@ ECR is Amazon Elastic Container Registry which is an AWS managed container image
 ## Question 8:
 ### Pods vs Deployments?
 ```
-Answer
+The pod is the smallest unit of Kubernetes used to house one or more containers and run applications in a cluster, while deployment is a tool that manages the performance of a pod and start it when it is down.
 ```
 ## Question 9:
 ### What is Cloud Formation?
@@ -55,28 +58,34 @@ AWS CloudFormation is a service that gives developers and businesses an easy way
 ```
 ## Question 10:
 ### Horizontal Scaling vs Vertical Scaling?
+[Watch explaination here](https://www.youtube.com/watch?v=YfJZBngbhM8&t=744s)
 ```
-Answer
+While horizontal scaling refers to adding additional nodes, vertical scaling describes adding more power to your current machines.
 ```
 ## Question 11:
 ### What Kubectl is used for?
+[Watch explaination here](https://www.youtube.com/watch?v=kV4jINv3s-k)
 ```
 Kubectl is the Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For more information including a complete list of kubectl operations.
 ```
 ## Question 12:
 ### Monolithic vs Microservices?
+[Watch explaination here go to min 00:24](https://www.youtube.com/watch?v=YfJZBngbhM8&t=20s)
 ```
-Answer
+A monolithic application is built as a single unit, normally, monolithic applications have one large code base and lack modularity. If developers want to update or change something, they access the same code base. So, they make changes in the whole stack at once.
+While a monolithic application is a single unified unit, a microservices architecture breaks it down into a collection of smaller independent units. These units carry out every application process as a separate service. So all the services have their own logic
 ```
 ## Question 13:
 ### What is LoadBalancer?
+[Watch explaination here go to min 2:23](https://www.youtube.com/watch?v=4Tkxe0VjrYw)
 ```
 Load balancing refers to efficiently distributing incoming network traffic across a group of backend servers, also known as a server farm or server pool.
 ```
 ## Question 14:
 ### What is Elasticity?
+[Watch explaination here go to min 00:34](https://www.youtube.com/watch?v=kV4jINv3s-k&t=4s)
 ```
-Answer
+The Elasticity refers to the ability of a cloud to automatically expand or compress the infrastructural resources on a sudden-up and down in the requirement so that the workload can be managed efficiently. This elasticity helps to minimize infrastructural cost.
 ```
 ## Question 15:
 ### What is Target groups?
@@ -85,11 +94,13 @@ Each target group is used to route requests to one or more registered targets. W
 ```
 ## Question 16:
 ### What High Availability means?
+[Watch explaination here go to min 1:18](https://www.youtube.com/watch?v=kV4jINv3s-k)
 ```
 High availability is the ability of a system to operate continuously without failing for a designated period of time the minimum number of nodes to acheive the High availability is 3 nodes
 ```
 ## Question 17:
 ### Master node vs Worker node?
+[Watch explaination here go to min 6:19](https://www.youtube.com/watch?v=YfJZBngbhM8)
 ```
 The master node is responsible for running several Kubernetes processes it contains (API Server, Controller manager, Scheduler and etcd)
 The worker nodes are the part of the Kubernetes clusters which actually execute the containers and applications on them. They have two main components, the Kubelet Service and the Kube-proxy Service.
