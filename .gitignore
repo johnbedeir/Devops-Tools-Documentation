@@ -9,3 +9,4 @@
 Terraform_Azure/Ubuntu_VM/.terraform
 Terraform_Azure/Windows_VM/.terraform
 .terraform
+gcp-credentials.json
