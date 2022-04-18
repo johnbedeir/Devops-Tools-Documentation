@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	}
+    stages {
+        stage('Docker Login') {
+            steps {
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+        stage('Build & push Dockerfile') {
+            steps {
+                sh """
+                cd Kubernetes/comingsoon/
+                ansible-playbook playbook.yml
+                """
+            }
+        }
+        stage('Create Cluster') {
+            steps {
+                sh "
+                eksctl create cluster --name comingsoon-cluster --nodes-min=2
+                "
+            }
+        }
+        stage('Create Namespace') {
+            steps {
+                sh "
+                kubectl create namespace comingsoon
+                "
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh """
+                cd Kubernetes/comingsoon/k8s
+                kubectl -n comingsoon apply -f deployment.yml
+                kubectl -n comingsoon apply -f service.yml
+                """
+            }
+        }
+    }
+}
