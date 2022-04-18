@@ -117,6 +117,9 @@ eksctl create cluster --name <cluster-name> --nodes-min=2
 ```
 
 ## 5. Make sure you have the same namespace in your manifest files
+```bash
+kubectl create namespace <namespace-name>
+```
 
 ## 6. In the services.yaml change the type from NodePort to LoadBalanced 
 ``` bash
