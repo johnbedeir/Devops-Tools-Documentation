@@ -18,13 +18,13 @@ pipeline {
                 """
             }
         }
-        stage('Delete Cluster') {
-            steps {
-                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
-                  sh "eksctl delete cluster comingsoon-cluster"
-                }
-            }
-        }
+        // stage('Delete Cluster') {
+        //     steps {
+        //         withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+        //           sh "eksctl delete cluster comingsoon-cluster"
+        //         }
+        //     }
+        // }
         stage('Create Cluster') {
             steps {
                 withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
