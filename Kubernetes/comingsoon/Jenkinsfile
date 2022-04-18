@@ -18,6 +18,13 @@ pipeline {
                 """
             }
         }
+        stage('Delete Cluster') {
+            steps {
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh "eksctl delete cluster comingsoon-cluster"
+                }
+            }
+        }
         stage('Create Cluster') {
             steps {
                 withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
@@ -27,16 +34,20 @@ pipeline {
         }
         stage('Create Namespace') {
             steps {
-                sh "kubectl create namespace comingsoon"
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh "kubectl create namespace comingsoon"
+                }
             }
         }
         stage('Deploy') {
             steps {
-                sh """
-                cd Kubernetes/comingsoon/k8s
-                kubectl -n comingsoon apply -f deployment.yml
-                kubectl -n comingsoon apply -f service.yml
-                """
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh """
+                  cd Kubernetes/comingsoon/k8s
+                  kubectl -n comingsoon apply -f deployment.yml
+                  kubectl -n comingsoon apply -f service.yml
+                  """
+                }
             }
         }
     }
