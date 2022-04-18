@@ -20,9 +20,9 @@ pipeline {
         }
         stage('Create Cluster') {
             steps {
-                sh "
-                eksctl create cluster --name comingsoon-cluster --nodes-min=2
-                "
+                withAWS(credentials: 'sam-jenkins-demo-credentials', region: 'eu-central-1') {
+                  sh "eksctl create cluster --name comingsoon-cluster --nodes-min=2"
+                }
             }
         }
         stage('Create Namespace') {
