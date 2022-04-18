@@ -26,29 +26,29 @@ pipeline {
                 }
             }
         }
-        stage('Create Cluster') {
-            steps {
-                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
-                  sh "eksctl create cluster --name comingsoon-cluster --nodes-min=2"
-                }
-            }
-        }
-        stage('Create Namespace') {
-            steps {
-                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
-                  sh "kubectl create namespace comingsoon"
-                }
-            }
-        }
-        stage('Deploy') {
-            steps {
-                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
-                  sh """
-                  cd Kubernetes/comingsoon/k8s
-                  kubectl -n comingsoon apply -f deployment.yaml
-                  kubectl -n comingsoon apply -f services.yaml
-                  """
-                }
+        // stage('Create Cluster') {
+        //     steps {
+        //         withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+        //           sh "eksctl create cluster --name comingsoon-cluster --nodes-min=2"
+        //         }
+        //     }
+        // }
+        // stage('Create Namespace') {
+        //     steps {
+        //         withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+        //           sh "kubectl create namespace comingsoon"
+        //         }
+        //     }
+        // }
+        // stage('Deploy') {
+        //     steps {
+        //         withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+        //           sh """
+        //           cd Kubernetes/comingsoon/k8s
+        //           kubectl -n comingsoon apply -f deployment.yaml
+        //           kubectl -n comingsoon apply -f services.yaml
+        //           """
+        //         }
             }
         }
     }
