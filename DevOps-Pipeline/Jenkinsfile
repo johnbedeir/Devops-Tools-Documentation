@@ -29,7 +29,7 @@ pipeline {
         stage('Composer Update') {
             steps {
                 sh """
-                docker exec -it devops-pipeline_phpmyadmin_1 bash
+                docker exec -it devops-pipeline_php-apache-environment_1 bash
                 composer update 
                 """
             }
