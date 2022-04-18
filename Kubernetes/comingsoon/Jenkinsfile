@@ -5,19 +5,19 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
     stages {
-        // stage('Docker Login') {
-        //     steps {
-        //         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-        //     }
-        // }
-        // stage('Build & push Dockerfile') {
-        //     steps {
-        //         sh """
-        //         cd Kubernetes/comingsoon/
-        //         ansible-playbook playbook.yml
-        //         """
-        //     }
-        // }
+        stage('Docker Login') {
+            steps {
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+        stage('Build & push Dockerfile') {
+            steps {
+                sh """
+                cd Kubernetes/comingsoon/
+                ansible-playbook playbook.yml
+                """
+            }
+        }
         stage('Delete Cluster') {
             steps {
                 withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
@@ -26,30 +26,30 @@ pipeline {
                 }
             }
         }
-        // stage('Create Cluster') {
-        //     steps {
-        //         withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
-        //           sh "eksctl create cluster --name comingsoon-cluster --nodes-min=2"
-        //         }
-        //     }
-        // }
-        // stage('Create Namespace') {
-        //     steps {
-        //         withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
-        //           sh "kubectl create namespace comingsoon"
-        //         }
-        //     }
-        // }
-        // stage('Deploy') {
-        //     steps {
-        //         withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
-        //           sh """
-        //           cd Kubernetes/comingsoon/k8s
-        //           kubectl -n comingsoon apply -f deployment.yaml
-        //           kubectl -n comingsoon apply -f services.yaml
-        //           """
-        //         }
-        //     }
-        // }
+        stage('Create Cluster') {
+            steps {
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh "eksctl create cluster --name comingsoon-cluster --nodes-min=2"
+                }
+            }
+        }
+        stage('Create Namespace') {
+            steps {
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh "kubectl create namespace comingsoon"
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh """
+                  cd Kubernetes/comingsoon/k8s
+                  kubectl -n comingsoon apply -f deployment.yaml
+                  kubectl -n comingsoon apply -f services.yaml
+                  """
+                }
+            }
+        }
     }
 }
