@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                sh "./install.sh"
+            }
+        }
+        stage('Build & push Dockerfile') {
+            steps {
+                echo 'Build and Push Stage'
+            }
+        }
+        stage('Run Dockercompose') {
+            steps {
+                echo 'Dockercompose Running'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
+}
