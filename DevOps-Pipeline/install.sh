@@ -69,5 +69,5 @@ sudo apt install ./kompose_1.26.1_amd64.deb
 echo "--------------------Add Docker to Sudo group--------------------"
 sudo groupadd docker && sudo usermod -aG docker $USER && newgrp docker && sudo chmod 777 /var/run/docker.sock
 #Show Jenkins Password
-# echo "--------------------Jenkins Password--------------------"
-# sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+echo "--------------------Jenkins Password--------------------"
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
