@@ -27,9 +27,7 @@ pipeline {
         }
         stage('Create Namespace') {
             steps {
-                sh "
-                kubectl create namespace comingsoon
-                "
+                sh "kubectl create namespace comingsoon"
             }
         }
         stage('Deploy') {
