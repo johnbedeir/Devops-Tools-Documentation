@@ -2,14 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Dependencies') {
-            steps {
-                sh "cd DevOps-Pipeline/"
-            }
-        }
         stage('Build & push Dockerfile') {
             steps {
-                sh "ansible-playbook playbook.yml"
+                sh """
+                cd DevOps-Pipeline/
+                ansible-playbook playbook.yml
+                """
             }
         }
         stage('Run Dockercompose') {
