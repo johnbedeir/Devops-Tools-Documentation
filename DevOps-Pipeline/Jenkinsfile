@@ -5,19 +5,19 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
     stages {
-        stage('Docker Login') {
-          steps {
-            sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-          }
-        }
-        stage('Build & push Dockerfile') {
-            steps {
-                sh """
-                cd DevOps-Pipeline/
-                ansible-playbook playbook.yml
-                """
-            }
-        }
+        // stage('Docker Login') {
+        //     steps {
+        //         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        //     }
+        // }
+        // stage('Build & push Dockerfile') {
+        //     steps {
+        //         sh """
+        //         cd DevOps-Pipeline/
+        //         ansible-playbook playbook.yml
+        //         """
+        //     }
+        // }
         stage('Run Dockercompose') {
             steps {
                 sh """
@@ -26,9 +26,12 @@ pipeline {
                 """
             }
         }
-        stage('Deploy') {
+        stage('Composer Update') {
             steps {
-                echo 'Deploying'
+                sh """
+                docker exec -it devops-pipeline_phpmyadmin_1 bash
+                composer update 
+                """
             }
         }
     }
