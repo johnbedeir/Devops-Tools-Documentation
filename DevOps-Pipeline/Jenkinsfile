@@ -22,7 +22,7 @@ pipeline {
             steps {
                 sh """
                 cd DevOps-Pipeline/
-                docker-compose up -d 
+                ansible-playbook playbook-dcompose.yml 
                 """
             }
         }
