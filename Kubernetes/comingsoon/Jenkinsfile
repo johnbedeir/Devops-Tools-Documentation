@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Create Cluster') {
             steps {
-                withAWS(credentials: 'sam-jenkins-demo-credentials', region: 'eu-central-1') {
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
                   sh "eksctl create cluster --name comingsoon-cluster --nodes-min=2"
                 }
             }
