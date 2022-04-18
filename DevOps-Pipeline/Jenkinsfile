@@ -20,7 +20,10 @@ pipeline {
         }
         stage('Run Dockercompose') {
             steps {
-                echo 'Dockercompose Running'
+                sh """
+                cd DevOps-Pipeline/
+                docker-compose up -d 
+                """
             }
         }
         stage('Deploy') {
