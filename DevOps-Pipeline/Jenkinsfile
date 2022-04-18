@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                sh "./install.sh"
+                sh """
+                cd DevOps-Pipeline/
+                ./install.sh
+                """
             }
         }
         stage('Build & push Dockerfile') {
