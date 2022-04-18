@@ -4,15 +4,12 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                sh """
-                cd DevOps-Pipeline/
-                ./install.sh
-                """
+                sh "cd DevOps-Pipeline/"
             }
         }
         stage('Build & push Dockerfile') {
             steps {
-                echo 'Build and Push Stage'
+                sh "ansible-playbook playbook.yml"
             }
         }
         stage('Run Dockercompose') {
