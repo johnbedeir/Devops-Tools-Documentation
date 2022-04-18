@@ -18,13 +18,16 @@ pipeline {
                 """
             }
         }
-        // stage('Delete Cluster') {
-        //     steps {
-        //         withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
-        //           sh "eksctl delete cluster comingsoon-cluster"
-        //         }
-        //     }
-        // }
+        stage('Delete Cluster') {
+            steps {
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh "eksctl delete cluster comingsoon-cluster"
+                }
+            }
+            options {
+                timeout(time: 180, unit: "SECONDS")
+            }
+        }
         stage('Create Cluster') {
             steps {
                 withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
@@ -44,8 +47,8 @@ pipeline {
                 withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
                   sh """
                   cd Kubernetes/comingsoon/k8s
-                  kubectl -n comingsoon apply -f deployment.yml
-                  kubectl -n comingsoon apply -f service.yml
+                  kubectl -n comingsoon apply -f deployment.yaml
+                  kubectl -n comingsoon apply -f service.yaml
                   """
                 }
             }
