@@ -46,7 +46,7 @@ pipeline {
                   sh """
                   cd Kubernetes/comingsoon/k8s
                   kubectl -n comingsoon apply -f deployment.yaml
-                  kubectl -n comingsoon apply -f service.yaml
+                  kubectl -n comingsoon apply -f services.yaml
                   """
                 }
             }
