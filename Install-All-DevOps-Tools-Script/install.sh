@@ -3,6 +3,17 @@ echo "--------------------Installing Java--------------------"
 sudo apt-get update -y
 sudo apt upgrade -y 
 sudo apt-get install openjdk-8-jdk -y
+#Install Python
+echo "--------------------Installing Python--------------------"
+sudo apt-get update -y
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update -y
+sudo apt-get install python3.8
+#Install Pip
+echo "--------------------Installing Pip--------------------"
+sudo apt-get update -y
+sudo apt-get install python3-pip
 #Install Jenkins 
 echo "--------------------Installing Jenkins--------------------"
 sudo apt -y install wget
