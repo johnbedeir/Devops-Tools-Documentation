@@ -1,4 +1,4 @@
-# Steps to Setup and Run Website using Jenkins on EC2 Instence
+# Steps to Deploy Website on EC2 Instence using Jenkins
 [Watch Jenkins and AWS شرح step by step on YouTube](https://youtu.be/awqwdGM_Trw)
 
 Step 1: 
