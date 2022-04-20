@@ -7,15 +7,15 @@ pipeline {
     stages {
         stage('Docker Login') {
             steps {
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
             }
         }
         stage('Build & push Dockerfile') {
             steps {
-                sh """
-                cd Kubernetes/comingsoon/
-                ansible-playbook playbook.yml
-                """
+              sh """
+              cd Kubernetes/comingsoon/
+              ansible-playbook playbook.yml
+              """
             }
         }
         stage('Delete Cluster') {
