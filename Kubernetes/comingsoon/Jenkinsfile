@@ -20,6 +20,7 @@ pipeline {
         }
         stage('Delete Cluster') {
             steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
                 withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
                   sh "eksctl delete cluster comingsoon-cluster"
                   sleep(time: 180, unit: "SECONDS")
