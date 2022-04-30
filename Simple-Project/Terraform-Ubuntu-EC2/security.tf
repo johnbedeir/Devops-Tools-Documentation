@@ -39,6 +39,6 @@ resource "aws_key_pair" "UbuntuKP" {
   public_key = var.public_key
 
   provisioner "local-exec" {
-    command = "echo '${tls_private_key.pk.private_key_pem}' > ./mykey.pem"
+    command = "echo '${tls_private_key.pk.private_key_pem}' > ./mykey.pem && chmod 400 mykey.pem"
   }
 }
