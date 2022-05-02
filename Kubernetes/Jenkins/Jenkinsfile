@@ -13,7 +13,7 @@ pipeline {
         stage('Build & push Dockerfile') {
             steps {
               sh """
-              cd Kubernetes/comingsoon/
+              cd Kubernetes/laravel-app/
               ansible-playbook playbook.yml
               """
             }
@@ -45,7 +45,7 @@ pipeline {
             steps {
                 withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
                   sh """
-                  cd Kubernetes/comingsoon/k8s
+                  cd Kubernetes/laravel-app/k8s
                   kubectl -n comingsoon apply -f deployment.yaml
                   kubectl -n comingsoon apply -f services.yaml
                   """
