@@ -1,0 +1,56 @@
+pipeline {
+    agent any
+
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	}
+    stages {
+        stage('Docker Login') {
+            steps {
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+        stage('Build & push Dockerfile') {
+            steps {
+              sh """
+              cd Kubernetes/comingsoon/
+              ansible-playbook playbook.yml
+              """
+            }
+        }
+        stage('Delete Cluster') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh "eksctl delete cluster comingsoon-cluster"
+                  sleep(time: 180, unit: "SECONDS")
+                }
+            }
+        }
+        stage('Create Cluster') {
+            steps {
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh "eksctl create cluster --name comingsoon-cluster --nodes-min=2"
+                }
+            }
+        }
+        stage('Create Namespace') {
+            steps {
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh "kubectl create namespace comingsoon"
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                  sh """
+                  cd Kubernetes/comingsoon/k8s
+                  kubectl -n comingsoon apply -f deployment.yaml
+                  kubectl -n comingsoon apply -f services.yaml
+                  """
+                }
+            }
+        }
+    }
+}
