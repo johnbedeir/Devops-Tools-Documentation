@@ -3,17 +3,6 @@ echo "--------------------Installing Java--------------------"
 sudo apt-get update -y
 sudo apt upgrade -y 
 sudo apt-get install openjdk-8-jdk -y
-#Install Python
-echo "--------------------Installing Python--------------------"
-sudo apt-get update -y
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt-get update -y
-sudo apt-get install python3.8
-#Install Pip
-echo "--------------------Installing Pip--------------------"
-sudo apt-get update -y
-sudo apt-get install python3-pip
 #Install Jenkins 
 echo "--------------------Installing Jenkins--------------------"
 sudo apt -y install wget
@@ -79,18 +68,6 @@ sudo apt install ./kompose_1.26.1_amd64.deb
 #Add docker to sudo group
 echo "--------------------Add Docker to Sudo group--------------------"
 sudo groupadd docker && sudo usermod -aG docker $USER && newgrp docker && sudo chmod 777 /var/run/docker.sock
-# Install Azure-Cli
-echo "--------------------Installing Azure-Cli--------------------"
-sudo apt-get update
-sudo apt-get install ca-certificates curl apt-transport-https lsb-release gnupg
-curl -sL https://packages.microsoft.com/keys/microsoft.asc |
-    gpg --dearmor |
-    sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
-AZ_REPO=$(lsb_release -cs)
-echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |
-    sudo tee /etc/apt/sources.list.d/azure-cli.list
-sudo apt-get update
-sudo apt-get install azure-cli
 #Show Jenkins Password
 echo "--------------------Jenkins Password--------------------"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
