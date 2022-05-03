@@ -1,0 +1,39 @@
+$main-font-color: #000;
+$main-font-family: 'Raleway';
+$main-font-size: 14px;
+$main-font-weight: 400;
+
+$header-height: 113px;
+$footer-height: 134px;
+
+$media-sm: 991px;
+$media-xs: 767px;
+
+@mixin rem($property, $values) {
+  $font-size: $main-font-size;
+  $px-values: ();
+  $rem-values: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == 0px {
+      $px-values: join($px-values, 0);
+      $rem-values: join($rem-values, 0);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == px) {
+      $new-rem-value: $value / $font-size;
+      $px-values: join($px-values, round($value));
+      $rem-values: join($rem-values, #{$new-rem-value}rem);
+    } @else if type-of($value) == number and not unitless($value) and (unit($value) == "%") {
+      $px-values: join($px-values, #{$value});
+      $rem-values: join($rem-values, #{$value});
+    } @else if $value == auto {
+      $px-values: join($px-values, auto);
+      $rem-values: join($rem-values, auto);
+    } @else {
+      $px-values: join($px-values, round($value * $font-size));
+      $rem-values: join($rem-values, #{$value}rem);
+    }
+  }
+
+  #{$property}: $px-values;
+  #{$property}: $rem-values;
+}
