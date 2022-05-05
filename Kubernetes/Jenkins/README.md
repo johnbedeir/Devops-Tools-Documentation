@@ -53,3 +53,7 @@ Add Dockerhub Username & Access Token
 `Manage Jenkins > Manage Credentials > global > Add Credentials > Kind: Aws Credentials`
 
 Add AWS Access ID & Secret Access Key
+
+## Step 6: Create Jenkins Pipeline
+
+New Item > Choose Pipeline > Pipeline > Definition: Pipeline script from SCM > SCM: Git
