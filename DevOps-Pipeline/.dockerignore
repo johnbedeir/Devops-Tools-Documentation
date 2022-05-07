@@ -1,6 +1,0 @@
-docker-compose.yml
-Dockerfile
-playbook.yml
-playbook-dcompose.yml
-*.tf
-*.tfvars
