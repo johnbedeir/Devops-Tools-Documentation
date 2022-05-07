@@ -1,0 +1,27 @@
+---
+- name: "Build container with ansible"
+  hosts: localhost
+  tasks:
+  - name: stop running container
+    command: docker stop <container name>
+    ignore_errors: yes
+
+  - name: remove stopped container
+    command: docker rm <container name>
+    ignore_errors: yes
+  
+  - name: remove used image
+    command: docker rmi <image name>
+    ignore_errors: yes
+    
+  - name: build docker image from dockerfile
+    command: docker build -t <image name> .  
+
+  - name: create tag to image
+    command: docker tag <image name> <dockerhub user/repository name>
+
+  - name: push image to dockerhub
+    command: docker push <dockerhub user/repository name> 
+
+  - name: run container from image
+    command: docker run -d --name <container name> -p <port> <image name>
