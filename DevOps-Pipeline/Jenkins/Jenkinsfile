@@ -18,18 +18,11 @@ pipeline {
                 """
             }
         }
-        stage('Run Dockercompose') {
+        stage('Run Dockercompose playbook') {
             steps {
                 sh """
                 cd DevOps-Pipeline/
                 ansible-playbook playbook-dcompose.yml 
-                """
-            }
-        }
-        stage('Composer Update') {
-            steps {
-                sh """
-                docker exec -i devops-pipeline_php-apache-environment_1 bash -c "composer update" 
                 """
             }
         }
