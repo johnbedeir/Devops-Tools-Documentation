@@ -22,5 +22,8 @@
     command: docker rmi phpmyadmin/phpmyadmin
     ignore_errors: yes
 
-  - name: build docker-compose
-    command: docker-compose up -d 
+  # - name: build docker-compose
+  #   command: docker-compose up -d 
+
+  # - name: Run composer update inside apache container 
+  #   command: docker exec -i devops-pipeline_php-apache-environment_1 bash -c "composer update"
