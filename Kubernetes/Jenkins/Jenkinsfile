@@ -29,21 +29,36 @@ pipeline {
         // }
         stage('Create Cluster') {
             steps {
-                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
                   sh "eksctl create cluster --name comingsoon-cluster --nodes-min=2"
                 }
             }
         }
         stage('Create Namespace') {
             steps {
-                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
                   sh "kubectl create namespace comingsoon"
                 }
             }
         }
         stage('Deploy') {
             steps {
-                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
                   sh """
                   cd Kubernetes/laravel-app/k8s
                   kubectl -n comingsoon apply -f deployment.yaml
@@ -54,3 +69,5 @@ pipeline {
         }
     }
 }
+
+

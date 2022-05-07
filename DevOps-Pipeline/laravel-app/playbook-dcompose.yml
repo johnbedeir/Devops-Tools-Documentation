@@ -24,3 +24,6 @@
 
   - name: build docker-compose
     command: docker-compose up -d 
+# This task is to get into the apache container where the project file exist and run composer update command with non-interactive tty 
+  - name: Run composer update inside apache container 
+    command: docker exec -i laravel-app_php-apache-environment_1 bash -c "composer update"
