@@ -8,13 +8,13 @@
 - 🥅 2022 Goals: Jump to the next level DevSecOps & SRE
 <!-- - ⚡ Fun fact: I love to draw and play guitar / drums -->
 
-
 ### Connect with me:
 
 [<img alt="johnydev.com" src="https://img.icons8.com/dusk/64/000000/domain.png"/>][website]
 [<img alt="https://www.youtube.com/channel/UCxvd-DdyFsE_07lCa4kRINA" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-youtube-social-media-justicon-lineal-color-justicon.png"/>][youtube]
 [<img alt="https://www.linkedin.com/in/johnbedeir/" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-linkedin-social-media-justicon-lineal-color-justicon.png"/>][linkedin]
 [<img alt="https://www.instagram.com/johnbedeir/" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-instagram-social-media-justicon-lineal-color-justicon.png"/>][instagram]
+[<img alt="https://www.facebook.com/JohnyDev-293895207431248" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-facebook-social-media-justicon-lineal-color-justicon.png"/>][facebook]
 
 <br />
 
@@ -56,6 +56,7 @@ px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
 ### 📺 Latest YouTube Videos
 
 <!-- YOUTUBE:START -->
+
 - [Kubernetes | EKS | Cluster (Part 3)](https://www.youtube.com/watch?v=4Tkxe0VjrYw)
 - [Kubernetes | MiniKube| Elasticity |Fault Tolerance | High Availability (Part 2)](https://www.youtube.com/watch?v=kV4jINv3s-k)
 - [Kubernetes | Scalability | Monolithic vs Microservices (Part 1)](https://www.youtube.com/watch?v=YfJZBngbhM8&t=537s)
@@ -95,3 +96,4 @@ px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
 [instagram]: https://www.instagram.com/johnbedeir/
 [linkedin]: https://www.linkedin.com/in/johnbedeir/
 [course]: https://www.youtube.com/channel/UCxvd-DdyFsE_07lCa4kRINA
+[facebook]: https://www.facebook.com/JohnyDev-293895207431248
