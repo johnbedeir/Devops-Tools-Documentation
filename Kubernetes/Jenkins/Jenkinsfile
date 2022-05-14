@@ -5,19 +5,19 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
     stages {
-        stage('Docker Login') {
-            steps {
-              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-            }
-        }
-        stage('Build & push Dockerfile') {
-            steps {
-              sh """
-              cd Kubernetes/comingsoon/
-              ansible-playbook playbook.yml
-              """
-            }
-        }
+        // stage('Docker Login') {
+        //     steps {
+        //       sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        //     }
+        // }
+        // stage('Build & push Dockerfile') {
+        //     steps {
+        //       sh """
+        //       cd Kubernetes/comingsoon/
+        //       ansible-playbook playbook.yml
+        //       """
+        //     }
+        // }
         // stage('Delete Cluster') {
         //     steps {
         //       // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
@@ -27,18 +27,18 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Create Cluster') {
-            steps {
-                withCredentials([[
-                  $class: 'AmazonWebServicesCredentialsBinding',
-                  credentialsId: "aws-credentials",
-                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-                  ]]) {
-                  sh "eksctl create cluster --name comingsoon-cluster --region eu-central-1 --nodes-min=2"
-                }
-            }
-        }
+        // stage('Create Cluster') {
+        //     steps {
+        //         withCredentials([[
+        //           $class: 'AmazonWebServicesCredentialsBinding',
+        //           credentialsId: "aws-credentials",
+        //           accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+        //           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+        //           ]]) {
+        //           sh "eksctl create cluster --name comingsoon-cluster --region eu-central-1 --nodes-min=2"
+        //         }
+        //     }
+        // }
         stage('Create Namespace') {
             steps {
                 withCredentials([[
