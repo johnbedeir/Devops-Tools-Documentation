@@ -13,7 +13,7 @@ pipeline {
         stage('Build & push Dockerfile') {
             steps {
               sh """
-              cd Kubernetes/laravel-app/
+              cd Kubernetes/comingsoon/
               ansible-playbook playbook.yml
               """
             }
@@ -60,7 +60,7 @@ pipeline {
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
                   sh """
-                  cd Kubernetes/laravel-app/k8s
+                  cd Kubernetes/comingsoon/k8s
                   kubectl -n comingsoon apply -f deployment.yaml
                   kubectl -n comingsoon apply -f services.yaml
                   """
