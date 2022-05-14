@@ -38,6 +38,7 @@ pipeline {
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
                   sh "eksctl delete cluster --name comingsoon-cluster --region eu-central-1"
+                  sleep(time: 180, unit: "SECONDS")
                 }
             }
         }
