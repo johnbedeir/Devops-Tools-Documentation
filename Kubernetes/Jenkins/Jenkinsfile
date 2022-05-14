@@ -18,17 +18,32 @@ pipeline {
         //       """
         //     }
         // }
+        // stage('Delete Cluster') {
+        //     steps {
+              
+        //       // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+        //         withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+        //           sh "eksctl delete cluster comingsoon-cluster"
+        //           sleep(time: 180, unit: "SECONDS")
+        //         }
+        //     }
+        // }
         stage('Delete Cluster') {
             steps {
               // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
-                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
                   sh "eksctl delete cluster comingsoon-cluster"
-                  sleep(time: 180, unit: "SECONDS")
                 }
             }
         }
         // stage('Create Cluster') {
         //     steps {
+        //       // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
         //         withCredentials([[
         //           $class: 'AmazonWebServicesCredentialsBinding',
         //           credentialsId: "aws-credentials",
@@ -41,6 +56,7 @@ pipeline {
         // }
         // stage('Create Namespace') {
         //     steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
         //         withCredentials([[
         //           $class: 'AmazonWebServicesCredentialsBinding',
         //           credentialsId: "aws-credentials",
@@ -53,6 +69,7 @@ pipeline {
         // }
         // stage('Deploy') {
         //     steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
         //         withCredentials([[
         //           $class: 'AmazonWebServicesCredentialsBinding',
         //           credentialsId: "aws-credentials",
