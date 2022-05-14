@@ -37,7 +37,7 @@ pipeline {
                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
-                  sh "eksctl delete cluster comingsoon-cluster"
+                  sh "eksctl delete cluster --name comingsoon-cluster"
                 }
             }
         }
