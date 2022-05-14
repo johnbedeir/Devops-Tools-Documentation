@@ -51,7 +51,10 @@ pipeline {
                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
-                  sh "eksctl create cluster --name comingsoon-cluster --region eu-central-1 --nodes-min=2"
+                  sh """
+                  eksctl create cluster --name comingsoon-cluster --region eu-central-1 --nodes-min=2
+                  aws eks update-kubeconfig --name comingsoon-cluster
+                  """
                 }
             }
         }
