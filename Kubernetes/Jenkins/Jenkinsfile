@@ -5,29 +5,19 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
     stages {
-        stage('Docker Login') {
-            steps {
-              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-            }
-        }
-        stage('Build & push Dockerfile') {
-            steps {
-              sh """
-              cd Kubernetes/comingsoon/
-              ansible-playbook playbook.yml
-              """
-            }
-        }
-        stage('Delete Cluster') {
-            steps {
-              
-              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
-                withAWS(credentials: 'aws-credentials', region: 'eu-central-1') {
-                  sh "eksctl delete cluster comingsoon-cluster"
-                  sleep(time: 180, unit: "SECONDS")
-                }
-            }
-        }
+        // stage('Docker Login') {
+        //     steps {
+        //       sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+        //     }
+        // }
+        // stage('Build & push Dockerfile') {
+        //     steps {
+        //       sh """
+        //       cd Kubernetes/comingsoon/
+        //       ansible-playbook playbook.yml
+        //       """
+        //     }
+        // }
         // stage('Delete Cluster') {
         //     steps {
         //       // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
@@ -51,7 +41,10 @@ pipeline {
                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
-                  sh "eksctl create cluster --name comingsoon-cluster --region eu-central-1 --nodes-min=2"
+                  sh """
+                  eksctl create cluster --name comingsoon-cluster --region eu-central-1 --nodes-min=2
+                  aws eks update-kubeconfig --name comingsoon-cluster
+                  """
                 }
             }
         }
