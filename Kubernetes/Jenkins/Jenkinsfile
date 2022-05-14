@@ -5,19 +5,19 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
     stages {
-        // stage('Docker Login') {
-        //     steps {
-        //       sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-        //     }
-        // }
-        // stage('Build & push Dockerfile') {
-        //     steps {
-        //       sh """
-        //       cd Kubernetes/comingsoon/
-        //       ansible-playbook playbook.yml
-        //       """
-        //     }
-        // }
+        stage('Docker Login') {
+            steps {
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+        stage('Build & push Dockerfile') {
+            steps {
+              sh """
+              cd Kubernetes/comingsoon/
+              ansible-playbook playbook.yml
+              """
+            }
+        }
         // stage('Delete Cluster') {
         //     steps {
         //       // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
