@@ -47,7 +47,7 @@ pipeline {
                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
-                  sh "kubectl create namespace comingsoon --region eu-central-1"
+                  sh "kubectl create namespace comingsoon"
                 }
             }
         }
