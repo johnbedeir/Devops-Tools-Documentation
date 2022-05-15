@@ -6,7 +6,7 @@ resource "aws_instance" "ubuntu-instance" {
   security_groups = ["${aws_security_group.UbuntuSG.name}"]
 
   tags  = {
-    Name  = "Ubuntu-EC2"
+    Name  = "Jenkins-EC2"
   }
 
 # The default storage size of the created EC2 will be 8GB SSD and since we will be running minikube, kubectl and docker we will need more storage 
