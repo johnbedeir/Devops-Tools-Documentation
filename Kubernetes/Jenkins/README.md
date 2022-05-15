@@ -57,3 +57,28 @@ Add AWS Access ID & Secret Access Key
 ## Step 6: Create Jenkins Pipeline
 
 New Item > Choose Pipeline > Pipeline > Definition: Pipeline script from SCM > SCM: Git
+
+`After you run the pipeline and your application is deployed`
+
+## Step 7: Find External IP in K9s
+
+1. SSH on the Jenkins EC2
+2. Run the following command to connect the Jenkins EC2 with your AWS
+
+```
+aws configure
+```
+
+3. Then run the following command to update the kubeconfig
+
+```
+aws eks update-kubeconfig --name <cluster name>
+```
+
+4. Open K9s
+
+```
+k9s
+```
+
+5. Search for Service and open you will find your External Ip that you will use to access your application
