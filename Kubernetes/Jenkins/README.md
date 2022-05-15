@@ -81,4 +81,4 @@ aws eks update-kubeconfig --name <cluster name>
 k9s
 ```
 
-5. Search for Service and open you will find your External Ip that you will use to access your application
+5. Press Ctrl+A ---> Search for Service and open ---> you will find your External Ip that you will use to access your application
