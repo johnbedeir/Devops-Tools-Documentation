@@ -17,30 +17,6 @@ resource "aws_security_group" "UbuntuSG" {
     cidr_blocks  = ["0.0.0.0/0"]
   }
 
-# We will use Port 5000 to run php-apache, you can choose any port but make sure it is the same in the docker-compose.yml 
-  ingress {
-    from_port = 5000
-    to_port   = 5000
-    protocol  = "tcp"
-    cidr_blocks  = ["0.0.0.0/0"]
-  }
-
-# Port 3306 is the default port for the database to run 
-  ingress {
-    from_port = 3306
-    to_port   = 3306
-    protocol  = "tcp"
-    cidr_blocks  = ["0.0.0.0/0"]
-  }
-
-# We will use port 4000 to run phpmyadmin, you can choose any port but make sure it is the same in the docker-compose.yml
-  ingress {
-    from_port = 4000
-    to_port   = 4000 
-    protocol  = "tcp"
-    cidr_blocks  = ["0.0.0.0/0"]
-  }
-
   egress  {
     from_port = 0
     to_port   = 0
