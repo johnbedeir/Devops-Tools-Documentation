@@ -26,4 +26,4 @@
     command: docker-compose up -d 
 # # This task is to get into the apache container where the project file exist and run composer update command with non-interactive tty 
   - name: Run composer update inside apache container 
-    command: docker exec -it `docker ps -q --filter name=php-apache` bash -c "composer update"
+    command: docker exec -i `docker ps -q --filter name=php-apache` bash -c "composer update"
