@@ -1,5 +1,5 @@
 pipeline {
-    agent JenkinsSlave01
+    agent {label 'JenkinsSlave01'}
 
     environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
