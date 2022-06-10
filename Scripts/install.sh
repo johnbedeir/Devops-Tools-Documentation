@@ -72,6 +72,12 @@ echo "--------------------Installing AWS-CLI--------------------"
 sudo apt-get install zip -y
 sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip
 sudo ./aws/install
+#Install CloudWatch Agent 
+echo "--------------------Installing CloudWatch Agent--------------------"
+sudo apt-get update -y
+sudo apt-get install awslogs -y
+sudo service awslogs start
+sudo chkconfig awslogs on
 # Install Kompose
 echo "--------------------Installing Kompose--------------------"
 wget https://github.com/kubernetes/kompose/releases/download/v1.26.1/kompose_1.26.1_amd64.deb # Replace 1.26.1 with latest tag
