@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'JenkinsSlave01'}
+    agent any
 
     environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
@@ -19,10 +19,5 @@ pipeline {
                 """
             }
         }
-    }
-    post {  
-         success {  
-             emailext body: 'Pipeline has been successfully completed', subject: 'Success', to: 'john.bedeir@gmail.com'
-         } 
-     }  
+    } 
 }
