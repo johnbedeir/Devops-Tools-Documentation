@@ -12,3 +12,5 @@ Terraform_Azure/Windows_VM/.terraform
 gcp-credentials.json
 
 *.pem
+
+*.rdp
