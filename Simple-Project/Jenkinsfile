@@ -19,10 +19,5 @@ pipeline {
                 """
             }
         }
-    }
-    post {  
-         success {  
-             emailext body: 'Pipeline has been successfully completed', subject: 'Success', to: 'john.bedeir@gmail.com'
-         } 
-     }  
+    } 
 }
