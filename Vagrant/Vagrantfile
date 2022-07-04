@@ -1,32 +1,43 @@
-
 Vagrant.configure("2") do |config|
 
-  # Provider
+  # BOX
+  config.vm.box = "ubuntu/xenial64" # Virtualbox Image
+  # config.vm.box = "generic/centos7" # Docker Image
+  # config.vm.box_check_update = false
+
+  # PROVIDER
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
     # vb.gui = true
-    # vb.cpu = 2
     # Customize the amount of memory on the VM:
-    vb.memory = "1024"
+    vb.memory = "2048"
+    # remains_running = false
   end
-    
-  # Box
-  # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/xenial64"
 
-
-  # Network
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
-  # config.vm.network "forwarded_port", guest: 80, host: 9090, host_ip: "127.0.0.1"
-  config.vm.network "private_network", ip: "192.168.56.10"
+  # NETWORK
+  # config.vm.network "forwarded_port", guest: 80, host: 9090
+  # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  config.vm.network "private_network", ip: "192.168.56.20"
   # config.vm.network "public_network"
+  
+  #------------------------PROVISION------------------------#
+  # PROVISION - SHELL
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   apt-get update
+  #   apt-get install -y apache2
+  # SHELL
 
-  # Share Dir
+  # PROVISION - SCRIPT
+  # $script = <<-SCRIPT
+  # apt-get update
+  # apt-get install -y apache2
+  # SCRIPT
+  # config.vm.provision "shell", inline: $script
+
+  # PROVISION - FILE
+  # config.vm.provision "shell", path: "script.sh"
+  #------------------------PROVISION------------------------# 
+  
+  # DIR SYNC
   # config.vm.synced_folder "../data", "/vagrant_data"
-
-  # Provision
-  config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    apt-get install -y apache2
-  SHELL
 end
