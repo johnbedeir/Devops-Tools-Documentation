@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: laravel-app
+  annotations:
+      prometheus.io/scrape: 'true'
+      prometheus.io/port:   '3000'
+spec:
+  selector: 
+    app: grafana
+# ClusterIP (default), LoadBalancer (works on cloud), NodePort (most used)
+  type: LoadBalancer  
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 32000
