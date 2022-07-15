@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Delete Cluster') {
+            steps {
+              // Ignore failure if the cluster does not exist
+              catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh "eksctl delete cluster --name laravelapp-cluster --region eu-central-1"
+                  sleep(time: 180, unit: "SECONDS")
+                }
+                
+                sh "exit 1"
+              }  
+            }
+        }
+    }
+}
