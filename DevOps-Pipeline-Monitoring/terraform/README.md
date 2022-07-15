@@ -44,7 +44,7 @@ output.tf
 
 ### Including the value of the variables
 
-`This file need to be created, you will not find in the repository`
+`This file need to be created with the vars in variables.tf, you will not find in the repository`
 
 ```
 terraform.tfvars
