@@ -1,0 +1,23 @@
+---
+- name: "Automate deployment"
+  hosts: localhost
+  tasks:
+  - name: Delete namespace
+    command: kubectl delete namespace laravel-app
+    ignore_errors: yes
+
+  - name: Create namespace
+    command: kubectl create namespace laravel-app
+  
+  - name: Deploy frontend
+    command: kubectl -n laravel-app apply -f frontend.yaml
+
+  - name: Deploy database
+    command: kubectl -n laravel-app apply -f db.yaml 
+
+  - name: Deploy phpmyadmin
+    command: kubectl -n laravel-app apply -f phpmyadmin.yaml
+
+
+
+  

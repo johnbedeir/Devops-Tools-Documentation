@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbserver
+  labels:
+    app: db
+  namespace: laravel-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+
+      - name: db
+        image: triple3a/laravel-app-mysql-5.7 
+        env:
+            - name: MYSQL_ALLOW_EMPTY_PASSWORD
+              value: "1"
+            - name: MYSQL_DATABASE
+              value: laravel-db
+            - name: MYSQL_PASSWORD
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-service
+  labels:
+    run: db-service
+  namespace: laravel-app
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: db
