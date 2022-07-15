@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+  # Create the database service
+  db:
+    container_name: db
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: "laravel-db"
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_PASSWORD: ""
+    ports:
+      - "3306:3306"
+
+  # Create the php-apache service
+  php-apache-environment:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: "triple3a/laravel-app"
+    volumes:
+      - . /var/www/html/
+    ports:
+      - "5000:80"
+
+  # Create phpmyadmin service to view the database in the GUI
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db
+      - php-apache-environment
+    ports:
+      - 4000:80
+    environment:
+      MYSQL_USER: root
+      MYSQL_PASSWORD:
+      MYSQL_ROOT_PASSWORD:

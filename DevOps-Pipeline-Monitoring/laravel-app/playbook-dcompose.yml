@@ -1,0 +1,57 @@
+---
+- name: "Run Docker-Compose using ansible playbook"
+  hosts: localhost
+  tasks:
+  - name: stop and remove containers
+    command: docker-compose down
+    ignore_errors: yes
+  
+  - name: remove image built with dockercompose
+    command: docker rmi triple3a/laravel-app
+    ignore_errors: yes
+
+  - name: remove php-apache image
+    command: docker rmi php:7.4.1-apache
+    ignore_errors: yes
+
+  - name: remove mysql image
+    command: docker rmi mysql:5.7
+    ignore_errors: yes
+
+  - name: remove tagged mysql image
+    command: docker rmi triple3a/laravel-app-mysql-5.7
+    ignore_errors: yes
+
+  - name: remove phpmyadmin image
+    command: docker rmi phpmyadmin/phpmyadmin
+    ignore_errors: yes
+
+  - name: remove tagged phpmyadmin image
+    command: docker rmi triple3a/laravel-app-phpmyadmin
+    ignore_errors: yes
+
+  - name: build docker-compose
+    command: docker-compose up -d 
+
+# # This task is to get into the apache container where the project file exist and run composer update command with non-interactive tty 
+  - name: Run composer update inside apache container 
+    command: docker exec -i laravel-app_php-apache-environment_1 bash -c "composer update"
+
+  - name: push php-apache image to dockerhub
+    command: docker push triple3a/laravel-app 
+    
+  - name: tag mysql image
+    command: docker tag mysql:5.7 triple3a/laravel-app-mysql-5.7 
+
+  - name: push mysql image to dockerhub
+    command: docker push triple3a/laravel-app-mysql-5.7 
+
+  - name: tag phpmyadmin image
+    command: docker tag phpmyadmin/phpmyadmin triple3a/laravel-app-phpmyadmin 
+
+  - name: push phpmyadmin image to dockerhub
+    command: docker push triple3a/laravel-app-phpmyadmin
+
+
+
+
