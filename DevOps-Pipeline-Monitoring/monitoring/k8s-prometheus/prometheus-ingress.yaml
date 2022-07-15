@@ -1,0 +1,33 @@
+## Nginx Ingress
+## Follow https://devopscube.com/setup-ingress-kubernetes-nginx-controller/
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: prometheus-ui
+  namespace: laravel-app
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  # Use the host you used in your kubernetes Ingress Configurations
+  - host: my-app.johnydev.com
+    http:
+      paths:
+      - backend:
+          serviceName: prometheus-service
+          servicePort: 8080
+  tls:
+  - hosts: 
+    - prometheus.apps.shaker242.lab
+    secretName: prometheus-secret
+---
+apiVersion: v1 
+kind: Secret 
+metadata:
+  name: prometheus-secret 
+  namespace: laravel-app
+data:
+# USe base64 in the certs
+  tls.crt: "{crt}"
+  tls.key: "{key}"

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin-server
+  labels:
+    app: phpmyadmin
+  namespace: laravel-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+
+      - name: phpmyadmin
+        image: triple3a/laravel-app-phpmyadmin
+        env:
+            - name: MYSQL_USER
+              value: root
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpmyadmin-service
+  labels:
+    run: phpmyadmin-service
+  namespace: laravel-app
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: phpmyadmin
