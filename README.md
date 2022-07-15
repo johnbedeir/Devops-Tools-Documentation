@@ -57,6 +57,15 @@ px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
 
 <!-- YOUTUBE:START -->
 
+- [Vagrant](https://www.youtube.com/watch?v=uo-0PkcUze8&list=PLQ5OGqigB8VlnBUhBTVWQ65OxglYiV6LE&index=11)
+- [Microsoft Azure | Ubuntu VM](https://youtu.be/16M_Gy16500)
+- [Google Cloud Platform | Windows VM](https://youtu.be/Llf_1mO1Uu0)
+- [Google Cloud Platform | Ubuntu VM](https://youtu.be/CimnP9XDwHI)
+- [DigitalOcean | Provisioning](https://youtu.be/GZmfhdHlnNs)
+- [DigitalOcean | Ubuntu | Droplet | Terraform](https://youtu.be/R3dNWIjZ14M)
+- [DevOps Pipeline](https://youtu.be/vrdlDh2GAPw)
+- [Terraform | AWS | EC2 | Ubuntu](https://youtu.be/V6CPs_C9v8A)
+- [Terraform - Part 1](https://youtu.be/zF_N4flz8lw)
 - [Kubernetes | EKS | Cluster (Part 3)](https://www.youtube.com/watch?v=4Tkxe0VjrYw)
 - [Kubernetes | MiniKube| Elasticity |Fault Tolerance | High Availability (Part 2)](https://www.youtube.com/watch?v=kV4jINv3s-k)
 - [Kubernetes | Scalability | Monolithic vs Microservices (Part 1)](https://www.youtube.com/watch?v=YfJZBngbhM8&t=537s)
