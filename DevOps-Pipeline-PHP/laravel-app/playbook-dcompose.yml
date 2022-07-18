@@ -1,0 +1,32 @@
+---
+- name: "Run Docker-Compose using ansible playbook"
+  hosts: localhost
+  tasks:
+  - name: stop and remove containers
+    command: docker-compose down
+    ignore_errors: yes
+
+  # Make sure to change the image name with your personal dockerhub account and reposiroty 
+  - name: remove image built with dockercompose
+    command: docker rmi triple3a/laravel-app
+    ignore_errors: yes
+
+  - name: remove php-apache image
+    command: docker rmi php:7.4.1-apache
+    ignore_errors: yes
+
+  - name: remove mysql image
+    command: docker rmi mysql:5.7
+    ignore_errors: yes
+
+  - name: remove phpmyadmin image
+    command: docker rmi phpmyadmin/phpmyadmin
+    ignore_errors: yes
+
+  - name: build docker-compose
+    command: docker-compose up -d 
+# This task is to get into the apache container where the project file exist and run composer update command with non-interactive tty 
+  - name: Run composer update inside apache container
+    command:  docker exec -i laravel-app_php-apache-environment_1 bash -c "composer update"
+# Use the following command if you don't know what the container name will be when created 'make sure you replace php-apache with keywords from your container name'
+    # command: docker exec -i `docker ps -q --filter name=php-apache` bash -c "composer update"
