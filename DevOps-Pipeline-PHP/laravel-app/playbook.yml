@@ -1,0 +1,25 @@
+---
+- name: "Build Image and run container with ansible playbook"
+  hosts: localhost
+  tasks:
+  - name: stop running container
+    command: docker stop laravel-container
+    ignore_errors: yes
+
+  - name: remove stopped container
+    command: docker rm laravel-container
+    ignore_errors: yes
+# Make sure to change the image name with your personal dockerhub account and reposiroty   
+  - name: remove used image
+    command: docker rmi triple3a/laravel-app
+    ignore_errors: yes
+# Make sure to change the image name with your personal dockerhub account and reposiroty 
+  - name: build docker image from dockerfile
+    command: docker build -t triple3a/laravel-app .  
+# Make sure to change the image name with your personal dockerhub account and reposiroty 
+  - name: push image to dockerhub
+    command: docker push triple3a/laravel-app 
+
+
+
+  
