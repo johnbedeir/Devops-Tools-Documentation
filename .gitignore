@@ -16,3 +16,10 @@ gcp-credentials.json
 *.rdp
 
 .vagrant
+
+
+__pycache__
+
+.env
+
+*.sqlite3
