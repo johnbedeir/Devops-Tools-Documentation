@@ -1,0 +1,22 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: survey-app-deploy 
+  namespace: python-app
+  labels:
+    app: survey-app
+spec:
+  selector:
+    matchLabels:
+      app: survey-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: survey-app
+    spec:
+      containers:
+      - name: survey-app
+        image: triple3a/survey-app-img:latest
+        ports:
+        - containerPort: 8000
