@@ -10,6 +10,8 @@
     command: docker rm django-container
     ignore_errors: yes
 
+### Make sure to change the image name in the next tasks with your dockerhub username and repository name
+
   - name: remove used image 
     command: docker rmi triple3a/survey-app-img
     ignore_errors: yes
@@ -19,6 +21,8 @@
 
   - name: push docker image  
     command: docker push triple3a/survey-app-img
+
+### Make sure to change the image name in the previous tasks with your dockerhub username and repository name
 
   # - name: run new container
   #   command: docker run -d --name django-container -p 4000:8000 triple3a/survey-app-img
