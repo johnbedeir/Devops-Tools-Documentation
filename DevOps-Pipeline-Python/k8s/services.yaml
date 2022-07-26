@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: survey-app
+  namespace: python-app
+  labels:
+    app: survey-app
+spec:
+  selector:
+    app: survey-app
+# ClusterIP (default), LoadBalancer (works on cloud), NodePort (most used)
+  type: NodePort
+  ports:
+  - port: 8000 
+    targetPort: 8000
