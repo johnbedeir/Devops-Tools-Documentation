@@ -85,7 +85,7 @@ docker-compose down
 
 ## Method 2
 
-You can use the playbook to automate the build and run for docker-compose using playbook-dcompose.yml
+You can use the playbook to automate the build and run of the docker-compose using playbook-dcompose.yml
 
 ```
 ansible-palybook playbook-dcompose.yml
