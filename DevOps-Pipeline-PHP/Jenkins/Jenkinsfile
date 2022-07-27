@@ -13,7 +13,7 @@ pipeline {
         stage('Build & push Dockerfile') {
             steps {
                 sh """
-                cd DevOps-Pipeline/laravel-app
+                cd DevOps-Pipeline-PHP/laravel-app
                 ansible-playbook playbook.yml
                 """
             }
@@ -21,7 +21,7 @@ pipeline {
         stage('Run Dockercompose playbook') {
             steps {
                 sh """
-                cd DevOps-Pipeline/laravel-app
+                cd DevOps-Pipeline-PHP/laravel-app
                 ansible-playbook playbook-dcompose.yml 
                 """
             }
