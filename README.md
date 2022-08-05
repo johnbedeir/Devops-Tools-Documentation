@@ -1,6 +1,6 @@
 ### Hi there, I'm Johny - [JohnyDev][website] 👋
 
-## I'm a Senior DevOps Engineer!!
+## I'm a Site Reliability Engineer!!
 
 - 🔭 I launched Devops courses on my Youtube Channel: [Become A Devops Engineer!][course]!
 - 🌱 I’m currently learning everything 🤣
