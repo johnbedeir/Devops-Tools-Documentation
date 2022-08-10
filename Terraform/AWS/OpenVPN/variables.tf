@@ -8,6 +8,6 @@ variable "ami" {
   default = "ami-0764964fdfe99bc31"
 }
 
-# variable "public_key" {
-#   description = "ssh public key"
-# }
+variable "public_key" {
+  description = "ssh public key"
+}
