@@ -7,3 +7,5 @@
 ## Step 3: Update kubeconfig with the cluster name
 
 ## Step 4: Deploy our app
+
+## Step 5: Reveal APP URL
