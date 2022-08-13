@@ -1,38 +1,36 @@
 pipeline {
     agent any
 
-    // stages {
+    stages {
 
-    //     stage('Create Cluster') {
-    //         steps {
-    //           // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
-    //             withCredentials([[
-    //               $class: 'AmazonWebServicesCredentialsBinding',
-    //               credentialsId: "aws-credentials",
-    //               accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-    //               secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-    //               ]]) {
-    //               sh "eksctl create cluster --name python-cluster --region eu-central-1 --nodes-min=3"
-    //             }
-    //         }
-    //     }
-
-        stages {
-            stage('Update Kubeconfig') {
-                steps {
-                  // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
-                    withCredentials([[
-                      $class: 'AmazonWebServicesCredentialsBinding',
-                      credentialsId: "aws-credentials",
-                      accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-                      secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-                      ]]) {
-                      sh """
-                      aws eks update-kubeconfig --name python-cluster
-                      """
-                    }
+        stage('Create Cluster') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh "eksctl create cluster --name python-cluster --region eu-central-1 --nodes-min=3"
                 }
             }
+        }
+
+        stage('Update Kubeconfig') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  aws eks update-kubeconfig --name python-cluster
+                  """
+                }
+        }
         
         stage('Create Namespace') {
             steps {
@@ -47,5 +45,23 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy App') {
+            steps {
+                script{
+                    build job: 'DEPLOY_APP',
+                    parameters: [
+                    [ $class: 'StringParameterValue', name: 'DEPLOYMENT']    
+                    ]
+                    
+                } 
+            }
+        }
     }
 }
+
+
+
+aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/i3j7y9e4
+
+docker push public.ecr.aws/i3j7y9e4/python-app:latest
