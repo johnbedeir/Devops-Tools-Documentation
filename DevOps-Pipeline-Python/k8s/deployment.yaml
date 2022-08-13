@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: survey-app
-        image: public.ecr.aws/i3j7y9e4/python-app:latest
+        image: triple3a/survey-app-img:latest
         ports:
         - containerPort: 8000
