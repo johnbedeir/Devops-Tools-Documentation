@@ -7,7 +7,7 @@
     ignore_errors: yes
   
   - name: remove used image
-    command: docker rmi devops-pipeline-python_app
+    command: docker rmi python_app
     ignore_errors: yes
     
   - name: build the existing dockerfile & run container
