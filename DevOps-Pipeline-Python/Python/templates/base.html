@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Polling {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand navbar-dark bg-dark mb-5">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarsExample02">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'polls:index' %}">Survey App</a>
+            </li>
+            
+            </ul>
+        </div>
+        </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+            {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

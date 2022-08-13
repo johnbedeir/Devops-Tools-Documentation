@@ -1,0 +1,14 @@
+---
+- name: "Automate docker-compose using Ansible"
+  hosts: localhost
+  tasks:
+  - name: stop & remove running container
+    command: docker-compose down
+    ignore_errors: yes
+  
+  - name: remove used image
+    command: docker rmi python_app
+    ignore_errors: yes
+    
+  - name: build the existing dockerfile & run container
+    command: docker-compose up -d
