@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	}
+    stages {
+        // We will use the following stage to let Jenkins be able to run docker push command to our dockerhub 
+        stage('Docker Login') {
+            steps {
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+        // Here we will run the playbook that will build our Dockerfile and push the new image to dockerhub so we can have a fresh build before deployment 
+        stage('Build & push Dockerfile') {
+            steps {
+              sh """
+              cd DevOps-Pipeline-Python/Python
+              ansible-playbook playbook.yml
+              """
+            }
+        }
+
+        stage('Update Kubeconfig') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  aws eks update-kubeconfig --name python-cluster
+                  """
+                }
+            }
+        }
+
+        stage('Deploy App') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  cd DevOps-Pipeline-Python/Python/k8s
+                  kubectl -n python-app apply -f deployment.yaml
+                  kubectl -n python-app apply -f services.yaml
+                  """
+                }
+            }
+        }
+    }
+}
