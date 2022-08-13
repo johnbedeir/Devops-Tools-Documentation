@@ -9,7 +9,7 @@ spec:
   selector:
     app: survey-app
 # ClusterIP (default), LoadBalancer (works on cloud), NodePort (most used)
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 8000 
     targetPort: 8000
