@@ -51,6 +51,11 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 sudo chmod 666 /var/run/docker.sock
+#Install AWS-CLI
+echo "--------------------Installing AWS-CLI--------------------"
+sudo apt-get install zip -y
+sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip
+sudo ./aws/install
 #Install EksCtl
 echo "--------------------Installing EKS-CTL--------------------"
 sudo curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
@@ -65,6 +70,7 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 echo "--------------------Installing Minikube--------------------"
 sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
+minikube start
 #Install K9s
 echo "--------------------Installing K9s--------------------"
 wget https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz
@@ -73,7 +79,6 @@ sudo install -m 755 k9s /usr/local/bin
 #Add docker to sudo group
 echo "--------------------Add Docker to Sudo group--------------------"
 sudo groupadd docker && sudo usermod -aG docker $USER && newgrp docker && sudo chmod 777 /var/run/docker.sock
-
 #Show Jenkins Password
 echo "--------------------Jenkins Password--------------------"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
