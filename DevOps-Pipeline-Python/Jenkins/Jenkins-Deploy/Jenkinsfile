@@ -4,7 +4,7 @@ pipeline {
     parameters {
         string(name: 'DEPLOYMENT')
     }
-    
+
     stages {
 
       stage('Update Kubeconfig') {
@@ -50,9 +50,7 @@ pipeline {
                 accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
-                sh """
-                aws elb describe-load-balancers | grep DNSName
-                """
+                sh "aws elb describe-load-balancers | grep DNSName"
               }
           }
       }
