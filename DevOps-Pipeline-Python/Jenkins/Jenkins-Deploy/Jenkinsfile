@@ -1,60 +1,60 @@
 pipeline {
     agent any
 
-    stages {
-
     parameters {
         string(name: 'DEPLOYMENT')
     }
+    
+    stages {
 
-    stage('Update Kubeconfig') {
-        steps {
-          // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
-            withCredentials([[
-              $class: 'AmazonWebServicesCredentialsBinding',
-              credentialsId: "aws-credentials",
-              accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-              secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-              ]]) {
-              sh """
-              aws eks update-kubeconfig --name python-cluster
-              """
-            }
-        }
-    }
+      stage('Update Kubeconfig') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh """
+                aws eks update-kubeconfig --name python-cluster
+                """
+              }
+          }
+      }
 
-    stage('Deploy App') {
-        steps {
-          // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
-            withCredentials([[
-              $class: 'AmazonWebServicesCredentialsBinding',
-              credentialsId: "aws-credentials",
-              accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-              secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-              ]]) {
-              sh """
-              cd DevOps-Pipeline-Python/k8s
-              kubectl -n python-app apply -f deployment.yaml
-              kubectl -n python-app apply -f services.yaml
-              """
-            }
-        }
-    }
+      stage('Deploy App') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh """
+                cd DevOps-Pipeline-Python/k8s
+                kubectl -n python-app apply -f deployment.yaml
+                kubectl -n python-app apply -f services.yaml
+                """
+              }
+          }
+      }
 
-    stage('Reveal APP URL') {
-        steps {
-          // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
-            withCredentials([[
-              $class: 'AmazonWebServicesCredentialsBinding',
-              credentialsId: "aws-credentials",
-              accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-              secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-              ]]) {
-              sh """
-              aws elb describe-load-balancers | grep DNSName
-              """
-            }
-        }
-    }
-    }
+      stage('Reveal APP URL') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh """
+                aws elb describe-load-balancers | grep DNSName
+                """
+              }
+          }
+      }
+  }
 }
