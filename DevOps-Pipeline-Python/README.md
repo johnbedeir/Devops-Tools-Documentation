@@ -57,5 +57,3 @@ It should look something like this (use the application port to access your app,
 ```
 a0e6e955cb648xxxxxxxxxxxx-xxxxxx025.REGION.elb.amazonaws.com:8000
 ```
-
-test
