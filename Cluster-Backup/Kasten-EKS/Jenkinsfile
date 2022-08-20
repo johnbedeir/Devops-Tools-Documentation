@@ -14,8 +14,9 @@ pipeline {
                 ]]) {
                 sh """
                 kubectl create namespace kasten-io
-                """
                 helm repo add kasten https://charts.kasten.io/
+                """
+                
               }
           }
       }
