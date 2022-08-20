@@ -37,6 +37,7 @@ pipeline {
                 kubectl -n python-app apply -f deployment.yaml
                 kubectl -n python-app apply -f services.yaml
                 """
+                sleep(time: 120, unit: "SECONDS")
               }
           }
       }
