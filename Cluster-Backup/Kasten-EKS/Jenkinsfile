@@ -12,7 +12,9 @@ pipeline {
                 accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
-                sh "kubectl create namespace kasten-io"
+                sh """
+                kubectl create namespace kasten-io
+                """
                 helm repo add kasten https://charts.kasten.io/
               }
           }
