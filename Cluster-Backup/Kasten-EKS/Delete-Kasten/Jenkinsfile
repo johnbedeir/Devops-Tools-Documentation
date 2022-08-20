@@ -62,9 +62,9 @@ pipeline {
                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
                 sh """
-                kubectl get namespace kasten-io -o json > ns.json
-                sed -i '/"kubernetes"/d' ./ns.json
-                kubectl replace --raw "/api/v1/namespaces/kasten-io/finalize" -f ./ns.json
+                kubectl get namespace kasten-io -o json > ns.json || true
+                sed -i '/"kubernetes"/d' ./ns.json || true
+                kubectl replace --raw "/api/v1/namespaces/kasten-io/finalize" -f ./ns.json || true
                 """
                 sleep(time: 30, unit: "SECONDS")
               }
