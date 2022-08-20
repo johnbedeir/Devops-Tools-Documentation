@@ -46,8 +46,27 @@ pipeline {
                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
                 sh """
-                kubectl delete namespace kasten-io
+                timeout 5s kubectl delete namespace kasten-io
                 """
+              }
+          }
+      }
+
+      stage('Completely-RM-Kasten') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh """
+                kubectl get namespace $NAMESPACE -o json > ns.json
+                sed -i '/"kubernetes"/d' ./ns.json
+                kubectl replace --raw "/api/v1/namespaces/kasten-io/finalize" -f ./ns.json
+                """
+                sleep(time: 30, unit: "SECONDS")
               }
           }
       }
