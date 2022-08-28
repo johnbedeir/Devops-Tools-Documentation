@@ -3,6 +3,36 @@ pipeline {
 
     stages {
 
+      stage('Create Cluster') {
+        steps {
+          // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+            withCredentials([[
+              $class: 'AmazonWebServicesCredentialsBinding',
+              credentialsId: "aws-credentials",
+              accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+              secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+              ]]) {
+              sh "eksctl create cluster --name kasten-cluster --region eu-central-1 --nodes-min=2"
+            }
+        }
+      }
+
+      stage('Update Kubeconfig') {
+        steps {
+          // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+            withCredentials([[
+              $class: 'AmazonWebServicesCredentialsBinding',
+              credentialsId: "aws-credentials",
+              accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+              secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+              ]]) {
+              sh """
+              aws eks update-kubeconfig --name kasten-cluster
+              """
+            }
+        }
+      }
+
       stage('Kasten Namespace') {
           steps {
             // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
@@ -53,7 +83,7 @@ pipeline {
               }
           }
       }
-      
+
       stage('Set External Gateway') {
           steps {
             // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
