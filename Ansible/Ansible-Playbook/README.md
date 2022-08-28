@@ -4,7 +4,7 @@
 
 This Playbook file is used to automate building docker image, since we are using a lot of commands to build, remove, and push images also to stop, remove and run containers so this file contains all the commands that you are going to use while testing building, pushing an image and run container.
 
-\***\*The file should do the following:\*\***
+**The file should do the following:**
 
 1. Stop the current running container if exist
 2. Remove the stopped container if exist
