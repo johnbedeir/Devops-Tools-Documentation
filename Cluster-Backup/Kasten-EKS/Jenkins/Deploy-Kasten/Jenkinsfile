@@ -1,0 +1,90 @@
+pipeline {
+    agent any
+
+    stages {
+
+      stage('Kasten Namespace') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh """
+                kubectl create namespace kasten-io
+                helm repo add kasten https://charts.kasten.io/
+                """
+                
+              }
+          }
+      }
+
+      stage('Deploy Kasten') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh "helm install k10 kasten/k10 --namespace kasten-io"
+                sleep(time: 60, unit: "SECONDS")
+              }
+          }
+      }
+
+      stage('Update Helm Repo') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh """
+                helm repo update && \
+                  helm get values k10 --output yaml --namespace=kasten-io > k10_val.yaml && \
+                  helm upgrade k10 kasten/k10 --namespace=kasten-io -f k10_val.yaml
+                """
+              }
+          }
+      }
+      
+      stage('Set External Gateway') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh """
+                helm upgrade k10 kasten/k10 --namespace=kasten-io \
+                    --reuse-values \
+                    --set externalGateway.create=true \
+                    --set auth.tokenAuth.enabled=true
+                """
+              }
+          }
+      }
+
+      stage('Port Forward') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh "aws elb describe-load-balancers | grep DNSName"
+              }
+          }
+      }
+  }
+}
