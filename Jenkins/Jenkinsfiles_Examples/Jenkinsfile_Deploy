@@ -1,0 +1,61 @@
+//This Jenkinsfile is made to run Kubernetes Manifest files for deploying the application then run command to get the application URL 
+
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'DEPLOYMENT')
+    }
+
+    stages {
+
+      stage('Update Kubeconfig') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh """
+                aws eks update-kubeconfig --name ${CLUSTER_NAME}
+                """
+              }
+          }
+      }
+
+      stage('Deploy App') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh """
+                cd DevOps-Pipeline-Python/k8s
+                kubectl -n ${NAMESPACE} apply -f ${DEPLOYMENT.YAML}
+                kubectl -n ${NAMESPACE} apply -f ${SERVICES.YAML}
+                """
+                sleep(time: 120, unit: "SECONDS")
+              }
+          }
+      }
+
+      stage('Reveal APP URL') {
+          steps {
+            // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+              withCredentials([[
+                $class: 'AmazonWebServicesCredentialsBinding',
+                credentialsId: "aws-credentials",
+                accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                ]]) {
+                sh "aws elb describe-load-balancers | grep DNSName"
+              }
+          }
+      }
+  }
+}

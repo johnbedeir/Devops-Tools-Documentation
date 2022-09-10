@@ -1,0 +1,100 @@
+// This Jenkinsfile is to Deploy Multiple Applications  
+
+pipeline {
+    agent any
+
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	}
+    stages {
+
+        stage('Deploy Prometheus') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  cd ${K8S_DIR}
+                  kubectl -n ${NAMESPACE} apply -f ${YAML_FILE}
+                  kubectl -n ${NAMESPACE} apply -f ${YAML_FILE}
+                  kubectl -n ${NAMESPACE} apply -f ${YAML_FILE}
+                  kubectl -n ${NAMESPACE} apply -f ${YAML_FILE}
+                  """
+                }
+            }
+        }
+        
+        stage('Deploy Grafana') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  cd ${K8S_DIR}
+                  kubectl -n ${NAMESPACE} apply -f ${YAML_FILE}
+                  kubectl -n ${NAMESPACE} apply -f ${YAML_FILE}
+                  kubectl -n ${NAMESPACE} apply -f ${YAML_FILE}
+                  """
+                }
+            }
+        }
+
+        stage('Docker Login') {
+            steps {
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+
+        stage('Build & push Dockerfile') {
+            steps {
+              sh """
+              cd ${APPLICATION_DIR}
+              ansible-playbook ${PLAYBOOK_FILE}
+              """
+            }
+        }
+
+        stage('Update Kubeconfig') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  aws eks update-kubeconfig --name ${CLUSTER_NAME}
+                  """
+                }
+            }
+        }
+
+        stage('Deploy App') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  cd ${K8S_DIR}
+                  kubectl -n ${NAMESPACE} apply -f ${YAML_FILE}
+                  kubectl -n ${NAMESPACE} apply -f ${YAML_FILE}
+                  kubectl -n ${NAMESPACE} apply -f ${YAML_FILE}
+                  """
+                }
+            }
+        }
+    }
+}
