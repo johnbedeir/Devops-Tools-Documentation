@@ -1,0 +1,64 @@
+//This Jenkinsfile is made to use AWS Credentials that will be added using "AWS CloudBees" Plugin and create Kubernetes cluster with a namespace and then run another Jenkinsfile to Deploy the Application
+
+pipeline {
+    agent any
+
+    stages {
+
+      stage('Create Cluster') {
+        steps {
+          // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+            withCredentials([[
+              $class: 'AmazonWebServicesCredentialsBinding',
+              credentialsId: "aws-credentials",
+              accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+              secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+              ]]) {
+              sh "eksctl create cluster --name ${CLUSTER_NAME} --region ${AWS_REGION} --nodes-min=3"
+            }
+        }
+      }
+
+      stage('Update Kubeconfig') {
+        steps {
+          // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+            withCredentials([[
+              $class: 'AmazonWebServicesCredentialsBinding',
+              credentialsId: "aws-credentials",
+              accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+              secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+              ]]) {
+              sh """
+              aws eks update-kubeconfig --name ${CLUSTER_NAME}
+              """
+            }
+        }
+      }
+      
+      stage('Create Namespace') {
+        steps {
+          // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+            withCredentials([[
+              $class: 'AmazonWebServicesCredentialsBinding',
+              credentialsId: "aws-credentials",
+              accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+              secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+              ]]) {
+              sh "kubectl create namespace ${NAMESPACE}"
+            }
+        }
+      }
+
+      stage('Deploy App') {
+        steps {
+            script{
+                build job: 'DEPLOY_APP',
+                parameters: [
+                [ $class: 'StringParameterValue', name: 'DEPLOYMENT']    
+                ]
+                
+            } 
+        } 
+      }
+    }
+}

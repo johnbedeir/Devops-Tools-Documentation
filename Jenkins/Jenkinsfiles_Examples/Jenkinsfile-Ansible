@@ -1,3 +1,5 @@
+// This Jenkinsfile is to login with Docker Credentials and run ansible playbook file that will run docker commands to build image, run container and push image to dockerhub  
+
 //Pipeline start here
 pipeline {
     agent any
@@ -20,7 +22,7 @@ pipeline {
             steps {
               // Run mutliple commands
               sh """
-              cd Kubernetes/comingsoon/
+              cd ${APPLICATION_DIR}
               ansible-playbook playbook.yml
               """
             }
