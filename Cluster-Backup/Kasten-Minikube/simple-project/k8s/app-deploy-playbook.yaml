@@ -1,0 +1,32 @@
+---
+- name: "deploy app with ansible"
+  hosts: localhost
+  tasks:
+    - name: Delete simple-project deployment if exists
+      command: kubectl delete deploy comingsoon-page-img-deployment -n simple-project
+      ignore_errors: yes
+
+    - name: Delete simple-project service if exists
+      command: kubectl delete service comingsoon-page -n simple-project
+      ignore_errors: yes
+
+    - name: Delete namespace if exists
+      command: kubectl delete namespace simple-project
+      ignore_errors: yes
+
+    - name: Create new namespace
+      command: kubectl create ns simple-project
+      ignore_errors: yes
+
+    - name: Kubernetes deployment
+      command: kubectl apply -f deployment.yaml
+
+    - name: Kubernetes services
+      command: kubectl apply -f services.yaml
+
+    - name: Reveal application URL
+      command: minikube service -n simple-project comingsoon-page --url
+      register: url_output
+
+    - debug:
+        var: url_output.stdout_lines
