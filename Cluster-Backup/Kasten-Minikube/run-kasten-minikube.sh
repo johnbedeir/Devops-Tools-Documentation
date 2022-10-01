@@ -23,6 +23,10 @@ then
     # Delete kasten namespace 
     if [[ $n = d ]]; then
 
+        #Delete helm repository
+        echo "--------------------Delete Helm Repo--------------------"
+        helm repo remove kasten
+
         #Delete deployments
         echo "--------------------Delete Deployment--------------------"
         kubectl delete deploy --all -n $NAMESPACE || true
@@ -75,6 +79,10 @@ then
       echo "--------------------Add Kasten Helm Repo--------------------"
       helm repo add kasten https://charts.kasten.io/ || true
 
+      #Update Helm Repositoies
+      echo "--------------------Update Helm Repo--------------------"
+      helm repo update
+
       #Install kasten with helm and port forward
       echo "--------------------Install Kasten--------------------"
       helm install k10 kasten/k10 --namespace=$NAMESPACE || true
@@ -109,6 +117,10 @@ then
     echo "If kasten-io namespace not exist press (y) to create it, or (d) to delete it"
     read n 
     if [[ $n = d ]]; then
+
+        #Delete helm repository
+        echo "--------------------Delete Helm Repo--------------------"
+        helm repo remove kasten
 
         #Delete deployments
         echo "--------------------Delete Deployment--------------------"
@@ -160,6 +172,10 @@ then
       #Add Helm Repo
       echo "--------------------Add Kasten Helm Repo--------------------"
       helm repo add kasten https://charts.kasten.io/
+
+      #Update Helm Repositoies
+      echo "--------------------Update Helm Repo--------------------"
+      helm repo update
 
       #Install kasten with helm and port forward
       echo "--------------------Install Kasten--------------------"

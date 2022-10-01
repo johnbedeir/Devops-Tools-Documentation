@@ -1,0 +1,20 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: comingsoon-page-img-deployment 
+  namespace: simple-project
+spec:
+  selector:
+    matchLabels:
+      app: comingsoon-page
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: comingsoon-page
+    spec:
+      containers:
+      - name: comingsoon-page
+        image: triple3a/comingsoon-page:latest
+        ports:
+        - containerPort: 80
