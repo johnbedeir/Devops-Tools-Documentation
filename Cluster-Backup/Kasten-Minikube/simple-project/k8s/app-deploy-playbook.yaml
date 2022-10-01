@@ -16,7 +16,6 @@
 
     - name: Create new namespace
       command: kubectl create ns simple-project
-      ignore_errors: yes
 
     - name: Kubernetes deployment
       command: kubectl apply -f deployment.yaml
