@@ -34,27 +34,8 @@ resource "aws_iam_user_policy" "k10-user_policy" {
         {
             "Sid": "VisualEditor0",
             "Effect": "Allow",
-            "Action": [
-                "s3:ListStorageLensConfigurations",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:GetAccessPoint",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:ListAllMyBuckets",
-                "s3:ListAccessPoints",
-                "s3:PutAccessPointPublicAccessBlock",
-                "s3:ListJobs",
-                "s3:PutStorageLensConfiguration",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:CreateJob"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "VisualEditor1",
-            "Effect": "Allow",
             "Action": "s3:*",
-            "Resource": "arn:aws:s3:::k10-buckup"
+            "Resource": "*"
         }
     ]
   })
