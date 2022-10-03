@@ -7,7 +7,7 @@ spec:
   selector:
     app: comingsoon-page
 # ClusterIP (default), LoadBalancer (works on cloud), NodePort (most used)
-  type: NodePort
+  type: LoadBalancer
   ports:
   - protocol: TCP
     port: 80 
