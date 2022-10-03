@@ -1,0 +1,21 @@
+---
+- name: "Build container with ansible"
+  hosts: localhost
+  tasks:
+    - name: stop running container
+      command: docker stop comingsoon-page
+      ignore_errors: yes
+
+    - name: remove stopped container
+      command: docker rm comingsoon-page
+      ignore_errors: yes
+
+    - name: remove used image
+      command: docker rmi triple3a/comingsoon-page:latest
+      ignore_errors: yes
+
+    - name: build docker image from dockerfile
+      command: docker build -t triple3a/comingsoon-page:latest .
+
+    - name: push image to dockerhub
+      command: docker push triple3a/comingsoon-page:latest

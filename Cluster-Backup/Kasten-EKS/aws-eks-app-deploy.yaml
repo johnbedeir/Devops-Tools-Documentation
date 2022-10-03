@@ -1,0 +1,18 @@
+---
+- name: "Create EKS and deploy simple app "
+  hosts: localhost
+  tasks:
+    - name: Create cluster
+      command: eksctl create cluster --name simple-project-cluster --nodes-min=2
+
+    - name: Update kubeconfig
+      command: aws eks update-kubeconfig --name simple-project-cluster
+
+    - name: Create new namespace
+      command: kubectl create ns simple-project
+
+    - name: Kubernetes deployment
+      command: kubectl apply -f simple-project/k8s/deployment.yaml
+
+    - name: Kubernetes services
+      command: kubectl apply -f simple-project/k8s/services.yaml

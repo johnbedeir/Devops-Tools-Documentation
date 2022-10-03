@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: comingsoon-page
+  namespace: simple-project
+spec:
+  selector:
+    app: comingsoon-page
+# ClusterIP (default), LoadBalancer (works on cloud), NodePort (most used)
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 80 
+    targetPort: 80 

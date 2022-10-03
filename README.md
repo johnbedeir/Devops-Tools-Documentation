@@ -8,6 +8,8 @@
 - 🥅 2022 Goals: Jump to the next level DevSecOps & SRE
 <!-- - ⚡ Fun fact: I love to draw and play guitar / drums -->
 
+![alt text](youtube.png)
+
 ### Connect with me:
 
 [<img alt="johnydev.com" src="https://img.icons8.com/dusk/64/000000/domain.png"/>][website]
