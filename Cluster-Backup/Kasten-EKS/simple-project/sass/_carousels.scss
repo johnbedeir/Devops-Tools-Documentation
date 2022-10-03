@@ -1,0 +1,55 @@
+/******************************************************************************
+  Carousels
+*******************************************************************************/
+.carousel-box {
+  .carousel {
+    .owl-item {
+      backface-visibility: inherit;
+    }
+  }
+  .carousel-controls {
+    height: 11px;
+    margin-top: 40px;
+    text-align: center;
+    @media (max-width: $media-xs) {
+      margin-top: 20px;
+    }
+    
+    .nav-item {
+      color: #111;
+      border: 0 none;
+      display: inline-block;
+      font-size: 16px;
+      height: 11px;
+      line-height: 11px;
+      margin: 0 28px;
+      text-align: left;
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      vertical-align: top;
+      width: 10px;
+      
+      &:hover {
+        svg {
+          -webkit-transform: translate3d(-3px,0,0);
+          transform: translate3d(-3px,0,0);
+        }
+      }
+      svg {
+        height: 11px;
+        -webkit-transition: -webkit-transform .2s;
+        transition: transform .2s;
+        vertical-align: top;
+        width: 10px;
+      }
+      &.next {
+        &:hover {
+          svg {
+            -webkit-transform: translate3d(3px,0,0);
+            transform: translate3d(3px,0,0);
+          }
+        }
+      }
+    }
+  }
+}
