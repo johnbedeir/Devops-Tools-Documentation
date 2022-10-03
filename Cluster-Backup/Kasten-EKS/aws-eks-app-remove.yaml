@@ -1,0 +1,19 @@
+---
+- name: "Delete deployment and eks"
+  hosts: localhost
+  tasks:
+    - name: Delete simple-project deployment if exists
+      command: kubectl delete deploy comingsoon-page-img-deployment -n simple-project
+      ignore_errors: yes
+
+    - name: Delete simple-project service if exists
+      command: kubectl delete service comingsoon-page -n simple-project
+      ignore_errors: yes
+
+    - name: Delete namespace if exists
+      command: kubectl delete namespace simple-project
+      ignore_errors: yes
+
+    - name: Delete Cluster if exists
+      command: eksctl delete cluster --name simple-project-cluster --region eu-central-1
+      ignore_errors: yes
