@@ -25,45 +25,55 @@
 <p align="left">
 <img  alt="Terminal" width="30px" src="https://www.kindpng.com/picc/m/153-1538018_terminal-icon-hd-png-download.png" />
 <img  alt="ubuntu" width="35px" src="https://img.icons8.com/color/48/000000/ubuntu--v1.png"/>
-<img  alt="redhat" width="35px" src="https://img.icons8.com/color/48/000000/red-hat.png"/>
-<img  alt="debian" width="35px" src="https://img.icons8.com/color/48/000000/debian.png"/>
+<img  alt="redhat" width="35px" src="https://johnydev.com/img/icons/redhat.png"/>
+<img  alt="debian" width="35px" src="https://johnydev.com/img/icons/debian.png"/>
 <img  alt="centos" width="35px" src="https://img.icons8.com/color/48/000000/centos.png"/>
 <img  alt="Rasp" width="35px" src="https://img.icons8.com/color/48/000000/raspberry-pi.png"/>
 <img  alt="Visual Studio Code" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" />
-<img  alt="HTML5" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
-<img  alt="CSS3" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
-<img  alt="JavaScript" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" />
+<img  alt="HTML5" width="30px" src="https://johnydev.com/img/icons/html.png" />
+<img  alt="CSS3" width="30px" src="https://johnydev.com/img/icons/css.png" />
+<img  alt="JavaScript" width="30px" src="https://johnydev.com/img/icons/jsicon.png" />
 <img  alt="TypeScript" width="30px" src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" />
-<img  alt="Python" width="35px" src="https://img.icons8.com/color/48/000000/python--v1.png"/>
+<img  alt="Python" width="35px" src="https://johnydev.com/img/icons/python.png"/>
 <img  alt="nginx" width="35px" src="https://img.icons8.com/color/48/000000/nginx.png"/>
-<img  alt="Git" width="30px" src="https://iconape.com/wp-content/png_logo_vector/git-icon.png" />
+<img  alt="Git" width="35px" src="https://johnydev.com/img/icons/git.png" />
 <img  alt="GitHub" width="30px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
-<img  alt="GitLab" width="30px" src="https://brandslogos.com/wp-content/uploads/thumbs/gitlab-logo-vector.svg" />
-<img  alt="BitBucket" width="30px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bitbucket-blue-logomark-only.svg/1200px-Bitbucket-blue-logomark-only.svg.png" />
+<img  alt="GitLab" width="30px" src="https://johnydev.com/img/icons/gitlab.png" />
+<img  alt="BitBucket" width="30px" src="https://johnydev.com/img/icons/bitbucket.png" />
 <img  alt="Vagrant" width="30px" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/000000/external-vagrant-an-open-source-software-product-for-building-and-maintaining-portable-virtual-software-logo-shadow-tal-revivo.png"/>
-<img  alt="Docker" width="30px" src="https://img.icons8.com/fluency/48/000000/docker.png"/>
+<img  alt="Docker" width="30px" src="https://johnydev.com/img/icons/docker.png"/>
 <img  alt="DockerCompose" width="30px" src="https://p1c2u.gallerycdn.vsassets.io/extensions/p1c2u/docker-compose/0.3.5/1565165856720/Microsoft.VisualStudio.Services.Icons.Default"/>
-<img  alt="Docker" width="30px" src="https://cdn.worldvectorlogo.com/logos/portainer.svg"/>
+<img  alt="portainer" width="100px" src="https://johnydev.com/img/icons/portainer.png"/>
+<img  alt="ngxproxy" width="30px" src="https://nginxproxymanager.com/icon.png"/>
 <img  alt="Ansible" width="30px" src="https://img.icons8.com/color/48/000000/ansible.png"/>
-<img  alt="Kubernetes" width="30px" src="https://img.icons8.com/color/48/000000/kubernetes.png"/>
-<img  alt="Helm" width="30px" src="https://cncf-branding.netlify.app/img/projects/helm/icon/color/helm-icon-color.png"/>
-<img  alt="AWS" width="35px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png" />
-<img  alt="GCP" width="30px" src="https://lirp.cdn-website.com/aa0ef369/dms3rep/multi/opt/google-cloud-icon-400w.png" />
-<img  alt="Azure" width="30px" src="https://img.icons8.com/fluency/48/000000/azure-1.png"/>
-<img  alt="DO" width="25px" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/000000/external-digital-ocean-a-cloud-infrastructure-with-data-centers-worldwide-logo-color-tal-revivo.png"/>
-<img  alt="Terraform" width="30px" src="https://img.icons8.com/color/48/000000/terraform.png"/>
-<img  alt="Pulumi" width="30px" src="https://www.pulumi.com/logos/brand/avatar-on-white.svg"/>
-<img  alt="Jenkins" width="35px" src="https://img.icons8.com/color/48/000000/jenkins.png"/>
+<img  alt="Kubernetes" width="30px" src="https://johnydev.com/img/icons/kub.png"/>
+<img  alt="Helm" width="30px" src="https://johnydev.com/img/icons/helm.png"/>
+<img  alt="AWS" width="35px" src="https://johnydev.com/img/icons/aws.png" />
+<img  alt="GCP" width="30px" src="https://johnydev.com/img/icons/google.png" />
+<img  alt="Azure" width="30px" src="https://johnydev.com/img/icons/azure.png"/>
+<img  alt="DO" width="25px" src="https://johnydev.com/img/icons/digitalocean.png"/>
+<img  alt="Terraform" width="30px" src="https://johnydev.com/img/icons/terraform.png"/>
+<img  alt="Pulumi" width="100px" src="https://johnydev.com/img/icons/pulumi.svg"/>
+<img  alt="Jenkins" width="35px" src="https://johnydev.com/img/icons/jenkins.png"/>
+<img  alt="gilap-cicd" width="35px" src="https://johnydev.com/img/icons/runner.png"/>
+<img  alt="heroku" width="100px" src="https://johnydev.com/img/icons/heroku.png"/>
 <img  alt="DevOps" width="35px" src="https://img.icons8.com/color/48/000000/infinity-large.png"/>
-<img  alt="JFrog" width="35px" src="https://support.jfrog.com/resource/1547111714000/BR_JFC_Resource/img/jfrog-logo.png"/>
-<img  alt="Prometheus" width="35px" src="https://img.icons8.com/color/48/000000/prometheus-app.png"/>
-<img  alt="Grafana" width="35px" src="https://img.icons8.com/color/48/000000/grafana.png"/>
+<img  alt="JFrog" width="45px" src="https://johnydev.com/img/icons/jfrog.png"/>
+<img  alt="elasticsearch" width="35px" src="https://johnydev.com/img/icons/elastic.png"/>
+<img  alt="Prometheus" width="35px" src="https://johnydev.com/img/icons/prometheus.png"/>
+<img  alt="Grafana" width="30px" src="https://johnydev.com/img/icons/grafana.png"/>
+<img  alt="loki" width="30px" src="https://johnydev.com/img/icons/loki.png"/>
 <img  alt="DataDog" width="35px" src="https://www.drupal.org/files/datadog-logo-purple.png"/>
-<img  alt="ArgoCD" width="35px" src="https://cncf-branding.netlify.app/img/projects/argo/icon/color/argo-icon-color.png"/>
-<img  alt="FluxCD" width="35px" src="https://cncf-branding.netlify.app/img/projects/flux/icon/color/flux-icon-color.png"/>
+<img  alt="ArgoCD" width="35px" src="https://johnydev.com/img/icons/argo.png"/>
+<img  alt="FluxCD" width="35px" src="https://johnydev.com/img/icons/flux.png">
 <img  alt="Vault" width="30px" src="https://cdn.worldvectorlogo.com/logos/vault-1.svg"/>
+<img  alt="secrethub" width="30px" src="https://johnydev.com/img/icons/secrethub.png"/>
+<img  alt="gitcrypt" width="100px" src="https://johnydev.com/img/icons/git-secret-big.png"/>
 <img  alt="K10" width="30px" src="https://www.kasten.io/hubfs/Kasten_January2020/Images/kasten-logo-stacked.svg"/>
-<img  alt="K10" width="30px" src="https://seeklogo.com/images/H/harness-icon-logo-F696561970-seeklogo.com.png"/>
+<img  alt="harness" width="30px" src="https://johnydev.com/img/icons/harness.png"/>
+<img  alt="werf" width="30px" src="https://johnydev.com/img/icons/werf.png"/>
+<img  alt="tekton" width="30px" src="https://johnydev.com/img/icons/tekton.png"/>
+<img  alt="garden-io" width="30px" src="https://johnydev.com/img/icons/garden.png"/>
 <p>
 
 ---
@@ -106,8 +116,6 @@
 [course]: https://www.youtube.com/channel/UCxvd-DdyFsE_07lCa4kRINA
 [facebook]: https://www.facebook.com/JohnyDev-293895207431248
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=johnbedeir&show_icons=true&theme=tokyonight)
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=johnbedeir&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=johnbedeir&show_icons=true&theme=tokyonight)&nbsp;[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=johnbedeir&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
 ![footer](https://capsule-render.vercel.app/api?type=wave&color=auto&height=200&section=footer&text=Now%20Use%20me!&fontSize=90&descAlign=20)
