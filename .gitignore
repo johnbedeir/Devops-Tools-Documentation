@@ -23,3 +23,8 @@ __pycache__
 .env
 
 *.sqlite3
+
+token.txt
+kubectl
+k10primer.yaml
+ns.json
