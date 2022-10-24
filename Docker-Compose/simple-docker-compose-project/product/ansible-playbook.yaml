@@ -1,0 +1,27 @@
+---
+- name: "Build & run container with ansible"
+  hosts: localhost
+  tasks:
+    - name: stop running container
+      command: docker stop py-container
+      ignore_errors: yes
+
+    - name: remove stopped container
+      command: docker rm py-container
+      ignore_errors: yes
+
+    # - name: remove used image
+    #   command: docker rmi python-img
+    #   ignore_errors: yes
+
+    # - name: build new image
+    #   command: docker build -t python-img
+
+    - name: run container from python image
+      command: docker run -d --name py-container -p 5003:80 python-img
+
+    - name: create image tag
+      command: docker tag python-img triple3a/test
+
+    - name: push image to dockerhub
+      command: docker push triple3a/test
