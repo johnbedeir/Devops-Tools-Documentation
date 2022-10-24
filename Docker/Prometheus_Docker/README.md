@@ -14,7 +14,7 @@ docker run -d --name prometheus-docker -p 9090:9090 -v prometheus_data:/home/joh
 
 ```
 
-## Access Jenkins from your browser 
+## Access Prometheus from your browser 
 
 ```
 http://localhost:9090
@@ -32,7 +32,7 @@ sudo vim /etc/hosts
 127.0.0.1       prometheus.local.com
 ```
 
-## Access Jenkins using the new domain from your browser 
+## Access Prometheus using the new domain from your browser 
 ```
 http://prometheus.local.com:9090
 ```
