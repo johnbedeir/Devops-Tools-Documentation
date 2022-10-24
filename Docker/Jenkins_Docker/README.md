@@ -37,4 +37,19 @@ sudo vim /etc/hosts
 http://jenkins.local.com:8081
 ```
 
+`If you have jobs from your locally installed jenkins here is how to copy them using:`
 
+### Copy Jenkins jobs from local into the jenkins container
+```
+sudo docker cp /var/jenkins/jobs/ jenkins-docker:/var/jenkins_home/
+```
+
+### Copy from local into container 
+```
+sudo docker cp <full-local-path> <container-name>:<path-inside-container>
+```
+
+### Copy from container into local
+```
+sudo docker cp <container-name>:<path-inside-container> <full-local-path>
+```
