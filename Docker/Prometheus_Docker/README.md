@@ -5,12 +5,12 @@
 ### 1. Run a container named prometheus-docker
 ### 2. Using port 9090
 ### 3. Set presistant volume name to prometheus_data
-### 4. Set promethues to run the locally yaml file into the presistant volume
+### 4. Set promethues to run the locally yaml file into the presistant volume ./prometheus.yml
 ### 5. Create the container from the image prom/prometheus
 
 ```
 
-docker run -d --name prometheus-docker -p 9090:9090 -v prometheus_data:/home/johnydev/Documents/Work/Locally/prometheus.yml prom/prometheus
+docker run -d --name prometheus-docker -p 9090:9090 -v prometheus_data:./prometheus.yml prom/prometheus
 
 ```
 
