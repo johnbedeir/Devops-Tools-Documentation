@@ -1,5 +1,5 @@
 ---
-- name: "Create EKS and deploy simple app "
+- name: "Create EKS and deploy simple app"
   hosts: localhost
   tasks:
     - name: Create cluster
