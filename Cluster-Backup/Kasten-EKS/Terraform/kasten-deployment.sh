@@ -5,10 +5,7 @@ EKS_CLUSTER_NAME=simple-project-cluster
 KASTEN_AWS_ACCESS_KEY=$(terraform output access_key_id)
 KASTEN_AWS_SECRET_KEY=$(terraform output secret_access_key)
 KASTEN_IAM_ARN=$(terraform output user_arn)
-oidc_id=$(aws eks describe-cluster --name ${EKS_CLUSTER_NAME} --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5)
 sa_secret=$(kubectl get serviceaccount k10-k10 -o jsonpath="{.secrets[0].name}" --namespace kasten-io)
-k10_url=$(kubectl get service gateway-ext -n kasten-io | awk '{print $4}')
-token=$(kubectl get secret $sa_secret --namespace kasten-io -ojsonpath="{.data.token}{'\n'}" | base64 --decode > token.txt)
 
 echo "--------------------Deploy the the pre-check tool--------------------"
 curl https://docs.kasten.io/tools/k10_primer.sh | bash
@@ -60,4 +57,4 @@ rm -rf token.txt
 
 #This is going to reveal K82 Token that will be used once we access K10 on browser 
 echo "--------------------Find the K8s Token in token.txt--------------------"
-echo "$token"
+kubectl get secret $sa_secret --namespace kasten-io -ojsonpath="{.data.token}{'\n'}" | base64 --decode > token.txt
