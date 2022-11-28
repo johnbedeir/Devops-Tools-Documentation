@@ -87,8 +87,6 @@ pipeline {
                   ]]) {
                   sh """
                   cd k8s
-                  kubectl -n laravel-app apply -f frontend.yaml
-                  kubectl -n laravel-app apply -f db.yaml
                   kubectl -n laravel-app apply -f playbook-k8s.yaml
                   """
                 }
