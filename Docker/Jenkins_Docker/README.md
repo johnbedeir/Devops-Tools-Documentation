@@ -1,5 +1,7 @@
 # Run Jenkins into Docker container 
 
+<img src="jenkins.png"  width="200" height="250">
+
 ## What this command will do?
 
 ### 1. Run a container named jenkins-docker

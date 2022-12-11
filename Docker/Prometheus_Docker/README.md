@@ -1,5 +1,7 @@
 # Run Prometheus into Docker container 
 
+![alt text](prometheus.png)
+
 ## What this command will do?
 
 ### 1. Run a container named prometheus-docker

@@ -1,6 +1,8 @@
 # Run Yacht into Docker container 
 
-## What this command will do?
+![alt text](yacht.png)
+
+## What this commands will do?
 
 ### 1. Run a container named yacht
 ### 2. Using port 8010
