@@ -1,5 +1,7 @@
 # Run Grafana into Docker container 
 
+![alt text](grafana.png)
+
 ## What this command will do?
 
 ### 1. Run a container named grafana-docker
