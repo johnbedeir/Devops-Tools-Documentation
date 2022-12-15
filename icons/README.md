@@ -23,55 +23,55 @@
 <p align="left">
 <img  alt="Terminal" width="30px" src="https://www.kindpng.com/picc/m/153-1538018_terminal-icon-hd-png-download.png" />
 <img  alt="ubuntu" width="35px" src="https://img.icons8.com/color/48/000000/ubuntu--v1.png"/>
-<img  alt="redhat" width="35px" src="icons/redhat.png">
-<img  alt="debian" width="35px" src="icons/debian.png">
+<img  alt="redhat" width="35px" src="redhat.png">
+<img  alt="debian" width="35px" src="debian.png">
 <img  alt="centos" width="35px" src="https://img.icons8.com/color/48/000000/centos.png"/>
 <img  alt="Rasp" width="35px" src="https://img.icons8.com/color/48/000000/raspberry-pi.png"/>
 <img  alt="Visual Studio Code" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" />
-<img  alt="HTML5" width="30px" src="icons/html.png">
-<img  alt="CSS3" width="30px" src="icons/css.png">
-<img  alt="JavaScript" width="30px" src="icons/jsicon.png">
+<img  alt="HTML5" width="30px" src="html.png">
+<img  alt="CSS3" width="30px" src="css.png">
+<img  alt="JavaScript" width="30px" src="jsicon.png">
 <img  alt="TypeScript" width="30px" src="https://cdn-icons-png.flaticon.com/512/5968/5968381.png" />
-<img  alt="Python" width="35px" src="icons/python.png">
+<img  alt="Python" width="35px" src="python.png">
 <img  alt="nginx" width="35px" src="https://img.icons8.com/color/48/000000/nginx.png"/>
-<img  alt="Git" width="35px" src="icons/git.png">
+<img  alt="Git" width="35px" src="git.png">
 <img  alt="GitHub" width="30px" src="https://img.icons8.com/stickers/100/000000/github.png"/>
-<img  alt="GitLab" width="30px" src="icons/gitlab.png">
-<img  alt="BitBucket" width="30px" src="icons/bitbucket.png">
+<img  alt="GitLab" width="30px" src="gitlab.png">
+<img  alt="BitBucket" width="30px" src="bitbucket.png">
 <img  alt="Vagrant" width="30px" src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/24/000000/external-vagrant-an-open-source-software-product-for-building-and-maintaining-portable-virtual-software-logo-shadow-tal-revivo.png"/>
-<img  alt="Docker" width="30px" src="icons/docker.png">
+<img  alt="Docker" width="30px" src="docker.png">
 <img  alt="DockerCompose" width="30px" src="https://p1c2u.gallerycdn.vsassets.io/extensions/p1c2u/docker-compose/0.3.5/1565165856720/Microsoft.VisualStudio.Services.Icons.Default"/>
-<img  alt="portainer" width="100px" src="icons/portainer.png">
+<img  alt="portainer" width="100px" src="portainer.png">
 <img  alt="ngxproxy" width="30px" src="https://nginxproxymanager.com/icon.png"/>
 <img  alt="Ansible" width="30px" src="https://img.icons8.com/color/48/000000/ansible.png"/>
-<img  alt="Kubernetes" width="30px" src="icons/kub.png">
-<img  alt="Helm" width="30px" src="icons/helm.png">
-<img  alt="AWS" width="35px" src="icons/aws.png">
-<img  alt="GCP" width="30px" src="icons/google.png" />
-<img  alt="Azure" width="30px" src="icons/azure.png"/>
-<img  alt="DO" width="25px" src="icons/digitalocean.png"/>
-<img  alt="Terraform" width="30px" src="icons/terraform.png"/>
-<img  alt="Pulumi" width="100px" src="icons/pulumi.svg"/>
-<img  alt="Jenkins" width="35px" src="icons/jenkins.png">
-<img  alt="gilap-cicd" width="35px" src="icons/runner.png">
-<img  alt="heroku" width="100px" src="icons/heroku.png"/>
+<img  alt="Kubernetes" width="30px" src="kub.png">
+<img  alt="Helm" width="30px" src="helm.png">
+<img  alt="AWS" width="35px" src="aws.png">
+<img  alt="GCP" width="30px" src="google.png" />
+<img  alt="Azure" width="30px" src="azure.png"/>
+<img  alt="DO" width="25px" src="digitalocean.png"/>
+<img  alt="Terraform" width="30px" src="terraform.png"/>
+<img  alt="Pulumi" width="100px" src="pulumi.svg"/>
+<img  alt="Jenkins" width="35px" src="jenkins.png">
+<img  alt="gilap-cicd" width="35px" src="runner.png">
+<img  alt="heroku" width="100px" src="heroku.png"/>
 <img  alt="DevOps" width="35px" src="https://img.icons8.com/color/48/000000/infinity-large.png"/>
-<img  alt="JFrog" width="45px" src="icons/jfrog.png"/>
-<img  alt="elasticsearch" width="35px" src="icons/elastic.png"/>
-<img  alt="Prometheus" width="35px" src="icons/prometheus.png"/>
-<img  alt="Grafana" width="30px" src="icons/grafana.png"/>
-<img  alt="loki" width="30px" src="icons/loki.png"/>
+<img  alt="JFrog" width="45px" src="jfrog.png"/>
+<img  alt="elasticsearch" width="35px" src="elastic.png"/>
+<img  alt="Prometheus" width="35px" src="prometheus.png"/>
+<img  alt="Grafana" width="30px" src="grafana.png"/>
+<img  alt="loki" width="30px" src="loki.png"/>
 <img  alt="DataDog" width="35px" src="https://www.drupal.org/files/datadog-logo-purple.png"/>
-<img  alt="ArgoCD" width="35px" src="icons/argo.png"/>
-<img  alt="FluxCD" width="35px" src="icons/flux.png">
+<img  alt="ArgoCD" width="35px" src="argo.png"/>
+<img  alt="FluxCD" width="35px" src="flux.png">
 <img  alt="Vault" width="30px" src="https://cdn.worldvectorlogo.com/logos/vault-1.svg"/>
-<img  alt="secrethub" width="30px" src="icons/secrethub.png"/>
+<img  alt="secrethub" width="30px" src="secrethub.png"/>
 <img  alt="gitcrypt" width="100px" src="git-secret-big.png"/>
 <img  alt="K10" width="30px" src="https://www.kasten.io/hubfs/Kasten_January2020/Images/kasten-logo-stacked.svg"/>
-<img  alt="harness" width="30px" src="icons/harness.png"/>
-<img  alt="werf" width="30px" src="icons/werf.png"/>
-<img  alt="tekton" width="30px" src="icons/tekton.png"/>
-<img  alt="garden-io" width="30px" src="icons/garden.png"/>
+<img  alt="harness" width="30px" src="harness.png"/>
+<img  alt="werf" width="30px" src="werf.png"/>
+<img  alt="tekton" width="30px" src="tekton.png"/>
+<img  alt="garden-io" width="30px" src="garden.png"/>
 <p>
 
 ---
