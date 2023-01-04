@@ -58,6 +58,8 @@ chmod +x remove-argocd-eks.sh
 
     Source `Choose the helm repository url you have added`
 
+    Chart `URL` and `Version`
+
     Cluster URL `https://kubernetes.default.svc`
 
     Namespace `If the namespace is not exist then you will need to create it`
