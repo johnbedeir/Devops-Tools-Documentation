@@ -6,34 +6,33 @@
 
 ### Step 1: Deploy ArgoCD
 [Official Documentation](https://argo-cd.readthedocs.io/en/stable/)
+
+Running this script will do the following:
+1. Start Minikube
+2. Create argocd namespace
+3. Deploy argocd on the created namespace
+4. Wait for the pods to start
+5. Change argocd service from ClusterIP to NodePort
+6. Get Argocd URL
+7. Get Argocd default password
+
 ```
-kubectl create ns argocd
+chmod +x deploy-argocd-minikube
 
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-```
-### Step 2: Change Port Type
-
-1. Open K9s
-2. Open Services
-3. Hover on argocd-server tap 'e'
-4. Change `type: ClusterIP` to be `type: NodePort`
-
-### Step 3: Get ArgoCD URL
-```
-minikube service -n argocd argocd-server --url
-```
-`Open one of the links on the browser`
-
-### Step 4: Get ArgoCD Password
-
-`Username: admin`
-
-`Password:`
-```
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+./deploy-argocd-minikube
 ```
 
-### Step 5: Add Application Repository
+### Delete ArgoCD deployment
+Running this script will do the following:
+1. Delete argocd deployment
+2. Delete argocd namespace
+
+```
+chmod +x remove-argocd-minikube.sh
+./remove-argocd-minikube.sh
+```
+
+### Step 2: Add Application Repository
 
 1. Navigate to `Settings` > `Repositories`
 2. `Connect Repo` > `VIA HTTPS`
