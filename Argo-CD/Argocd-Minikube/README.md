@@ -1,6 +1,6 @@
-# Deploy App using ArgoCD
+# Deploy K8s App using ArgoCD
 
-<img src="argo.png"  width="255" height="250">
+<img src="argo.png"  width="255" height="250"> <img src="minikube.png"  width="230" height="230">
 
 ## In those stpes we will deploy application with kubernetes manifest files on minikube using argo-cd
 
@@ -32,7 +32,7 @@ chmod +x remove-argocd-minikube.sh
 ./remove-argocd-minikube.sh
 ```
 
-### Step 2: Add Application Repository
+### Step 2: Add Application Git Repository
 
 1. Navigate to `Settings` > `Repositories`
 2. `Connect Repo` > `VIA HTTPS`
@@ -55,8 +55,6 @@ chmod +x remove-argocd-minikube.sh
     Application Name
 
     Project Name `default`
-
-    Sync Policy `Automatic`
 
     Source `Choose the repository you have added`
 
