@@ -32,4 +32,4 @@ az aks get-credentials \
 --file ./kubeconfig
 ```
 
-### `NOTE: If you will K9s to view your cluster you can copy what's inside .kubeconfig and past it inside ~/.kube/config`
+### `NOTE: If you will use K9s to view your cluster you can copy what's inside .kubeconfig and past it inside ~/.kube/config`
