@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "default" {
-  name     = "intax-rg"
+  name     = "demo-rg"
   location = "uaenorth"
 
   tags = {
@@ -8,10 +8,10 @@ resource "azurerm_resource_group" "default" {
 }
 
 resource "azurerm_kubernetes_cluster" "default" {
-  name                = "intax-aks"
+  name                = "demo-aks"
   location            = azurerm_resource_group.default.location
   resource_group_name = azurerm_resource_group.default.name
-  dns_prefix          = "intax-k8s"
+  dns_prefix          = "demo-k8s"
 
   default_node_pool {
     name            = "default"
