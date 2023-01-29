@@ -43,7 +43,7 @@ Install Jenkins:
 ```sh
 sudo apt update -y
 
-sudo apt-get install openjdk-8-jdk -y 
+sudo apt install openjdk-11-jdk
 
 java -version
 
