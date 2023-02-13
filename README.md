@@ -3,7 +3,7 @@
 - 🚀 I launched Devops courses on my Youtube Channel: [Become A Devops Engineer!][course]!
 - 📖 I’m currently learning everything 🤣
 - 🧑🏻‍🤝‍🧑🏻 I’m looking to collaborate with other content creators
-- ✅ 2022 Goals: Jump to the next level DevSecOps & SRE
+- ✅ 2023 Goal: DevSecOps and explore new DevOps tools
 <!-- - ⚡ Fun fact: I love to draw and play guitar / drums -->
 
 ![alt text](youtube.png)
@@ -11,7 +11,7 @@
 ### Connect with me:
 
 [<img alt="johnydev.com" src="https://img.icons8.com/dusk/64/000000/domain.png"/>][website]
-[<img alt="https://www.youtube.com/channel/UCxvd-DdyFsE_07lCa4kRINA" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-youtube-social-media-justicon-lineal-color-justicon.png"/>][youtube]
+[<img alt="https://www.youtube.com/@JohnyDev" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-youtube-social-media-justicon-lineal-color-justicon.png"/>][youtube]
 [<img alt="https://www.linkedin.com/in/johnbedeir/" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-linkedin-social-media-justicon-lineal-color-justicon.png"/>][linkedin]
 [<img alt="https://www.instagram.com/johnbedeir/" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-instagram-social-media-justicon-lineal-color-justicon.png"/>][instagram]
 [<img alt="https://www.facebook.com/JohnyDev-293895207431248" src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-facebook-social-media-justicon-lineal-color-justicon.png"/>][facebook]
@@ -65,8 +65,7 @@
 <img  alt="ArgoCD" width="35px" src="icons/argo.png"/>
 <img  alt="FluxCD" width="35px" src="icons/flux.png">
 <img  alt="Vault" width="30px" src="https://cdn.worldvectorlogo.com/logos/vault-1.svg"/>
-<img  alt="secrethub" width="30px" src="icons/secrethub.png"/>
-<img  alt="gitcrypt" width="100px" src="git-secret-big.png"/>
+<img  alt="gitcrypt" width="100px" src="icons/git-secret-big.png"/>
 <img  alt="K10" width="30px" src="https://www.kasten.io/hubfs/Kasten_January2020/Images/kasten-logo-stacked.svg"/>
 <img  alt="harness" width="30px" src="icons/harness.png"/>
 <img  alt="werf" width="30px" src="icons/werf.png"/>
@@ -111,7 +110,7 @@
 [youtube]: https://www.youtube.com/channel/UCxvd-DdyFsE_07lCa4kRINA
 [instagram]: https://www.instagram.com/johnbedeir/
 [linkedin]: https://www.linkedin.com/in/johnbedeir/
-[course]: https://www.youtube.com/channel/UCxvd-DdyFsE_07lCa4kRINA
+[course]: https://www.youtube.com/@JohnyDev
 [facebook]: https://www.facebook.com/JohnyDev-293895207431248
 
 <!-- ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=johnbedeir&show_icons=true&theme=tokyonight) -->
