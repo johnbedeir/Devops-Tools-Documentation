@@ -62,7 +62,7 @@ docker run -d --name grafana-docker -p 3000:3000 -v grafana_data:/var/lib/grafan
 
 1. Navigate to:
 ```
-http://localhost:9090
+http://localhost:3000
 ```
 2. Login Credentials: `you can create new password or skip`
 ```
