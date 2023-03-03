@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	}
+
+    stages {
+
+        stage('Deploy LaravelApp') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  cd DevOps-Pipeline-Monitoring/laravel-app
+                  kubectl apply -f k8s 
+                  """
+                }
+            }
+        }
+    }
+}
