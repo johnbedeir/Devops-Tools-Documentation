@@ -4,7 +4,7 @@ pipeline {
     environment {
 		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
 	}
-  
+
     stages {
 
         stage('Create Cluster') {
@@ -50,7 +50,7 @@ pipeline {
                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
-                  sh """"
+                  sh """
                   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
                   sleep 1m
                   kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
