@@ -33,7 +33,7 @@ pipeline {
                   accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
-                  sh """"
+                  sh """
                   kubectl create ns laravel-app || true
                   kubectl create ns argocd || true
                   """
