@@ -17,7 +17,7 @@ pipeline {
                   secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                   ]]) {
                   sh """
-                  cd DevOps-Pipeline-Monitoring/laravel-app
+                  cd DevOps-Pipeline-Monitoring
                   kubectl apply -f k8s 
                   """
                 }
