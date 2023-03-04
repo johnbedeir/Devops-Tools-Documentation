@@ -15,10 +15,10 @@
     ignore_errors: yes
 # Make sure to change the image name with your personal dockerhub account and reposiroty 
   - name: build docker image from dockerfile
-    command: docker build -t triple3a/laravel-app .  
+    command: docker build -t minabottros001/laravel-app .  
 # Make sure to change the image name with your personal dockerhub account and reposiroty 
   - name: push image to dockerhub
-    command: docker push triple3a/laravel-app 
+    command: docker push minabottros001/laravel-app
 
 
 
