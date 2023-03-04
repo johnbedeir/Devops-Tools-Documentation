@@ -2,7 +2,7 @@
 echo "--------------------Installing Java--------------------"
 sudo apt-get update -y
 sudo apt upgrade -y 
-sudo apt-get install openjdk-8-jdk -y
+sudo apt-get install openjdk-11-jre
 #Install Jenkins 
 echo "--------------------Installing Jenkins--------------------"
 sudo apt -y install wget
