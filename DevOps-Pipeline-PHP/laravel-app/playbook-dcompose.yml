@@ -8,7 +8,7 @@
 
   # Make sure to change the image name with your personal dockerhub account and reposiroty 
   - name: remove image built with dockercompose
-    command: docker rmi triple3a/laravel-app
+    command: docker rmi minabottros001/laravel-app
     ignore_errors: yes
 
   - name: remove php-apache image
