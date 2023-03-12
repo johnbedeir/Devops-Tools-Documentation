@@ -1,0 +1,77 @@
+pipeline {
+    agent any
+
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	}
+
+    stages {
+
+        // stage('Create Cluster') {
+        //     steps {
+        //       // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+        //         withCredentials([[
+        //           $class: 'AmazonWebServicesCredentialsBinding',
+        //           credentialsId: "aws-credentials",
+        //           accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+        //           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+        //           ]]) {
+        //           sh """
+        //           eksctl create cluster --name laravelapp-cluster --region eu-central-1 --nodes-min=3
+        //           aws eks update-kubeconfig --name laravelapp-cluster
+        //           """
+        //         }
+        //     }
+        // }
+
+        // stage('Create Namespace') {
+        //     steps {
+        //       // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+        //         withCredentials([[
+        //           $class: 'AmazonWebServicesCredentialsBinding',
+        //           credentialsId: "aws-credentials",
+        //           accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+        //           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+        //           ]]) {
+        //           sh """
+        //           kubectl create ns laravel-app || true
+        //           kubectl create ns argocd || true
+        //           """
+        //         }
+        //     }
+        // }
+
+        stage('Deploy Argocd') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first 
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  aws eks update-kubeconfig --name laravelapp-cluster
+                  aws elb describe-load-balancers | grep DNSName
+                  kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo ' '
+                  """
+                }
+            }
+        }
+
+        stage('Docker Login') {
+            steps {
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+
+        stage('Build & push Dockerfile') {
+            steps {
+              sh """
+              cd DevOps-Pipeline-Monitoring/laravel-app
+              ansible-playbook playbook.yml
+              """
+            }
+        }
+    }
+}
