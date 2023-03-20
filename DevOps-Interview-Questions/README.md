@@ -106,7 +106,8 @@ The master node is responsible for running several Kubernetes processes it conta
 The worker nodes are the part of the Kubernetes clusters which actually execute the containers and applications on them. They have two main components, the Kubelet Service and the Kube-proxy Service.
 
 ```
-## Question 18: (Kubernetes Questions)
+---
+## Question 18: (Kubernetes)
 ### What is Kubernetes and how does it work?
 ```
 Kubernetes is an open-source platform that automates the deployment, scaling, and management of containerized applications. It works by creating a cluster of worker nodes that can run containerized applications, and managing those nodes and applications through a central control plane.
@@ -164,5 +165,66 @@ A namespace is a way to partition a Kubernetes cluster into multiple virtual clu
 ### How do you perform a rolling update of a Kubernetes deployment?
 ```
 You can perform a rolling update of a Kubernetes deployment by updating the deployment manifest file with the new container image or configuration options and then using kubectl apply to apply the changes. Kubernetes will automatically roll out the update to the pods in the deployment, one at a time, while keeping the application available to users.
+
+```
+---
+## Question 28: (Infrastructure as a Code)
+### What is Infrastructure as Code (IaC), and how does it differ from traditional infrastructure management approaches?
+```
+Infrastructure as Code (IaC) is a practice of managing and provisioning infrastructure through code, using version control systems and automation tools. It differs from traditional infrastructure management approaches, which typically rely on manual configuration and require extensive documentation to track changes.
+
+```
+## Question 29:
+### What are some benefits of using IaC for managing infrastructure, compared to traditional approaches?
+```
+Some benefits of using IaC for managing infrastructure include faster and more consistent provisioning, greater agility and flexibility, easier collaboration and version control, improved security and compliance, and better cost management.
+
+```
+## Question 30:
+### Can you explain how tools like Terraform and Ansible can be used for IaC?
+```
+Terraform and Ansible are two popular tools for IaC. Terraform is a tool for defining and provisioning infrastructure resources, while Ansible is a tool for automating configuration management tasks. Both tools use declarative configuration files to define infrastructure resources and dependencies, and can automate the entire infrastructure lifecycle.
+
+```
+## Question 31:
+### How do you ensure that your IaC code is secure and follows best practices?
+```
+To ensure that IaC code is secure and follows best practices, it is important to implement security and compliance checks as part of the deployment pipeline. This includes using tools like static code analysis, vulnerability scanners, and compliance frameworks, as well as performing regular code reviews and testing.
+
+```
+## Question 32:
+### What are some common design patterns and best practices for writing IaC code?
+```
+Common design patterns and best practices for writing IaC code include modularizing infrastructure code, using parameterized templates, versioning infrastructure code, using version control systems, and testing code changes before deploying to production.
+
+```
+## Question 33:
+### How do you test and validate your IaC code before deploying it to production?
+```
+IaC code can be tested and validated using a combination of automated and manual testing techniques, including unit tests, integration tests, functional tests, and user acceptance testing (UAT). It is important to test code changes in a staging environment before deploying to production.
+
+```
+## Question 34:
+### What are some common challenges and limitations when using IaC, and how can they be addressed?
+```
+Common challenges and limitations when using IaC include managing stateful resources, dealing with complex dependencies, handling drift and resource deletion, and addressing security concerns. These challenges can be addressed by using tools and techniques like Terraform modules, Ansible playbooks, configuration drift detection, and security automation.
+
+```
+## Question 35:
+### Can you explain the concept of infrastructure drift, and how IaC can help prevent it?
+```
+Infrastructure drift refers to the situation where the actual state of infrastructure resources differs from their intended state. IaC can help prevent infrastructure drift by automatically detecting and correcting deviations from the intended state, using tools like Terraform's "apply" command or Ansible's "check mode."
+
+```
+## Question 36:
+### How do you manage secrets and sensitive data in IaC code?
+```
+Sensitive data and secrets can be managed in IaC code by using tools like HashiCorp Vault or AWS Secrets Manager to store and manage secrets securely, and by using environment variables or configuration files to pass secrets to the IaC tool at runtime.
+
+```
+## Question 37:
+### Can you give an example of a real-world scenario where you used IaC to deploy and manage infrastructure?
+```
+One example of a real-world scenario where IaC can be used to deploy and manage infrastructure is the deployment of a web application on AWS. In this scenario, IaC tools like Terraform or CloudFormation can be used to define and provision infrastructure resources like EC2 instances, load balancers, and databases, while Ansible or Chef can be used to automate configuration management tasks.
 
 ```
