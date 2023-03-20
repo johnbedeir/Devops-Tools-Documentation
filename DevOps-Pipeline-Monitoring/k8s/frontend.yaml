@@ -16,7 +16,6 @@ spec:
         app: apache
     spec:
       containers:
-      
       - name: apache
         image: triple3a/laravel-app
         ports:

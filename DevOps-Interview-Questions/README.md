@@ -96,6 +96,7 @@ Each target group is used to route requests to one or more registered targets. W
 [Watch explaination here go to min 1:18](https://www.youtube.com/watch?v=kV4jINv3s-k)
 ```
 High availability is the ability of a system to operate continuously without failing for a designated period of time the minimum number of nodes to acheive the High availability is 3 nodes
+
 ```
 ## Question 17:
 ### Master node vs Worker node?
@@ -103,5 +104,65 @@ High availability is the ability of a system to operate continuously without fai
 ```
 The master node is responsible for running several Kubernetes processes it contains (API Server, Controller manager, Scheduler and etcd)
 The worker nodes are the part of the Kubernetes clusters which actually execute the containers and applications on them. They have two main components, the Kubelet Service and the Kube-proxy Service.
+
+```
+## Question 18: (Kubernetes Questions)
+### What is Kubernetes and how does it work?
+```
+Kubernetes is an open-source platform that automates the deployment, scaling, and management of containerized applications. It works by creating a cluster of worker nodes that can run containerized applications, and managing those nodes and applications through a central control plane.
+
+```
+## Question 19:
+### Can you explain the difference between a pod and a deployment in Kubernetes?
+```
+A pod is the smallest deployable unit in Kubernetes, consisting of one or more containers that share the same network and storage resources. A deployment is a higher-level abstraction that manages a set of replica pods, ensuring that the desired number of replicas are running and that they are updated and rolled out gracefully.
+
+```
+## Question 20:
+### How do you scale a deployment in Kubernetes?
+```
+You can scale a deployment in Kubernetes by updating its replica count using the kubectl scale command or by modifying its YAML configuration file and applying the changes using kubectl apply.
+
+```
+## Question 21:
+### How do you monitor and troubleshoot a Kubernetes cluster?
+```
+You can monitor and troubleshoot a Kubernetes cluster using various tools and techniques, including logging and metrics collection, tracing, and debugging. Common tools for monitoring and troubleshooting Kubernetes include Prometheus, Grafana, Jaeger, and kubectl commands like kubectl logs and kubectl exec.
+
+```
+## Question 22:
+### What is a service in Kubernetes and why is it needed?
+```
+A service in Kubernetes is an abstract way to expose an application running on a set of pods as a network service. It provides a stable IP address and DNS name for the pods, and allows other applications to access the service through a consistent endpoint.
+
+```
+## Question 23:
+### How do you deploy a containerized application to Kubernetes?
+```
+To deploy a containerized application to Kubernetes, you need to create a Kubernetes deployment or a pod YAML configuration file that describes the application's container image, resource requirements, and other settings. You can then apply the configuration using kubectl apply or create commands.
+
+```
+## Question 24:
+### What are the different types of Kubernetes volumes and when would you use each type?
+```
+There are several types of Kubernetes volumes, including hostPath, emptyDir, configMap, secret, persistentVolumeClaim, and more. Each type is designed to support different use cases and storage requirements, such as temporary storage, shared configuration, or persistent data storage.
+
+```
+## Question 25:
+### What is a Kubernetes ConfigMap and how would you use it?
+```
+A ConfigMap is a Kubernetes object that provides a way to store configuration data as key-value pairs that can be consumed by containers running in a pod. You can use a ConfigMap to store environment variables, command-line arguments, and other configuration options.
+
+```
+## Question 26:
+### Can you explain the concept of a Kubernetes namespace?
+```
+A namespace is a way to partition a Kubernetes cluster into multiple virtual clusters. It provides a way to group related objects together and to provide isolation between different parts of your application. You can use namespaces to limit resource usage, provide access control, and simplify management of your Kubernetes cluster.
+
+```
+## Question 27:
+### How do you perform a rolling update of a Kubernetes deployment?
+```
+You can perform a rolling update of a Kubernetes deployment by updating the deployment manifest file with the new container image or configuration options and then using kubectl apply to apply the changes. Kubernetes will automatically roll out the update to the pods in the deployment, one at a time, while keeping the application available to users.
 
 ```
