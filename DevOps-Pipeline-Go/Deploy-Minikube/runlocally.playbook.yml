@@ -1,0 +1,25 @@
+---
+- name: "Automate building containers with ansible playbook"
+  hosts: localhost
+
+  vars_files:
+    - vars.yml
+
+  tasks:
+
+  - name: stop and remove previous run
+    command: docker-compose down
+    ignore_errors: yes
+
+  - name: remove previous build
+    shell: docker rmi -f $(docker images -q {{ USER_NAME }}/{{ REPO_NAME }})
+    ignore_errors: yes
+
+  - name: build a new docker image
+    command: docker build -t {{ USER_NAME }}/{{ REPO_NAME }}:{{ IMAGE_TAG }} .
+
+  - name: push docker image to dockerhub
+    command: docker push {{ USER_NAME }}/{{ REPO_NAME }}:{{ IMAGE_TAG }}
+
+  - name: run the docker compose with a new image
+    command: docker-compose up -d
