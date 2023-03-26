@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-svc
+  namespace: go-survey
+  labels:
+    app: go-app
+spec:
+  selector:
+    app: go-app
+# ClusterIP (default), LoadBalancer (works on cloud), NodePort (most used)
+  type: LoadBalancer
+  ports:
+    - name: app-http
+      port: 8080
+      targetPort: 8080
