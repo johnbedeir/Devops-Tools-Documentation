@@ -6,7 +6,7 @@ namespace="go-survey"
 image_name="triple3a/gosurvey"
 
 # Set the file name and search string
-filename="k8s/deployment.yml"
+filename="k8s/deployment-app.yml"
 
 # Get the tag from Docker Hub
 tag=$(curl -s https://hub.docker.com/v2/repositories/triple3a/gosurvey/tags\?page_size\=1000 | jq -r '.results[].name' | awk 'NR==1 {print$1}')
