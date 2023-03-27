@@ -7,7 +7,6 @@ image_name="triple3a/gosurvey"
 
 # Set the file name and search string
 filename="k8s/deployment-app.yml"
-searchstring="triple3a/gosurvey:v1"
 
 # Get the tag from Docker Hub
 tag=$(curl -s https://hub.docker.com/v2/repositories/triple3a/gosurvey/tags\?page_size\=1000 | jq -r '.results[].name' | awk 'NR==1 {print$1}')
@@ -41,7 +40,7 @@ docker push $image_name:$newtag
 
 # Replace the tag in the kubernetes deployment file
 echo "--------------------Update Img Tag--------------------"
-awk -v search="$searchstring" -v replace="triple3a/gosurvey:$newtag" '{gsub(search, replace)}1' "$filename" > tmpfile && mv tmpfile "$filename"
+awk -v search="$tag" -v replace="$newtag" '{gsub(search, replace)}1' "$filename" > tmpfile && mv tmpfile "$filename"
 
 # Update kubeconfig
 echo "--------------------Update Kubeconfig--------------------"
