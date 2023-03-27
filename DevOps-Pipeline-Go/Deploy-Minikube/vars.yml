@@ -1,4 +1,0 @@
-USER_NAME: triple3a
-REPO_NAME: gosurvey
-IMAGE_TAG: latest
-NAMESPACE: go-survey
