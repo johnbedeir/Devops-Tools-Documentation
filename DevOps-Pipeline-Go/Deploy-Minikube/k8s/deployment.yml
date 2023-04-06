@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-app-deploy
+  namespace: go-survey
+  labels:
+    app: go-app
+spec:
+  selector:
+    matchLabels:
+      app: go-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: go-app
+    spec:
+      containers:
+      - name: go-app
+        image: triple3a/gosurvey:v6
+        ports:
+        - containerPort: 8080
+      - name: mongo-app
+        image: mongo:latest
+        ports:
+        - containerPort: 27017

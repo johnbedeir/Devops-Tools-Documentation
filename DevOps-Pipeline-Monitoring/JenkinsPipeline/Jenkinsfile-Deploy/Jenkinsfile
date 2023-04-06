@@ -1,0 +1,112 @@
+pipeline {
+    agent any
+
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
+	}
+
+    stages {
+
+        stage('Create Cluster') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  eksctl create cluster --name laravelapp-cluster --region eu-central-1 --nodes-min=3
+                  aws eks update-kubeconfig --name laravelapp-cluster
+                  """
+                }
+            }
+        }
+
+        stage('Create Namespace') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  kubectl create ns laravel-app || true
+                  """
+                }
+            }
+        }
+
+        stage('Docker Login') {
+            steps {
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+            }
+        }
+
+        stage('Build & push Dockerfile') {
+            steps {
+              sh """
+              cd DevOps-Pipeline-Monitoring/laravel-app
+              ansible-playbook playbook.yml
+              """
+            }
+        }
+
+        stage('Deploy LaravelApp') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  cd DevOps-Pipeline-Monitoring
+                  kubectl apply -f k8s
+                  """
+                }
+            }
+        }
+
+        stage('Deploy Monitoring') {
+            steps {
+              // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first
+                withCredentials([[
+                  $class: 'AmazonWebServicesCredentialsBinding',
+                  credentialsId: "aws-credentials",
+                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+                  ]]) {
+                  sh """
+                  helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+                  helm repo update
+                  helm install prometheus prometheus-community/prometheus --set service.type=LoadBalancer
+                  helm repo add grafana https://grafana.github.io/helm-charts
+                  helm repo update
+                  helm install grafana  grafana/grafana --set service.type=LoadBalancer
+                  helm install node-exporter prometheus-community/prometheus-node-exporter --set service.type=LoadBalancer
+                  """
+                }
+            }
+        }
+
+        // stage('NodeExporter Configuration') {
+        //     steps {
+        //       // You will need to install CloudBees AWS Credentials Plugin in Jenkins and add AWS Credentials first
+        //         withCredentials([[
+        //           $class: 'AmazonWebServicesCredentialsBinding',
+        //           credentialsId: "aws-credentials",
+        //           accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+        //           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+        //           ]]) {
+        //           sh 'chmod +x promethues.sh'
+        //           sh './promethues.sh'
+        //         }
+        //     }
+        // }
+    }
+}
