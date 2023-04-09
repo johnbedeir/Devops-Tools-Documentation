@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Authenticate with Google Cloud
-      uses: google-github-actions/setup-gcloud@master
+      uses: google-github-actions/setup-gcloud@v2
       with:
         project_id: ${{ env.PROJECT_ID }}
         service_account_key: ${{ secrets.GCLOUD_AUTH }}
