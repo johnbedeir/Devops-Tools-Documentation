@@ -21,6 +21,10 @@ token="<YOUR-TOKEN>"
 ### Step 4: Build `Ubuntu` Droplet
 ```
 terraform init
+```
+```
 terraform plan
+```
+```
 terraform apply -auto-approve
 ```
