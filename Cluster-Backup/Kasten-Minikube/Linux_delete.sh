@@ -7,17 +7,9 @@ NAMESPACE=kasten-io
 echo "--------------------Delete Helm Repo--------------------"
 helm repo remove kasten
 
-#Delete deployments
-echo "--------------------Delete Deployment--------------------"
-kubectl delete deploy --all -n $NAMESPACE
-
-#Delete services
-echo "--------------------Delete Services--------------------"
-kubectl delete service --all -n $NAMESPACE
-
-#Delete configmap
-echo "--------------------Delete Configmap--------------------"
-kubectl delete configmap --all -n $NAMESPACE
+#Delete all resources in the namespace
+echo "--------------------Delete All Resources--------------------"
+kubectl delete all --all -n $NAMESPACE
 
 #Delete namespace
 echo "--------------------Delete Namespace--------------------"
