@@ -7,3 +7,9 @@ services:
       - "4000:8000"
     volumes:
       - .:/usr/src/app
+      - sqlite_data:/usr/src/app/db
+    environment:
+      - DATABASE_URL=sqlite:////usr/src/app/db/data.sqlite3
+
+volumes:
+  sqlite_data:

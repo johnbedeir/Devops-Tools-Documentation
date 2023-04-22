@@ -10,11 +10,10 @@ services:
       - db
     environment:
       ADDR: 0.0.0.0:8080
+      MONGO_URI: mongodb://db:27017
 
   db:
     image: mongo:latest
     restart: always
-    environment:
-      MONGO_URI: mongodb://localhost:27017
     ports:
       - "27017:27017"
