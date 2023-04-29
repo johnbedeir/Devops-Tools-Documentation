@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-deploy
+  namespace: go-survey
+  labels:
+    app: db-app
+spec:
+  selector:
+    matchLabels:
+      app: db-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: db-app
+    spec:
+      containers:
+        - name: mongo-app
+          image: mongo:latest
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: mongo-data
+              mountPath: /data/db
+      volumes:
+        - name: mongo-data
+          persistentVolumeClaim:
+            claimName: mongo-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-app-service
+  namespace: go-survey
+  labels:
+    app: mongo-app
+spec:
+  selector:
+    app: db-app
+  type: ClusterIP
+  ports:
+    - name: mongo-app
+      port: 27017
+      targetPort: 27017

@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-app-deploy
+  namespace: go-survey
+  labels:
+    app: go-app
+spec:
+  selector:
+    matchLabels:
+      app: go-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: go-app
+    spec:
+      containers:
+        - name: go-app
+          image: triple3a/gosurvey:v15
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MONGODB_URI
+              value: "mongodb://mongo-app-service:27017"
+            - name: APP_PORT
+              value: "8080"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-app
+  namespace: go-survey
+  labels:
+    app: go-app
+spec:
+  selector:
+    app: go-app
+  type: LoadBalancer
+  ports:
+    - name: go-app
+      port: 8080
+      targetPort: 8080
