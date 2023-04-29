@@ -8,12 +8,24 @@ metadata:
 spec:
   selector:
     app: go-app
-# ClusterIP (default), LoadBalancer (works on cloud), NodePort (most used)
   type: NodePort
   ports:
     - name: go-app
-      port: 8080 
+      port: 8080
       targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-app-service
+  namespace: go-survey
+  labels:
+    app: mongo-app
+spec:
+  selector:
+    app: go-app
+  ports:
     - name: mongo-app
       port: 27017
       targetPort: 27017
+  type: NodePort
