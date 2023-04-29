@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: triple3a/gosurvey:v6
+          image: triple3a/gosurvey:v15
           ports:
             - containerPort: 8080
           env:
@@ -25,7 +25,20 @@ spec:
               value: "mongodb://mongo-app-service:27017"
             - name: APP_PORT
               value: "8080"
-        - name: mongo-app
-          image: mongo:latest
-          ports:
-            - containerPort: 27017
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-app
+  namespace: go-survey
+  labels:
+    app: go-app
+spec:
+  selector:
+    app: go-app
+  type: LoadBalancer
+  ports:
+    - name: go-app
+      port: 8080
+      targetPort: 8080

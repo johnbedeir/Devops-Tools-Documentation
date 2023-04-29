@@ -6,7 +6,7 @@ namespace="go-survey"
 image_name="triple3a/gosurvey"
 
 # Set the file name and search string
-filename="k8s/deployment-app.yml"
+filename="k8s/app-deployment.yml"
 
 # Get the tag from Docker Hub
 tag=$(curl -s https://hub.docker.com/v2/repositories/triple3a/gosurvey/tags\?page_size\=1000 | jq -r '.results[].name' | awk 'NR==1 {print$1}')
@@ -25,6 +25,27 @@ newtag=$(echo "$tag" | sed "s/$numeric_part$/$next_numeric/")
 # Create the cluster
 echo "--------------------Creating EKS--------------------"
 eksctl create cluster --name cluster1 --region eu-central-1 --nodes-min=2
+
+# Create IAM Policy
+# https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/docs/example-iam-policy.json
+echo "--------------------Creating IAM Policy--------------------"
+aws iam create-policy --policy-name AmazonEKS_EBS_CSI_Driver_Policy --policy-document file://$(pwd)/policy.json
+
+eksctl create iamserviceaccount \
+    --region <your-region> \
+    --name ebs-csi-controller-sa \
+    --namespace kube-system \
+    --cluster <your-cluster-name> \
+    --attach-policy-arn arn:aws:iam::<AWS_ACCOUNT_ID>:policy/AmazonEKS_EBS_CSI_Driver_Policy \
+    --approve \
+    --override-existing-serviceaccounts
+
+
+# Create EBS CSI
+echo "--------------------Creating EBS CSI--------------------"
+helm repo add aws-ebs-csi-driver https://kubernetes-sigs.github.io/aws-ebs-csi-driver/
+helm repo update
+helm install aws-ebs-csi-driver aws-ebs-csi-driver/aws-ebs-csi-driver --namespace kube-system --set enableVolumeScheduling=true --set enableVolumeResizing=true --set enableVolumeSnapshot=true
 
 # remove preious docker images
 echo "--------------------Remove Previous build--------------------"

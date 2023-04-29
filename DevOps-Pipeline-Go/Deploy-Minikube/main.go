@@ -26,7 +26,8 @@ func main() {
 	// Set up MongoDB connection
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-	clientOptions := options.Client().ApplyURI("mongodb://db:27017")
+	// You will need to update the MongoDB URI if you choose to run both the app and the database using the docker-compose replace "localhost" with "db"
+	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
 	client, _ = mongo.Connect(ctx, clientOptions)
 
 	router := mux.NewRouter()
