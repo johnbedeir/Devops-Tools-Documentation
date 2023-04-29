@@ -1,7 +1,7 @@
 # deployment.yaml
 # ingress.yaml
 # services.yaml
-
+.history
 *.tfstate
 *.tfvars
 *.tfstate.*
