@@ -1,0 +1,28 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    container:
+      image: docker:20-git
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and push image
+        env:
+          DOCKER_BUILDKIT: 1
+          DOCKER_REGISTRY: ${{ secrets.ACR_REGISTRY }}
+          DOCKER_REPOSITORY: nginx
+          DOCKER_USERNAME: ${{ secrets.ACR_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+        run: |
+          docker build -t $DOCKER_REGISTRY/$DOCKER_REPOSITORY:${{ github.sha }} .
+          docker login $DOCKER_REGISTRY -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker push $DOCKER_REGISTRY/$DOCKER_REPOSITORY:${{ github.sha }}
