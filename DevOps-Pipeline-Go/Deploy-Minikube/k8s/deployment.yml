@@ -17,13 +17,13 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: triple3a/gosurvey:v6
+          image: triple3a/gosurvey:v26
           ports:
             - containerPort: 8080
           env:
             - name: MONGODB_URI
               value: "mongodb://mongo-app-service:27017"
-            - name: APP_PORT
+            - name: SERVER_PORT
               value: "8080"
         - name: mongo-app
           image: mongo:latest
