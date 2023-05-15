@@ -2,7 +2,7 @@ version: '3'
 
 services:
   app:
-    image: triple3a/gosurvey
+    image: triple3a/gosurvey:v1
     build: .
     ports:
       - "8080:8080"
