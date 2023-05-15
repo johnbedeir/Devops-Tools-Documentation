@@ -17,12 +17,12 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: 702551696126.dkr.ecr.eu-central-1.amazonaws.com/goapp-survey:latest
+          image: triple3a/gosurvey:v26
           ports:
             - containerPort: 8080
           env:
-            - name: MONGODB_URI
-              value: "mongodb://mongo-app-service:27017"
+            - name: MONGO_URI
+              value: "mongodb://mongo-app-service.go-survey.svc:27017"
             - name: APP_PORT
               value: "8080"
 
@@ -37,7 +37,7 @@ metadata:
 spec:
   selector:
     app: go-app
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - name: go-app
       port: 8080
@@ -53,7 +53,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-    - host: goapp.johnydev.com
+    - host: a4f7e859893734779a425f66857440ee-904440433.eu-central-1.elb.amazonaws.com
       http:
         paths:
           - path: /
@@ -62,4 +62,4 @@ spec:
               service:
                 name: go-app
                 port:
-                  name: go-app
+                  number: 8080
