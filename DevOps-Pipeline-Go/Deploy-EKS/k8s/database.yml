@@ -43,3 +43,38 @@ spec:
     - name: mongo-app
       port: 27017
       targetPort: 27017
+
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: mongo-data-pv
+  labels:
+    type: aws-ebs
+spec:
+  capacity:
+    storage: 50Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: ""
+  awsElasticBlockStore:
+    volumeID: vol-073b941c3a9296db9
+    fsType: ext4
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mongo-pvc
+  namespace: go-survey
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi
+  storageClassName: ""
+  selector:
+    matchLabels:
+      type: aws-ebs

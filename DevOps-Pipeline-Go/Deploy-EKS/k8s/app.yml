@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: triple3a/gosurvey:v15
+          image: 702551696126.dkr.ecr.eu-central-1.amazonaws.com/goapp-survey:latest
           ports:
             - containerPort: 8080
           env:
@@ -42,3 +42,24 @@ spec:
     - name: go-app
       port: 8080
       targetPort: 8080
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: go-app-ingress
+  namespace: go-survey
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: goapp.johnydev.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: go-app
+                port:
+                  name: go-app
