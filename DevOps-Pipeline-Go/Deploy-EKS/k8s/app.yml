@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: triple3a/gosurvey:v26
+          image: triple3a/gosurvey:latest
           ports:
             - containerPort: 8080
           env:
@@ -53,7 +53,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-    - host: a4f7e859893734779a425f66857440ee-904440433.eu-central-1.elb.amazonaws.com
+    - host: goapp.johnydev.com
       http:
         paths:
           - path: /
