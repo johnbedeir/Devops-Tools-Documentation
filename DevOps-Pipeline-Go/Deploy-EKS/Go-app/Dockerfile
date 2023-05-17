@@ -2,14 +2,11 @@ FROM golang:1.17-alpine3.14
 
 WORKDIR /app
 
-COPY main.go .
-COPY go.mod .
-COPY go.sum .
+COPY . .
 
 RUN go mod download && \
-  go mod verify
-
-RUN go build -o survey .
+  go mod verify && \
+  go build -o survey .
 
 CMD [ "./survey" ]
 
