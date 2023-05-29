@@ -1,4 +1,4 @@
-Sure, here's an example `README.md` for your Node.js app:
+# Nodejs and Postgres Application
 
 ```markdown
 # Node.js App with PostgreSQL
