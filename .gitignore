@@ -28,3 +28,6 @@ token.txt
 kubectl
 k10primer.yaml
 ns.json
+
+node_modules
+package*.json

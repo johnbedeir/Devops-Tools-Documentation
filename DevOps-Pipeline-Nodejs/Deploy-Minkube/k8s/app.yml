@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-app-deploy
+  namespace: nodejs-app
+  labels:
+    app: nodejs-app
+spec:
+  selector:
+    matchLabels:
+      app: nodejs-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nodejs-app
+    spec:
+      containers:
+        - name: nodejs-app
+          image: triple3a/nodejs-app:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DB_USER
+              value: "postgres"
+            - name: DB_HOST
+              value: "postgres-service"
+            - name: DB_DATABASE
+              value: "postgres_db"
+            - name: DB_PASSWORD
+              value: "password"
+            - name: DB_PORT
+              value: "5432"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-app-service
+  namespace: nodejs-app
+  labels:
+    app: nodejs-app
+spec:
+  selector:
+    app: nodejs-app
+  type: NodePort
+  ports:
+    - name: nodejs-app
+      port: 8000
+      targetPort: 8000
