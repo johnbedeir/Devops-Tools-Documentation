@@ -4,7 +4,7 @@
 cluster_name="cluster-1-test"
 namespace="go-survey"
 REGION="eu-central-1"
-image_name="702551696126.dkr.ecr.eu-central-1.amazonaws.com/goapp-survey/app-img:latest"
+image_name="702551696126.dkr.ecr.eu-central-1.amazonaws.com/goapp-survey:latest"
 
 # End Variables
 
@@ -13,9 +13,10 @@ echo "--------------------Creating EKS--------------------"
 echo "--------------------Creating ECR--------------------"
 echo "--------------------Creating EBS--------------------"
 echo "--------------------Deploying Ingress--------------------"
-echo "--------------------Deploying Argo--------------------"
+echo "--------------------Deploying Monitoring--------------------"
 cd terraform && \ 
 terraform init 
+helm repo update
 terraform apply -auto-approve
 
 # update kubeconfig
@@ -24,7 +25,7 @@ aws eks update-kubeconfig --name $cluster_name --region $region
 
 # remove preious docker images
 echo "--------------------Remove Previous build--------------------"
-docker rmi -f $(docker images -q $image_name)
+docker rmi -f $image_name || true
 
 # build new docker image with new tag
 echo "--------------------Build new Image--------------------"
