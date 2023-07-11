@@ -1,13 +1,15 @@
-# Deploy Helm Chart using ArgoCD
+# Deploy ArgoCD using Helm Chart
 
 <img src="argo.png"  width="255" height="250"> <img src="helm.png"  width="255" height="250">
 
 ## In those stpes we will deploy application with Helm on AWS EKS using argo-cd
 
 ### Step 1: Deploy ArgoCD
+
 [Official Documentation](https://argo-cd.readthedocs.io/en/stable/)
 
 Running this script will do the following:
+
 1. Create AWS EKS
 2. Create argocd namespace
 3. Deploy argocd on the created namespace
@@ -23,7 +25,9 @@ chmod +x deploy-argocd-eks.sh
 ```
 
 ### Delete ArgoCD deployment
+
 Running this script will do the following:
+
 1. Delete argocd deployment
 2. Delete argocd namespace
 3. Delete Cluster
@@ -40,11 +44,11 @@ chmod +x remove-argocd-eks.sh
 2. `Connect Repo` > `VIA HTTPS`
 3. Fill in the required detials
 
-    Type `helm`
+   Type `helm`
 
-    Project `default`
+   Project `default`
 
-    `Helm Repository URL`
+   `Helm Repository URL`
 
 4. Navigate to `Applications`
 
@@ -52,18 +56,18 @@ chmod +x remove-argocd-eks.sh
 
 6. Fill in the required details:
 
-    Application Name
+   Application Name
 
-    Project Name `default`
+   Project Name `default`
 
-    Source `Choose the helm repository url you have added`
+   Source `Choose the helm repository url you have added`
 
-    Chart `URL` and `Version`
+   Chart `URL` and `Version`
 
-    Cluster URL `https://kubernetes.default.svc`
+   Cluster URL `https://kubernetes.default.svc`
 
-    Namespace `If the namespace is not exist then you will need to create it`
+   Namespace `If the namespace is not exist then you will need to create it`
 
-    `NOTE: If you need` **External IP** `for your application then you can change the values of the helm chart in the same page, search for` **service.type** `and change it's value to` **LoadBalancer**
+   `NOTE: If you need` **External IP** `for your application then you can change the values of the helm chart in the same page, search for` **service.type** `and change it's value to` **LoadBalancer**
 
-    Tap on `Create`
+   Tap on `Create`

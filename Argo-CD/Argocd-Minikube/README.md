@@ -1,13 +1,15 @@
-# Deploy K8s App using ArgoCD
+# Deploy using ArgoCD on Minikube
 
 <img src="argo.png"  width="255" height="250"> <img src="minikube.png"  width="230" height="230">
 
 ## In those stpes we will deploy application with kubernetes manifest files on minikube using argo-cd
 
 ### Step 1: Deploy ArgoCD
+
 [Official Documentation](https://argo-cd.readthedocs.io/en/stable/)
 
 Running this script will do the following:
+
 1. Start Minikube
 2. Create argocd namespace
 3. Deploy argocd on the created namespace
@@ -23,7 +25,9 @@ chmod +x deploy-argocd-minikube
 ```
 
 ### Delete ArgoCD deployment
+
 Running this script will do the following:
+
 1. Delete argocd deployment
 2. Delete argocd namespace
 
@@ -38,13 +42,13 @@ chmod +x remove-argocd-minikube.sh
 2. `Connect Repo` > `VIA HTTPS`
 3. Fill in the required detials
 
-    Type `git`
+   Type `git`
 
-    Project `default`
+   Project `default`
 
-    `Repository URL`
+   `Repository URL`
 
-  `NOTE: If your repositoy is private you can add your git credentials`
+`NOTE: If your repositoy is private you can add your git credentials`
 
 4. Navigate to `Applications`
 
@@ -52,16 +56,16 @@ chmod +x remove-argocd-minikube.sh
 
 6. Fill in the required details:
 
-    Application Name
+   Application Name
 
-    Project Name `default`
+   Project Name `default`
 
-    Source `Choose the repository you have added`
+   Source `Choose the repository you have added`
 
-    Path `The path to the kubernetes manifest files`
+   Path `The path to the kubernetes manifest files`
 
-    Cluster URL `https://kubernetes.default.svc`
+   Cluster URL `https://kubernetes.default.svc`
 
-    Namespace `If the namespace is not exist then create it first`
+   Namespace `If the namespace is not exist then create it first`
 
-    Tap on `Create`
+   Tap on `Create`
