@@ -1,5 +1,3 @@
-# e-conomic
-
 # DevOps Pipeline
 
 ## Using Microservice Application (PHP | Apache | Mysql) | Monitoring using (Prometheus & Grafana)
