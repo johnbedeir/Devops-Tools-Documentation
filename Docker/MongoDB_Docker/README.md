@@ -30,7 +30,7 @@ This guide outlines the steps to run MongoDB in a Docker container with an attac
 mongodb://localhost:27017
 ```
 
-### 3. Add a name for the database.
+### 3. Add a name for the connection.
 
 ### 4. Create a new database.
 
@@ -59,7 +59,7 @@ This command creates a collection named `my_collection` within the `my_db` datab
 ### 7. Insert documents into the collection:
 
 ```
-db.mycollection.insertOne({
+db.my_collection.insertOne({
 "name": "John Doe",
 "age": 30,
 "email": "johndoe@example.com",
@@ -86,5 +86,5 @@ This command retrieves all documents from the `my_collection` collection and dis
 ### 9. Delete the created collection:
 
 ```
-db.mycollection.drop()
+db.my_collection.drop()
 ```
