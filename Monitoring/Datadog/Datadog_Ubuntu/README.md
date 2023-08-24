@@ -52,6 +52,6 @@ sudo apt upgrade -y
 
 ## Conclusion
 
-You've now successfully set up the Datadog agent on Ubuntu and accessed the metrics dashboard. Explore more about Datadog's features and tailor your monitoring as per your requirements.
+You've now successfully set up the Datadog agent on Ubuntu and accessed the metrics dashboard.
 
 <img src=8.png width=600px>
