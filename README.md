@@ -101,12 +101,12 @@
 - [What is DevOps?](https://www.youtube.com/watch?v=KvZ5xyLT-Dw)
 <!-- YOUTUBE:END -->
 
-➡️ [more videos...](https://www.youtube.com/channel/UCxvd-DdyFsE_07lCa4kRINA)
+➡️ [more videos...](https://www.youtube.com/@JohnyDev)
 
 ---
 
 [website]: https://johnydev.com
-[youtube]: https://www.youtube.com/channel/UCxvd-DdyFsE_07lCa4kRINA
+[youtube]: https://www.youtube.com/@JohnyDev
 [instagram]: https://www.instagram.com/johnbedeir/
 [linkedin]: https://www.linkedin.com/in/johnbedeir/
 [course]: https://www.youtube.com/@JohnyDev
