@@ -64,8 +64,10 @@ Now, will spinup some more containers to monitor the changes for example (Grafan
 
 #### `This will increase the CPU, Memory,and the Network send and receive metrics`
 
-<img src=8.png width=600px>
+<img src=8.png width=800px>
 
 ## Conclusion
 
 You've now successfully set up the Datadog agent using Docker and accessed the metrics with your customized dashboard.
+
+<img src=9.png width=800px>
