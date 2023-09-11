@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: triple3a/gosurvey:v1
+          image: triple3a/gosurvey:latest
           ports:
             - containerPort: 8080
           env:
