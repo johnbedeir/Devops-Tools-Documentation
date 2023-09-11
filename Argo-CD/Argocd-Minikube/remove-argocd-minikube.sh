@@ -7,3 +7,7 @@ kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/s
 #Delete ArgoCD Namespace
 echo "--------------------Delete ArgoCD Namespace--------------------"
 kubectl delete ns argocd
+
+#Delete ArgoCD helm repo
+echo "--------------------Delete ArgoCD Helm Repo--------------------"
+helm repo rm argo

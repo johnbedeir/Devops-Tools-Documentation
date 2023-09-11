@@ -31,3 +31,7 @@ ns.json
 
 node_modules
 package*.json
+
+index.ts
+tsconfig.json
+*.zip
