@@ -7,7 +7,7 @@ spec:
   selector:
     matchLabels:
       app: comingsoon-page
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
