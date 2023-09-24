@@ -10,7 +10,7 @@ docker image pull <image_name>:<image_version/tag>
 
 3. Show all docker images on your local system
 ```sh
-docker image
+docker images
 ```
 
 4. Build docker image from Dockerfile
