@@ -8,6 +8,6 @@ kubectl delete -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/s
 echo "--------------------Delete ArgoCD Namespace--------------------"
 kubectl delete ns argocd
 
-#Delete ArgoCD helm repo
-echo "--------------------Delete ArgoCD Helm Repo--------------------"
-helm repo rm argo
+#Delete ArgoCD Password
+echo "--------------------Delete ArgoCD Password--------------------"
+rm -rf argo-pass.txt
