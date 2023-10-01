@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Posts</title>
+</head>
+<body>
+  <h1>Posts</h1>
+  <% if (results.length) { %>
+    <% results.forEach(function(post) { %>
+      <h2><%= post.title %></h2>
+      <p><%= post.body %></p>
+    <% }) %>
+  <% } else { %>
+    <p>No posts to display</p>
+  <% } %>
+</body>
+</html>
