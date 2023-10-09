@@ -1,16 +1,13 @@
 # #/bin/bash
 
 CLUSTER_NAME=cluster-1
-NAMESPACE=argocd
+NAMESPACE=default
 REGION=eu-central-1
+RELEASE_NAME=my-argo-cd
 
 #Delete ArgoCD EKS
 echo "--------------------Delete ArgoCD EKS--------------------"
-kubectl delete -n ${NAMESPACE} -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-
-#Delete argocd namespace
-echo "--------------------Deleting argocd namespace--------------------"
-kubectl delete ns ${NAMESPACE}
+helm uninstall ${RELEASE_NAME}
 
 #Delete cluster
 echo "--------------------Deleting cluster--------------------"
