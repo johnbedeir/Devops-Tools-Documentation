@@ -1,7 +1,6 @@
 # #/bin/bash
 
 CLUSTER_NAME=cluster-1
-NAMESPACE=default
 REGION=eu-central-1
 RELEASE_NAME=my-argo-cd
 
