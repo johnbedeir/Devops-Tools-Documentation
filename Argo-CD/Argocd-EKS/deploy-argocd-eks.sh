@@ -28,6 +28,7 @@ sleep 1m
 echo "--------------------Change Argocd Service to LoadBalancer--------------------"
 kubectl patch svc ${RELEASE_NAME}-argocd-server -n ${NAMESPACE} -p '{"spec": {"type": "LoadBalancer"}}'
 
+
 #Sleep 10 seconds
 echo "--------------------Creating External-IP--------------------"
 sleep 10s
