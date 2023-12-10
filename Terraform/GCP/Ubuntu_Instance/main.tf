@@ -1,10 +1,11 @@
 resource "google_compute_instance" "ubuntu-instance" {
   name         = "ubuntu-gcp"
-  machine_type = "f1-micro"
+  machine_type = "e2-medium"
+  tags         = ["ubuntu-vm"]
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "debian-11"
     }
   }
 
@@ -13,6 +14,7 @@ resource "google_compute_instance" "ubuntu-instance" {
 
     access_config {
       // Ephemeral public IP
+      nat_ip = google_compute_address.static_ip.address
     }
   }
 
@@ -21,4 +23,19 @@ resource "google_compute_instance" "ubuntu-instance" {
     email  = var.email
     scopes = ["https://www.googleapis.com/auth/cloud-platform"]
   }
+
+  scheduling {
+    automatic_restart   = true // This ensures the VM is restarted automatically if it fails
+    on_host_maintenance = "MIGRATE"
+  }
+}
+
+resource "google_compute_snapshot" "default" {
+  name        = "gitlab-runner-snapshot"
+  source_disk = google_compute_instance.ubuntu-instance.boot_disk.0.source
+}
+
+resource "google_compute_image" "default" {
+  name            = "gitlab-runner-image"
+  source_snapshot = google_compute_snapshot.default.self_link
 }
