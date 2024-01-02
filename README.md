@@ -3,7 +3,7 @@
 - 🚀 I launched Devops courses on my Youtube Channel: [Become A Devops Engineer!][course]!
 - 📖 I’m currently learning everything 🤣
 - 🧑🏻‍🤝‍🧑🏻 I’m looking to collaborate with other content creators
-- ✅ 2023 Goal: DevSecOps and explore new DevOps tools
+- ✅ 2024 Goal: Explore Cutting-edge DevOps tools
 <!-- - ⚡ Fun fact: I love to draw and play guitar / drums -->
 
 ![alt text](youtube.png)
