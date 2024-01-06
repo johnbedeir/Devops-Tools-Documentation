@@ -8,5 +8,4 @@ terraform {
 
 inputs = {
   ec2_name      = "pre-prod-ec2"
-  # key_name      = "pre-prod-key"
 }

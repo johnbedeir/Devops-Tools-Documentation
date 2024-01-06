@@ -8,5 +8,4 @@ terraform {
 
 inputs = {
   ec2_name      = "dev-ec2"
-  # key_name      = "dev-key"
 }
