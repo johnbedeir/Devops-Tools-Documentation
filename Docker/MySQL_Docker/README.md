@@ -4,6 +4,8 @@
 
 This guide outlines the steps to run MySQL in a Docker container with an attached volume. This allows you to persist the data outside the container and preserve it even when the container is removed.
 
+🎥 For a detailed walkthrough into this project, check out my video on YouTube: [HERE](https://youtu.be/RWOppRo-iXI).
+
 ## Prerequisites
 
 - Docker installed on your machine

@@ -4,6 +4,8 @@
 
 This README provides step-by-step instructions on how to set up the Datadog agent on an Ubuntu machine and view the metrics dashboard.
 
+🎥 For a detailed walkthrough into this project, check out my video on YouTube: [HERE](https://youtu.be/vSL9y29yYQ4).
+
 ## Prerequisites
 
 - An Ubuntu machine.
