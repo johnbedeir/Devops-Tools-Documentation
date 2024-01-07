@@ -1,12 +1,19 @@
 # How to run Vagrant?
 
+🎥 For a detailed walkthrough into this project, check out my video on YouTube:
+
+- [Vagrant Part 1](https://youtu.be/uo-0PkcUze8).
+- [Vagrant Part 2](https://youtu.be/Xv4I-TCzvP4).
+- [Vagrant Part 3](https://youtu.be/cINWNEbS1To).
+- [Vagrant Part 4](https://youtu.be/r3or3qlY464).
+
 ## Step 1: Download & Install
 
-[Download Virtualbox](https://www.virtualbox.org/wiki/Downloads)
+Download [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 
-[Install Virtualbox using GDebi Package Installer](https://linuxhint.com/install-and-use-gdebi-ubuntu/)
+Install Virtualbox using [GDebi Package Installer](https://linuxhint.com/install-and-use-gdebi-ubuntu/)
 
-[Download Vagrant](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqblpDZ2YwOHQ3cmJITHRtT1RTXzk1N0VWRzlnUXxBQ3Jtc0trQjJpMldKVlh1VWpEVnl1c1BKRG5uWVM0elZJSm9rckUybENoa1dIWXROQkNDS2VjR2Nqd0lKNV85T3lVLW5yeUdOMG5pWmFBY0JURUwySG9ZRkppbHRGVVJrdWlxdXdfUndUa3U1bmh2OGhQVjgzMA&q=https%3A%2F%2Fwww.vagrantup.com%2Fdownloads%23%3A%7E%3Atext%3Dall%2520Vagrant%2520tutorials-%2CRelease%2520Information%2C-Releases%253A&v=uo-0PkcUze8)
+Download [Vagrant](https://developer.hashicorp.com/vagrant/install?product_intent=vagrant)
 
 ## Step 2: Run Vagrant
 

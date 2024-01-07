@@ -2,7 +2,9 @@
 
 <img src="argo.png"  width="255" height="250"> <img src="helm.png"  width="255" height="250">
 
-## In those stpes we will deploy application with Helm on AWS EKS using argo-cd
+🎥 For a detailed walkthrough into this project, check out my video on YouTube: [HERE](https://youtu.be/UHcbz5h-1Ws).
+
+### Deploy Argo-CD with Helm on AWS EKS:
 
 ### Step 1: Deploy ArgoCD
 
