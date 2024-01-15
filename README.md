@@ -5,6 +5,8 @@
 - 🧑🏻‍🤝‍🧑🏻 I’m looking to collaborate with other content creators
 - ✅ 2024 Goal: Explore Cutting-edge DevOps tools
 
+![alt text](youtube.png)
+
 ### Connect with me:
 
 [<img alt="johnydev.com" src="https://img.icons8.com/dusk/64/000000/domain.png"/>][website]
