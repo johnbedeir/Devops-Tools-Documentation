@@ -1,10 +1,3 @@
-## I'm a Site Reliability Engineer!!
-
-- 🚀 I launched Devops courses on my Youtube Channel: [Become A Devops Engineer!][course]!
-- 📖 I’m currently learning everything 🤣
-- 🧑🏻‍🤝‍🧑🏻 I’m looking to collaborate with other content creators
-- ✅ 2024 Goal: Explore Cutting-edge DevOps tools
-
 ### Connect with me:
 
 <img alt="https://johnydev.com/" src="icons/icons8-website-100.png" width="60px">&nbsp;
