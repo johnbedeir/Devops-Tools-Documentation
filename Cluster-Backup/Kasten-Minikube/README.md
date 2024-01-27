@@ -1,5 +1,7 @@
 # Cluster Backup on Minikube using Kasten
 
+<img src="cover.jpg">
+
 ## Step 1: Install _prerequisites.sh_
 
 This script includes the needed tools for this project to run:
