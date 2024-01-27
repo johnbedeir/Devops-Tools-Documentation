@@ -1,14 +1,21 @@
-### `For Prerequisites check` [here](https://github.com/johnbedeir/Devops-Tools-Documentation/blob/main/Cluster-Backup/Kasten-Minikube/prerequisites.sh)
+# EKS Cluster Backup with Kasten (K10)
 
----
+<img src="cover.jpg">
 
-# Backup EKS Cluster using Kasten (K10)
+### Initial Requirements
 
-## Step 1: Build Infrastructure
+For the required initial setup, please run the prerequisites script
 
-This step will build S3 Bucket where all the backup will be stored and IAM Role that will be used by Kasten to Access your S3 Bucket.
+```
+chmod +x prerequisites.sh
+./prerequisites.sh
+```
 
-Build the infrastructure by Terraform using the following commands
+## Step 1: Setting Up Infrastructure
+
+This step involves creating an S3 Bucket for backup storage and an IAM Role for Kasten's S3 Bucket access.
+
+Set up your infrastructure with these Terraform commands:
 
 ```
 cd Terraform
@@ -20,47 +27,43 @@ terraform plan
 terraform apply -auto-approve
 ```
 
-## Step 2: Create Cluster and Deploy Application
+## Step 2: Launching Cluster and Application
+
+Deploy the cluster and application with this Ansible command:
 
 ```
 ansible-playbook aws-eks-app-deploy.yaml
 ```
 
-## To delete cluster and application deployment
+## Step 3: Kasten Installation on AWS
+
+Deploy Kasten using the **kasten-deployment.sh** script:
 
 ```
-ansible-playbook aws-eks-app-remove.yaml
-```
-
-## Step 3: Deploy Kasten AWS
-
-Deploy Kasten using the automated script **kasten-deployment.sh**
-
-```
-cd Terrafrom
+cd Terraform
 
 chmod +x kasten-deployment.sh
 
 ./kasten-deployment.sh
 ```
 
-which will do the following:
+This process involves:
 
-1. Run pre-check before deployment
-2. Update kubeconfig
-3. Show the available OIDC then associate it with the cluster
-4. Add helm repo for Kasten
-5. Create namespace for Kasten
-6. Install Kasten using helm
-7. Sleep for 1 minute until the pods are started
-8. Update the helm repo and upgrade Kasten
-9. Set external gateway to access Kasten via LoadBalancer
-10. Reveal Kasten URL
-11. Reveal Kubernetes token to access Kasten
+1. Conducting a deployment pre-check
+2. Updating kubeconfig
+3. Associating OIDC with the cluster
+4. Adding Kasten's helm repository
+5. Creating a Kasten-specific namespace
+6. Installing Kasten with helm
+7. Pausing briefly (1 minute) for pod startup
+8. Refreshing the helm repo and updating Kasten
+9. Configuring external LoadBalancer access for Kasten
+10. Displaying Kasten's URL
+11. Providing a Kubernetes token for Kasten login
 
 ## Delete Kasten Deployment
 
-For deleting kasten deployment use the script **delete-kasten-deployment.sh**
+To remove the Kasten setup, utilize the **delete-kasten-deployment.sh** script:
 
 ```
 cd Terraform
@@ -68,4 +71,12 @@ cd Terraform
 chmod +x delete-kasten-deployment.sh
 
 ./delete-kasten-deployment.sh
+```
+
+## Delete Cluster and Application
+
+To dismantle the cluster and application:
+
+```
+ansible-playbook aws-eks-app-remove.yaml
 ```
