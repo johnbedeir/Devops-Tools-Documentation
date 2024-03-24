@@ -11,7 +11,7 @@ fi
 
 # Check Python
 echo "Checking Python installation..."
-python3.9 --version
+python3 --version
 if [ $? -eq 0 ]; then
     echo "Python installed successfully."
 else
