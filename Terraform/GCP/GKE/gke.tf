@@ -40,7 +40,6 @@ resource "google_container_node_pool" "primary_nodes" {
   node_config {
     preemptible  = false
     machine_type = "e2-medium"
-    #service_account = ""
 
     // Assign nodes to the private subnet
     tags = ["gke-node", "private-subnet"]
@@ -64,6 +63,7 @@ resource "helm_release" "cluster-autoscaler" {
     value = "true"
   }
 
+  // GKE-specific settings
   set {
     name  = "autoDiscovery.clusterName"
     value = "${var.name_prefix}-${var.environment}"

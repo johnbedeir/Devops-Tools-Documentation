@@ -2,23 +2,23 @@
 variable "project_id" {
   description = "The name of the VPC to use."
   type        = string
-  default     = "johnydev"
+  default     = "PROJECT_ID"
 }
 
 
 variable "region" {
   description = "The name of the VPC to use."
   type        = string
-  default     = "europe-west1"
+  default     = "REGION"
 }
 
 variable "name_prefix" {
   description = "The name of the VPC to use."
   type        = string
-  default     = "cluster-1"
+  default     = "CLUSTER_NAME"
 }
 
 variable "environment" {
   type    = string
-  default = "testing-env"
+  default = "ENV_NAME"
 }
