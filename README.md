@@ -1,4 +1,4 @@
-### Connect with me:
+### with me:
 
 <a href="https://johnydev.com/" target="_blank"><img src="icons/icons8-website-100.png" width="60px"></a>&nbsp;
 <a href="https://www.youtube.com/@JohnyDev" target="_blank"><img src="icons/icons8-youtube-48.png" width="60px"></a>&nbsp;
