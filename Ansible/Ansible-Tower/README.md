@@ -90,7 +90,3 @@ kubectl delete -k .
 ---
 
 **Note**: Make sure your cluster has enough resources for deploying AWX, and consult the official AWX documentation for any custom configurations.
-
-```
-
-```
