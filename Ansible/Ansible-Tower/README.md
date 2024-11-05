@@ -1,5 +1,7 @@
 # Deploying Ansible Tower (AWX) with AWX Operator on AWS
 
+<img src=cover.png>
+
 This guide will help you deploy Ansible Tower (AWX) on AWS using the AWX Operator.
 
 ## Prerequisites
