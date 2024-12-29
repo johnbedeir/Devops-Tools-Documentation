@@ -1,29 +1,26 @@
 pipeline {
     agent any
 
-    environment {
-		DOCKERHUB_CREDENTIALS=credentials('dockerhub')
-	}
     stages {
         stage('Docker Login') {
             steps {
-                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKERHUB_CREDENTIALS_USR', passwordVariable: 'DOCKERHUB_CREDENTIALS_PSW')]) {
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                }
             }
         }
-        stage('Build & push Dockerfile') {
+        stage('Build & Push Dockerfile') {
             steps {
-                sh """
-                cd DevOps-Pipeline-PHP/laravel-app
-                ansible-playbook playbook.yml
-                """
+                dir('DevOps-Pipeline-PHP/laravel-app') {
+                    sh 'ansible-playbook playbook.yml'
+                }
             }
         }
-        stage('Run Dockercompose playbook') {
+        stage('Run Docker Compose Playbook') {
             steps {
-                sh """
-                cd DevOps-Pipeline-PHP/laravel-app
-                ansible-playbook playbook-dcompose.yml 
-                """
+                dir('DevOps-Pipeline-PHP/laravel-app/') {
+                    sh 'ansible-playbook playbook-dcompose.yml'
+                }
             }
         }
     }
