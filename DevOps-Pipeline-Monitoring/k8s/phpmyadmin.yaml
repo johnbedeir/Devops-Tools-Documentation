@@ -19,6 +19,8 @@ spec:
 
       - name: phpmyadmin
         image: triple3a/laravel-app-phpmyadmin
+        securityContext:
+          allowPrivilegeEscalation: false
         env:
             - name: MYSQL_USER
               value: root
