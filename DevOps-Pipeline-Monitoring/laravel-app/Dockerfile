@@ -1,5 +1,5 @@
 # Pull php-apache image 
-FROM php:7.4.1-apache
+FROM php:7.4-apache-bullseye
 
 # use root user
 USER root 
@@ -10,12 +10,12 @@ WORKDIR /var/www/html
 # Copy all files into the apache public directory
 COPY . /var/www/html/
 
-# Install the dependecies to run php
-RUN apt-get update && apt-get install -y \
+# Install the dependencies to run php
+RUN apt-get update && apt-get install -y --no-install-recommends \
     libpng-dev \
     zlib1g-dev \
     libxml2-dev \
-    libzip-dev \ 
+    libzip-dev \
     zip \
     curl \
     unzip \
@@ -24,7 +24,8 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install zip \
-    && docker-php-source delete
+    && docker-php-source delete \
+    && rm -rf /var/lib/apt/lists/*
 
 
 COPY ./vhost.conf /etc/apache2/sites-available/000-default.conf
