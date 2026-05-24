@@ -16,5 +16,7 @@ spec:
       containers:
       - name: comingsoon-page
         image: triple3a/comingsoon-page:latest
+        securityContext:
+          allowPrivilegeEscalation: false
         ports:
         - containerPort: 80
