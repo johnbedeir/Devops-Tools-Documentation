@@ -3,6 +3,10 @@
 # services.yaml
 .history
 .*
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
+!.github/workflows/*.yaml
 *.tfstate
 *.tfvars
 *.tfstate.*
