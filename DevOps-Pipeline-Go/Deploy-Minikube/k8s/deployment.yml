@@ -18,6 +18,8 @@ spec:
       containers:
         - name: go-app
           image: triple3a/gosurvey:latest
+          securityContext:
+            allowPrivilegeEscalation: false
           ports:
             - containerPort: 8080
           env:
