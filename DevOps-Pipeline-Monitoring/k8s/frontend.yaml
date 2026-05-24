@@ -18,6 +18,8 @@ spec:
       containers:
       - name: apache
         image: triple3a/laravel-app
+        securityContext:
+          allowPrivilegeEscalation: false
         ports:
         - containerPort: 80
 
