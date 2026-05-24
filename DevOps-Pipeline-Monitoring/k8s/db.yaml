@@ -18,7 +18,9 @@ spec:
       containers:
 
       - name: db
-        image: triple3a/laravel-app-mysql-5.7 
+        image: triple3a/laravel-app-mysql-5.7
+        securityContext:
+          allowPrivilegeEscalation: false
         env:
             - name: MYSQL_ALLOW_EMPTY_PASSWORD
               value: "1"
