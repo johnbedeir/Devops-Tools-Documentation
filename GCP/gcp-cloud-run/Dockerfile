@@ -10,4 +10,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8080
 
+RUN useradd --create-home --shell /bin/bash appuser
+USER appuser
+
 CMD ["python3", "./main.py"]
