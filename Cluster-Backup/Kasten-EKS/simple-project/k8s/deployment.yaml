@@ -18,3 +18,5 @@ spec:
         image: triple3a/comingsoon-page:latest
         ports:
         - containerPort: 80
+        securityContext:
+          allowPrivilegeEscalation: false
