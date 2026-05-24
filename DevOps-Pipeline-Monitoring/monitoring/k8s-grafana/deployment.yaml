@@ -17,6 +17,8 @@ spec:
       containers:
       - name: grafana
         image: grafana/grafana:latest
+        securityContext:
+          allowPrivilegeEscalation: false
         ports:
         - name: grafana
           containerPort: 3000
