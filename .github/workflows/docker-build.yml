@@ -1,0 +1,42 @@
+name: Docker Build Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  docker-build:
+    name: Build all Dockerfiles
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build every Dockerfile
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mapfile -d '' dockerfiles < <(git ls-files -z -- ':(glob)**/Dockerfile' | sort -z)
+
+          if [ "${#dockerfiles[@]}" -eq 0 ]; then
+            echo "No Dockerfiles found."
+            exit 0
+          fi
+
+          for dockerfile in "${dockerfiles[@]}"; do
+            context="$(dirname "$dockerfile")"
+            safe_name="$(echo "$context" | sed 's#[^A-Za-z0-9_.-]#-#g')"
+            if [ "$safe_name" = "." ]; then
+              safe_name="root"
+            fi
+            image_name="dockerfile-check:$safe_name"
+
+            echo "::group::Building $dockerfile"
+            docker build --file "$dockerfile" --tag "$image_name" "$context"
+            echo "::endgroup::"
+          done
