@@ -11,6 +11,9 @@ RUN go mod download && \
 
 RUN go build -o survey .
 
+RUN adduser -D -u 1001 appuser
+USER appuser
+
 CMD [ "./survey" ]
 
 EXPOSE 8080
