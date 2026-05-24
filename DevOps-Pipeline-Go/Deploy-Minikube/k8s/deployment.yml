@@ -31,3 +31,5 @@ spec:
           image: mongo:latest
           ports:
             - containerPort: 27017
+          securityContext:
+            allowPrivilegeEscalation: false
