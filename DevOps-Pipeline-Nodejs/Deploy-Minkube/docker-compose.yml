@@ -21,6 +21,8 @@ services:
 
   db:
     image: postgres:13
+    security_opt:
+      - no-new-privileges:true
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
