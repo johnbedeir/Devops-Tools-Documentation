@@ -22,6 +22,8 @@ services:
       - . /var/www/html/
     ports:
       - "5000:80"
+    security_opt:
+      - no-new-privileges:true
 
   # Create phpmyadmin service to view the database in the GUI
   phpmyadmin:
