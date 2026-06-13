@@ -28,6 +28,8 @@ services:
   # Create phpmyadmin service to view the database in the GUI
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    security_opt:
+      - no-new-privileges:true
     links:
       - db
       - php-apache-environment
