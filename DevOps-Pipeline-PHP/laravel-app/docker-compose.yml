@@ -5,6 +5,8 @@ services:
     container_name: db
     image: mysql:5.7
     restart: always
+    security_opt:
+      - no-new-privileges:true
     environment:
       MYSQL_DATABASE: 'laravel-db'
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
