@@ -1,5 +1,5 @@
 # Pull php-apache image 
-FROM php:8.4.11-apache-bullseye
+FROM php:8.5.7-cli-alpine3.22
 
 # use root user
 USER root 
